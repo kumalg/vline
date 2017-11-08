@@ -7,6 +7,7 @@ body, html {
     height: 100%;
     width: 100%;
     font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .menu {
@@ -27,11 +28,11 @@ body, html {
   box-shadow: none;
 
   a {
-      color: white;
+      color: white !important;
 
       &:hover {
-        background-color: white;
-        color: $colorPrimary;
+        background-color: white !important;
+        color: $colorPrimary !important;
       }
   }
 }
@@ -53,6 +54,7 @@ body, html {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 #menu-center {
   //background-color: blue;
   max-width: 980px;
@@ -71,8 +73,28 @@ body, html {
 
     li {
       list-style: none;
-      margin: 0 0 0 0;
+      margin: 0;
       display: inline;
+
+      a {
+        padding: 0 20px;
+        height: 32px;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 0.75em;
+        color: black;
+        text-decoration: none;
+        line-height: 32px;
+        border: none;
+        border-radius: 16px;
+        background-color: transparent;
+        transition: background-color .2s, color .2s;
+
+        &.active {
+            color: #fff;
+            background-color: $colorPrimary;
+        }
+      }
     }
   }
 
@@ -87,34 +109,26 @@ body, html {
   }
 }
 
-a {
-  padding: 0 20px;
-  height: 32px;
-  display: inline-block;
-  font-family:'Open Sans', serif;
-  font-weight: 600;
-  font-size: 0.75em;
-  color: black;
-  text-decoration: none;
-  line-height: 32px;
-  border: none;
-  border-radius: 16px;
-  background-color: transparent;
-  transition: background-color .2s, color .2s;
-
-  &.active {
-      font-family:'Open Sans', serif;
-      color: #fff;
-      background-color: $colorPrimary;
-  }
-}
-
 #splash{
   background-color: $colorPrimary;
   background: url(../content/splash-bg.jpg) no-repeat center/cover;
   overflow: hidden;
   height: 100%;
   width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+  }
+  h6 {
+    font-size: 2em;
+    font-weight: 300;
+  }
 }
 
 #o_vline{
@@ -124,7 +138,25 @@ a {
 }
 
 #oferta{
-  background-color: white;
+  background-color: #fff;
   height: 100%;
+  width: 100%;
+}
+
+#promocje{
+  background-color: #ebebeb;
+  height: 640px;
+  width: 100%;
+}
+
+#aktualnosci{
+  background-color: #fff;
+  height: 640px;
+  width: 100%;
+}
+
+#kontakt{
+  background-color: #121212;
+  height: 320px;
   width: 100%;
 }
