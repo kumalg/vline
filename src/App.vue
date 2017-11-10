@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <!-- <UpperMenu/> -->
     <div id="menu" ref="menu" class="m1 menu" :class="[active, {'menu-splash': isSplashVisible}]">
-      <div id="menu-center">
-          <a id="logo-button" class="logo-button splash" href="#splash" @click="makeActive"></a>
-          <ul class="menu-sections">
-            <li v-for="item in menuItems">
-              <a :href="'#' + item.name" :class="item.name" @click="makeActive">{{item.title}}</a>
-            </li>
-          </ul>
-      </div>
+      <scrollactive id="menu-center" v-on:itemchanged="yourFunction()">
+        <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash" @click="makeActive"></a>
+        <ul class="menu-sections">
+          <li v-for="item in menuItems">
+            <a :href="'#' + item.name" :class="item.name" class="scrollactive-item">{{item.title}}</a>
+          </li>
+        </ul>
+      </scrollactive>
     </div>
 
     <section id="splash" ref="splash">
@@ -34,7 +33,6 @@
 </template>
 
 <script>
-// import UpperMenu from './components/UpperMenu'
 
 export default {
   name: 'app',
@@ -44,7 +42,7 @@ export default {
       active: 'splash',
       scrollPosition: null,
       menuItems: [
-        {name:'o_vline', title: 'OVH uj'},
+        {name:'o_vline', title: 'O VLine'},
         {name:'oferta', title: 'Oferta'},
         {name:'promocje', title: 'Promocje'},
         {name:'aktualnosci', title: 'Aktualności'},
@@ -62,6 +60,9 @@ export default {
     },
     updateMenuStyle() {
       this.isSplashVisible = this.scrollPosition <  this.$refs.splash.offsetTop + this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
+    },
+    yourFunction(){
+
     },
     updateScroll() {
       this.scrollPosition = window.scrollY
