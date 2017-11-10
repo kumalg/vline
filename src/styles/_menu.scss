@@ -66,6 +66,10 @@ $menu-height: 96px;
     //background-color: red;
     float: right;
 
+    li + li {
+      margin-left: 4px;
+    }
+
     li {
       list-style: none;
       margin: 0;

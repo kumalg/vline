@@ -3,26 +3,10 @@
     <!-- <UpperMenu/> -->
     <div id="menu" ref="menu" class="m1 menu" :class="[active, {'menu-splash': isSplashVisible}]">
       <div id="menu-center">
-          <a id="logo-button" class="logo-button splash" href="#splash" @click="makeActive('splash')"></a>
+          <a id="logo-button" class="logo-button splash" href="#splash" @click="makeActive"></a>
           <ul class="menu-sections">
-            <li>
-              <a href="#o_vline" class="o_vline" @click="makeActive('o_vline')">O Vline</a>
-            </li>
-
-            <li>
-              <a href="#oferta" class="oferta" @click="makeActive('oferta')">Oferta</a>
-            </li>
-
-            <li>
-              <a href="#promocje" class="promocje" @click="makeActive('promocje')">Promocje</a>
-            </li>
-
-            <li>
-              <a href="#aktualnosci" class="aktualnosci" @click="makeActive('aktualnosci')">Aktualności</a>
-            </li>
-
-            <li>
-              <a href="#kontakt" class="kontakt" @click="makeActive('kontakt')">Kontakt</a>
+            <li v-for="item in menuItems">
+              <a :href="'#' + item.name" :class="item.name" @click="makeActive">{{item.title}}</a>
             </li>
           </ul>
       </div>
@@ -58,14 +42,23 @@ export default {
     return {
       isSplashVisible: true,
       active: 'splash',
-      scrollPosition: null
+      scrollPosition: null,
+      menuItems: [
+        {name:'o_vline', title: 'OVH uj'},
+        {name:'oferta', title: 'Oferta'},
+        {name:'promocje', title: 'Promocje'},
+        {name:'aktualnosci', title: 'Aktualności'},
+        {name:'kontakt', title: 'Kontakt'}
+      ]
     }
   },
   components: {
   },
   methods: {
     makeActive(item){
-      this.active = item
+      const itemName = item.target.getAttribute('class');
+      console.log(itemName)
+      this.active = itemName
     },
     updateMenuStyle() {
       this.isSplashVisible = this.scrollPosition <  this.$refs.splash.offsetTop + this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
