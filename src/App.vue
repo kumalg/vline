@@ -1,47 +1,93 @@
 <template>
   <div id="app">
-    <Menu/>
-    <!-- <img src="./assets/logo.png">
-    <HelloWorld/> -->
+    <!-- <UpperMenu/> -->
+    <div id="menu" ref="menu" class="m1 menu" :class="[active, {'menu-splash': isSplashVisible}]">
+      <div id="menu-center">
+          <a id="logo-button" class="logo-button splash" href="#splash" @click="makeActive('splash')"></a>
+          <ul class="menu-sections">
+            <li>
+              <a href="#o_vline" class="o_vline" @click="makeActive('o_vline')">O Vline</a>
+            </li>
 
-    <section id="splash">
+            <li>
+              <a href="#oferta" class="oferta" @click="makeActive('oferta')">Oferta</a>
+            </li>
+
+            <li>
+              <a href="#promocje" class="promocje" @click="makeActive('promocje')">Promocje</a>
+            </li>
+
+            <li>
+              <a href="#aktualnosci" class="aktualnosci" @click="makeActive('aktualnosci')">Aktualności</a>
+            </li>
+
+            <li>
+              <a href="#kontakt" class="kontakt" @click="makeActive('kontakt')">Kontakt</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+    <section id="splash" ref="splash">
       <h6>Internet + Telewizja + Telefon</h6>
     </section>
 
-    <section id="o_vline">
-      <div id="app">
-        {{ message }}
-      </div>
+    <section id="o_vline" ref="o_vline">
     </section>
 
-    <section id="oferta">
+    <section id="oferta" ref="oferta">
     </section>
 
-    <section id="promocje">
+    <section id="promocje" ref="oferta">
     </section>
 
-    <section id="aktualnosci">
+    <section id="aktualnosci" ref="aktualnosci">
     </section>
 
-    <section id="kontakt">
+    <section id="kontakt" ref="kontakt">
     </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import Menu from './components/Menu'
+// import UpperMenu from './components/UpperMenu'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      isSplashVisible: true,
+      active: 'splash',
+      scrollPosition: null
+    }
+  },
   components: {
-    HelloWorld,
-    Menu
+  },
+  methods: {
+    makeActive(item){
+      this.active = item
+    },
+    updateMenuStyle() {
+      this.isSplashVisible = this.scrollPosition <  this.$refs.splash.offsetTop + this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
+    },
+    updateScroll() {
+      this.scrollPosition = window.scrollY
+      this.updateMenuStyle()
+    },
+    updateResize() {
+      this.updateScroll()
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+    window.addEventListener('resize', this.updateResize);
   }
 }
+
 </script>
 
-<style src="./reset.css"></style>
+<style src="./styles/reset.css"></style>
+<style src="./styles/_menu.scss" lang="scss"></style>
 <style lang="scss">
 
 $menu-height: 96px;

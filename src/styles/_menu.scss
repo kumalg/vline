@@ -1,49 +1,6 @@
-<template>
-  <div id="menu" class="m1 menu" v-bind:class="active">
-		<div id="menu-center">
-      <!-- <nav v-bind:class="active" v-on:click.prevent> -->
-    		<a id="logo-button" class="logo-button splash" href="#splash" v-on:click="makeActive('splash')"></a>
-        <ul class="menu-sections">
-  				<li><a href="#o_vline" class="o_vline" v-on:click="makeActive('o_vline')">O Vline</a>
-  				</li>
 
-  				<li><a href="#oferta" class="oferta" v-on:click="makeActive('oferta')">Oferta</a>
-  				</li>
-
-  				<li><a href="#promocje" class="promocje" v-on:click="makeActive('promocje')">Promocje</a>
-  				</li>
-
-  				<li><a href="#aktualnosci" class="aktualnosci" v-on:click="makeActive('aktualnosci')">Aktualności</a>
-  				</li>
-
-  				<li><a href="#kontakt" class="kontakt" v-on:click="makeActive('kontakt')">Kontakt</a>
-  				</li>
-  			</ul>
-      <!-- </nav> -->
-		</div>
-	</div>
-</template>
-
-<script>
-export default {
-  name: 'Menu',
-  data() {
-    return {
-      active: 'splash'
-    }
-  },
-  methods: {
-    makeActive(item){
-        this.active = item;
-    }
-  }
-}
-</script>
-
-<style lang="scss">
 $menu-height: 96px;
-$colorPrimary: #6b21d6;
-$colorText: #292929;
+@import "_colors.scss";
 
 .menu {
   width: 100%;
@@ -69,13 +26,17 @@ $colorText: #292929;
       color: $colorPrimary !important;
     }
   }
-}
 
-.logo-button {
-  &.hide {
+  .logo-button {
     display: none !important;
   }
 }
+
+// .logo-button {
+//   &.hide {
+//     display: none !important;
+//   }
+// }
 
 .light-menu {
   width: 100%;
@@ -126,9 +87,8 @@ $colorText: #292929;
         //background-color: transparent;
         transition: background-color 0.2s, color 0.2s;
 
-        &.active {
-          color: #fff;
-          background-color: $colorPrimary;
+        &:hover {
+          background-color: rgba(0,0,0,.1);
         }
       }
     }
@@ -154,4 +114,3 @@ $colorText: #292929;
     color: #fff;
     background-color: $colorPrimary;
 }
-</style>
