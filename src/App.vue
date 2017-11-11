@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <div id="menu" ref="menu" class="m1 menu" :class="[active, {'menu-splash': isSplashVisible}]">
-      <scrollactive id="menu-center" v-on:itemchanged="yourFunction()">
-        <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash" @click="makeActive"></a>
+      <scrollactive
+          id="menu-center"
+          :offset="96"
+          v-on:itemchanged="yourFunction()">
+        <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
         <ul class="menu-sections">
           <li v-for="item in menuItems">
             <a :href="'#' + item.name" :class="item.name" class="scrollactive-item">{{item.title}}</a>
@@ -53,11 +56,11 @@ export default {
   components: {
   },
   methods: {
-    makeActive(item){
-      const itemName = item.target.getAttribute('class');
-      console.log(itemName)
-      this.active = itemName
-    },
+    // makeActive(item){
+    //   const itemName = item.target.getAttribute('class');
+    //   console.log(itemName)
+    //   this.active = itemName
+    // },
     updateMenuStyle() {
       this.isSplashVisible = this.scrollPosition <  this.$refs.splash.offsetTop + this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
     },
