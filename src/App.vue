@@ -3,11 +3,16 @@
   <div id="menu" ref="menu" class="m1 menu" :class="{'menu-splash': isSplashVisible}">
     <scrollactive id="menu-center" :offset="96">
       <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
-      <ul class="menu-sections">
-        <li v-for="item in menuItems">
-          <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
-        </li>
-      </ul>
+      <div class="hamburger-menu navigation">
+        <button id="nav-button" @click="navButtonClick"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
+        <div :class="['menu-section', {'hide': menuHidden}]">
+          <ul>
+            <li v-for="item in menuItems">
+              <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </scrollactive>
   </div>
 
@@ -58,9 +63,10 @@ export default {
     return {
       isSplashVisible: true,
       scrollPosition: null,
+      menuHidden: true,
       menuItems: [{
           href: '#o_vline',
-          title: 'O VLine',
+          title: 'O Vline',
         },
         {
           href: '#oferta',
@@ -95,6 +101,9 @@ export default {
     //   console.log(itemName)
     //   this.active = itemName
     // },
+    navButtonClick(){
+      this.menuHidden = !this.menuHidden
+    },
     updateMenuStyle() {
       this.isSplashVisible = this.scrollPosition < this.$refs.splash.offsetTop + this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
     },
@@ -197,6 +206,7 @@ html {
 
       a {
         padding: 0 32px;
+        margin-bottom: 8px;
         height: 48px;
         display: inline-block;
         font-weight: 600;
