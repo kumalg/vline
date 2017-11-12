@@ -1,6 +1,5 @@
-
-$menu-height: 96px;
 @import "_colors.scss";
+$menu-height: 96px;
 
 .menu {
   width: 100%;
@@ -12,6 +11,7 @@ $menu-height: 96px;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  z-index: 9999;
 }
 
 .menu-splash {
@@ -32,26 +32,7 @@ $menu-height: 96px;
   }
 }
 
-// .logo-button {
-//   &.hide {
-//     display: none !important;
-//   }
-// }
-
-.light-menu {
-  width: 100%;
-  height: $menu-height;
-  background-color: rgba(255, 255, 255, 1);
-  position: fixed;
-  background-color: rgba(4, 180, 49, 0.6);
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
 #menu-center {
-  //background-color: blue;
   max-width: 980px;
   height: $menu-height;
   margin: 0 auto;
@@ -63,7 +44,6 @@ $menu-height: 96px;
   }
 
   ul {
-    //background-color: red;
     float: right;
 
     li + li {
@@ -74,10 +54,8 @@ $menu-height: 96px;
       list-style: none;
       margin: 0;
       display: inline;
-      //background-color: blue;
 
       a {
-        //background-color: green;
         padding: 0 20px;
         height: 32px;
         display: inline-block;
@@ -88,7 +66,6 @@ $menu-height: 96px;
         line-height: 32px;
         border: none;
         border-radius: 16px;
-        //background-color: transparent;
         transition: background-color 0.2s, color 0.2s;
 
         &:hover {
@@ -110,16 +87,5 @@ $menu-height: 96px;
     border: none !important;
     padding: 0;
     border-radius: 0;
-    //background: red;
   }
-}
-
-#menu.splash .splash,
-#menu.o_vline .o_vline,
-#menu.oferta .oferta,
-#menu.promocje .promocje,
-#menu.aktualnosci .aktualnosci,
-#menu.kontakt .kontakt {
-    color: #fff;
-    background-color: $colorPrimary;
 }
