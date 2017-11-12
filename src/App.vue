@@ -17,7 +17,7 @@
   </div>
 
   <section id="splash" ref="splash">
-    <img src="./assets/logo.png" id="logo" />
+    <img src="./assets/logo_white.svg" id="logo" />
     <h6>Internet &nbsp;&nbsp; + &nbsp;&nbsp; Telewizja &nbsp;&nbsp; + &nbsp;&nbsp; Telefon</h6>
   </section>
 
@@ -50,6 +50,10 @@
   <Aktualnosci id="aktualnosci" ref="aktualnosci" />
 
   <section id="kontakt" ref="kontakt">
+  </section>
+
+  <section id="stopka" ref="stopka">
+
   </section>
 </div>
 </template>
@@ -103,8 +107,7 @@ export default {
     //   this.active = itemName
     // },
     hideMenu() {
-      if (!this.menuHidden)
-        this.menuHidden = true;
+      this.menuHidden = true
     },
     navButtonClick() {
       this.menuHidden = !this.menuHidden
@@ -133,8 +136,11 @@ export default {
 }
 </script>
 
-<style src="./styles/reset.css">
-</style><style src="./styles/_menu.scss" lang="scss"></style><style lang="scss">$menu-height: 96px;
+<style src="./styles/reset.css"></style>
+<style src="./styles/_menu.scss" lang="scss"></style>
+<style lang="scss">
+
+$menu-height: 96px;
 $colorPrimary: #6b21d6;
 $colorText: #292929;
 
@@ -208,10 +214,11 @@ html {
       margin: 0 8px;
       display: inline;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
 
       a {
         padding: 0 32px;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
         height: 48px;
         display: inline-block;
         font-weight: 600;

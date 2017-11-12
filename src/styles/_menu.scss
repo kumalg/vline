@@ -26,6 +26,11 @@ $menu-height: 96px;
       color: $colorPrimary !important;
     }
   }
+
+  .logo-button {
+    display: none !important;
+  }
+
   @media all and (min-width: 721px) {
     a {
       color: white !important;
@@ -35,10 +40,6 @@ $menu-height: 96px;
         color: $colorPrimary !important;
       }
     }
-  }
-
-  .logo-button {
-    display: none !important;
   }
 }
 
@@ -68,6 +69,7 @@ $menu-height: 96px;
       list-style: none;
       margin: 0;
       display: inline;
+      -webkit-tap-highlight-color: transparent;
 
       a {
         padding: 0 20px;
@@ -99,6 +101,7 @@ $menu-height: 96px;
     height: 32px;
     width: 70px;
     border: none !important;
+    margin: 0 16px;
     padding: 0;
     border-radius: 0;
   }
@@ -115,6 +118,7 @@ $nav-button-height: 48px;
   background-color: transparent;
   transition: background-color 0.2s, color 0.2s;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   border: {
     radius: $nav-button-height / 2;
@@ -143,11 +147,12 @@ $nav-button-height: 48px;
       box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.15);
       padding: 16px 32px;
       display: block;
+      transition: visibility 0.2s, opacity 0.2s;
 
       &.hide {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
       }
-
       ul {
         li {
           margin: 8px 0 !important;

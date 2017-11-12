@@ -35,6 +35,7 @@ section {
   .fb-posts {
     margin: 32px 0 56px 0;
     text-align: center;
+    overflow-x: auto;
 
     * {
      margin: 0 8px;
