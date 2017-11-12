@@ -4,7 +4,7 @@
     <scrollactive id="menu-center" :offset="96">
       <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
       <div class="hamburger-menu navigation">
-        <button id="nav-button" @click="navButtonClick"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
+        <button id="nav-button" @click="navButtonClick" v-click-outside="hideMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
         <div :class="['menu-section', {'hide': menuHidden}]">
           <ul>
             <li v-for="item in menuItems">
@@ -47,7 +47,7 @@
     </div>
   </section>
 
-  <Aktualnosci id="aktualnosci" ref="aktualnosci"/>
+  <Aktualnosci id="aktualnosci" ref="aktualnosci" />
 
   <section id="kontakt" ref="kontakt">
   </section>
@@ -56,6 +56,7 @@
 
 <script>
 import Aktualnosci from './components/Aktualnosci'
+import ClickOutside from 'vue-click-outside'
 
 export default {
   name: 'app',
@@ -101,7 +102,11 @@ export default {
     //   console.log(itemName)
     //   this.active = itemName
     // },
-    navButtonClick(){
+    hideMenu() {
+      if (!this.menuHidden)
+        this.menuHidden = true;
+    },
+    navButtonClick() {
       this.menuHidden = !this.menuHidden
     },
     updateMenuStyle() {
@@ -119,17 +124,17 @@ export default {
     window.addEventListener('scroll', this.updateScroll);
     window.addEventListener('resize', this.updateResize);
   },
-  created: function () {
+  created: function() {
     updateMenuStyle()
+  },
+  directives: {
+    ClickOutside
   }
 }
 </script>
 
-<style src="./styles/reset.css"></style>
-<style src="./styles/_menu.scss" lang="scss"></style>
-<style lang="scss">
-
-$menu-height: 96px;
+<style src="./styles/reset.css">
+</style><style src="./styles/_menu.scss" lang="scss"></style><style lang="scss">$menu-height: 96px;
 $colorPrimary: #6b21d6;
 $colorText: #292929;
 

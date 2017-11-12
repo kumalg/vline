@@ -18,13 +18,22 @@ $menu-height: 96px;
   background-color: transparent;
   box-shadow: none;
 
-  #nav-button,
-  a :not(.hamburger-menu) {
+  #nav-button {
     color: white !important;
 
     &:hover {
       background-color: white !important;
       color: $colorPrimary !important;
+    }
+  }
+  @media all and (min-width: 721px) {
+    a {
+      color: white !important;
+
+      &:hover {
+        background-color: white !important;
+        color: $colorPrimary !important;
+      }
     }
   }
 
@@ -128,6 +137,7 @@ $nav-button-height: 48px;
     .menu-section {
       position: fixed;
       right: 0;
+      width: 100%;
       top: $menu-height;
       background-color: #fff;
       box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.15);
@@ -142,6 +152,13 @@ $nav-button-height: 48px;
         li {
           margin: 8px 0 !important;
           display: block !important;
+          text-align: center;
+
+          a {
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+          }
         }
       }
     }
