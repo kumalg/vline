@@ -128,7 +128,7 @@ export default {
     window.addEventListener('resize', this.updateResize);
   },
   created: function() {
-    updateMenuStyle()
+    this.updateMenuStyle()
   },
   directives: {
     ClickOutside

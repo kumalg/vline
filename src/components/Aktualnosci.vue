@@ -10,13 +10,38 @@
 </template>
 
 <script>
-import Links from '../api/fbPostLinks.json'
+import axios from 'axios'
+
+window.fbAsyncInit = function() {
+  FB.XFBML.parse();
+}
 
 export default {
   name: 'Aktualnosci',
-  data () {
+  data() {
     return {
-      fbPostLinks: Links
+      fbPostLinks: []
+    }
+  },
+  created: function() {
+    console.log('created')
+    this.fetchFbPostLinks()
+  },
+  methods: {
+    fetchFbPostLinks() {
+      var self = this;
+      axios.get('/static/api/fbPostLinks.json')
+        .then(function(resp) {
+          self.fbPostLinks = resp.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      setTimeout(function() {
+        if (typeof(FB) != 'undefined') {
+          window.fbAsyncInit();
+        }
+      }, 2000)
     }
   }
 }
@@ -24,24 +49,24 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  background-color: #fff;
-  min-height: 640px;
-  width: 100%;
+    background-color: #fff;
+    min-height: 640px;
+    width: 100%;
 
-  .container {
-      max-width: 1100px;
-  }
-
-  .fb-posts {
-    margin: 32px 0 56px 0;
-    text-align: center;
-    overflow-x: auto;
-
-    * {
-     margin: 0 8px;
-     vertical-align: top;
-     margin-bottom: 16px;
+    .container {
+        max-width: 1100px;
     }
-  }
+
+    .fb-posts {
+        margin: 32px 0 56px;
+        text-align: center;
+        overflow-x: auto;
+
+        * {
+            margin: 0 8px;
+            vertical-align: top;
+            margin-bottom: 16px;
+        }
+    }
 }
 </style>
