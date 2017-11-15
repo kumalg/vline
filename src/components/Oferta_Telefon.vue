@@ -5,3 +5,16 @@
   <h3>Oferta no to już bardzo</h3>
 </div>
 </template>
+
+<script>
+// export default {
+//   name: 'Oferta_Telefonowa',
+//   data() {
+//     return {
+//     }
+//   },
+//   created: function() {
+//     console.log('nowa oferta telefonowa')
+//   }
+// }
+</script>

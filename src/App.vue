@@ -28,16 +28,14 @@
     <div class="container">
       <h1 class="heading">Oferta</h1>
       <ul>
-        <li>
-          <a :class="{'active': ofertaView == 'Oferta_Internet'}" @click="ofertaChangeView('Oferta_Internet')">Internet</a>
-        </li><li>
-          <a :class="{'active': ofertaView == 'Oferta_Telewizja'}" @click="ofertaChangeView('Oferta_Telewizja')">Telewizja</a>
-        </li><li>
-          <a :class="{'active': ofertaView == 'Oferta_Telefon'}" @click="ofertaChangeView('Oferta_Telefon')">Telefon</a>
+        <li v-for="item in ofertaMenuItems">
+          <a :class="{'active': ofertaView == item.componentName}" @click="ofertaChangeView(item.componentName)">{{item.title}}</a>
         </li>
       </ul>
       <transition name="oferta-component-fade" mode="out-in">
-        <component v-bind:is="ofertaView"></component>
+        <keep-alive>
+          <component :is="ofertaView"></component>
+        </keep-alive>
       </transition>
     </div>
   </section>
@@ -100,6 +98,19 @@ export default {
           external: true,
           title: 'Panel klienta'
         }
+      ],
+      ofertaMenuItems: [{
+          componentName: 'Oferta_Internet',
+          title: 'Internet'
+        },
+        {
+          componentName: 'Oferta_Telewizja',
+          title: 'Telewizja'
+        },
+        {
+          componentName: 'Oferta_Telefon',
+          title: 'Telefon'
+        }
       ]
     }
   },
@@ -122,7 +133,7 @@ export default {
       this.menuHidden = !this.menuHidden
     },
     updateMenuStyle() {
-      this.isSplashVisible = this.scrollPosition < this.$refs.splash.offsetTop + this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
+      this.isSplashVisible = this.scrollPosition < this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
     },
     updateScroll() {
       this.scrollPosition = window.scrollY
@@ -143,8 +154,6 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
     window.addEventListener('resize', this.updateResize);
-  //  this.elements = this.$el.querySelectorAll('#promocje');
-    //console.log(this.elements)
   },
   created: function() {
     this.updateMenuStyle()
@@ -225,10 +234,11 @@ html {
 
   h3 {
     font-size: 4em;
+    text-align: center;
   }
 
   .oferta-component-fade-enter-active, .oferta-component-fade-leave-active {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .oferta-component-fade-enter, .oferta-component-fade-leave-to
   /* .component-fade-leave-active below version 2.1.8 */ {
@@ -236,11 +246,13 @@ html {
   }
 
   .oferta-component-fade-enter {
-    transform: translateX(31px);
+    transform: translateX(8px);
+    // transform: scale(0.98, 0.98);
   }
 
   .oferta-component-fade-leave-to {
-    transform: translateX(-31px);
+    transform: translateX(-8px);
+    // transform: scale(1.02, 1.02);
   }
 
   ul {
