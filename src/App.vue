@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <div id="menu" ref="menu" class="m1 menu" :class="{'menu-splash': isSplashVisible}">
-    <scrollactive id="menu-center" :offset="96">
+    <scrollactive id="menu-center" :offset="96" v-on:itemchanged="yourFunction">
       <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
       <div class="hamburger-menu navigation">
         <button id="nav-button" @click="navButtonClick" v-click-outside="hideMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
@@ -29,15 +29,16 @@
       <h1 class="heading">Oferta</h1>
       <ul>
         <li>
-          <a class="active">Internet</a>
-        </li>
-        <li>
-          <a>Telewizja</a>
-        </li>
-        <li>
-          <a>Telefon</a>
+          <a :class="{'active': ofertaView == 'Oferta_Internet'}" @click="ofertaChangeView('Oferta_Internet')">Internet</a>
+        </li><li>
+          <a :class="{'active': ofertaView == 'Oferta_Telewizja'}" @click="ofertaChangeView('Oferta_Telewizja')">Telewizja</a>
+        </li><li>
+          <a :class="{'active': ofertaView == 'Oferta_Telefon'}" @click="ofertaChangeView('Oferta_Telefon')">Telefon</a>
         </li>
       </ul>
+      <transition name="oferta-component-fade" mode="out-in">
+        <component v-bind:is="ofertaView"></component>
+      </transition>
     </div>
   </section>
 
@@ -60,6 +61,9 @@
 
 <script>
 import Aktualnosci from './components/Aktualnosci'
+import Oferta_Internet from './components/Oferta_Internet'
+import Oferta_Telewizja from './components/Oferta_Telewizja'
+import Oferta_Telefon from './components/Oferta_Telefon'
 import ClickOutside from 'vue-click-outside'
 
 export default {
@@ -69,6 +73,8 @@ export default {
       isSplashVisible: true,
       scrollPosition: null,
       menuHidden: true,
+      ofertaView: 'Oferta_Internet',
+      // elements: [],
       menuItems: [{
           href: '#o_vline',
           title: 'O Vline',
@@ -98,7 +104,10 @@ export default {
     }
   },
   components: {
-    Aktualnosci
+    Aktualnosci,
+    'Oferta_Internet': Oferta_Internet,
+    'Oferta_Telewizja': Oferta_Telewizja,
+    'Oferta_Telefon': Oferta_Telefon
   },
   methods: {
     // makeActive(item){
@@ -121,11 +130,21 @@ export default {
     },
     updateResize() {
       this.updateScroll()
+    },
+    ofertaChangeView(button){
+     this.ofertaView = button
+    },
+    yourFunction(event, currentItem, lastActiveItem){
+    //  console.log('change')
+    //  console.log(currentItem)
+    //  console.log(lastActiveItem)
     }
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
     window.addEventListener('resize', this.updateResize);
+  //  this.elements = this.$el.querySelectorAll('#promocje');
+    //console.log(this.elements)
   },
   created: function() {
     this.updateMenuStyle()
@@ -202,8 +221,27 @@ html {
 
 #oferta {
   background-color: #fff;
-  height: 100vh;
   width: 100%;
+
+  h3 {
+    font-size: 4em;
+  }
+
+  .oferta-component-fade-enter-active, .oferta-component-fade-leave-active {
+    transition: all 0.3s ease;
+  }
+  .oferta-component-fade-enter, .oferta-component-fade-leave-to
+  /* .component-fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
+  .oferta-component-fade-enter {
+    transform: translateX(31px);
+  }
+
+  .oferta-component-fade-leave-to {
+    transform: translateX(-31px);
+  }
 
   ul {
     margin: 32px 0 64px 0;
@@ -258,7 +296,7 @@ html {
 
 .container {
   max-width: 960px;
-  padding-top: 80px;
+  padding: 80px 0;
   margin: 0 auto;
 }
 
