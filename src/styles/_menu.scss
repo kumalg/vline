@@ -147,10 +147,11 @@ $nav-button-height: 48px;
       box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.15);
       padding: 16px 32px;
       display: block;
-      transition: visibility 0.2s, opacity 0.2s;
+      transition: visibility 0.2s, opacity 0.2s, transform 0.2s ease;
 
       &.hide {
         opacity: 0;
+        transform: translateY(-16px);
         visibility: hidden;
       }
       ul {

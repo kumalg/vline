@@ -15,22 +15,26 @@
     </ul>
   </div>
   <div class="items">
-    <div class="item list-item" v-for="item in items[actualIndex].items" v-bind:key="item">
-      <div class="title">
-        {{item.title}}
-      </div>
-      <div class="subtitle">
-        {{item.subtitle}}
-      </div>
-      <div class="more-info" v-if="item.moreInfo != null">
-        <div v-for="info in item.moreInfo">
-          {{info}}
+    <transition name="offer-fade" mode="out-in">
+      <div v-bind:key="actualIndex">        
+        <div class="item list-item" v-for="item in items[actualIndex].items">
+          <div class="title">
+            {{item.title}}
+          </div>
+          <div class="subtitle">
+            {{item.subtitle}}
+          </div>
+          <div class="more-info" v-if="item.moreInfo != null">
+            <div v-for="info in item.moreInfo">
+              {{info}}
+            </div>
+          </div>
+          <div class="cost">
+            {{item.cost}} zł
+          </div>
         </div>
       </div>
-      <div class="cost">
-        {{item.cost}} zł
-      </div>
-    </div>
+    </transition>
   </div>
 </div>
 </template>
@@ -73,6 +77,27 @@ export default {
 div {
     display: flex;
     width: 100%;
+
+
+        .offer-fade-enter-active,
+        .offer-fade-leave-active {
+            transition: all 0.2s ease;
+        }
+        /* .component-fade-leave-active below version 2.1.8 */
+        .offer-fade-enter,
+        .offer-fade-leave-to {
+            opacity: 0;
+        }
+
+        .offer-fade-enter {
+            transform: translateX(8px);
+            // transform: scale(0.98, 0.98);
+        }
+
+        .offer-fade-leave-to {
+            transform: translateX(-8px);
+            // transform: scale(1.02, 1.02);
+        }
 
     .nav {
         flex: 1;
