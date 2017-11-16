@@ -31,7 +31,7 @@
     display: none !important;
   }
 
-  @media all and (min-width: 721px) {
+  @media all and (min-width: 751px) {
     a {
       color: white !important;
 
@@ -129,7 +129,7 @@ $nav-button-height: 48px;
     background-color: rgba(0,0,0,.1);
   }
 }
-@media all and (max-width: 720px) {
+@media all and (max-width: 750px) {
   .hamburger-menu {
     text-align: right;
     align-self: flex-start;
