@@ -1,11 +1,11 @@
 <template>
 <div id="app">
-  <div id="menu" ref="menu" class="m1 menu" :class="{'menu-splash': isSplashVisible}">
-    <scrollactive id="menu-center" :offset="96" v-on:itemchanged="yourFunction">
+  <div id="menu" class="m1 menu" :class="{'menu-splash': isSplashVisible}">
+    <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="yourFunction">
       <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
       <div class="hamburger-menu navigation">
-        <button id="nav-button" @click="navButtonClick" v-click-outside="hideMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
-        <div :class="['menu-section', {'hide': menuHidden}]">
+        <button id="nav-button" @click="hamburgerButtonClick" v-click-outside="hideHamburgerMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
+        <div :class="['menu-section', {'hide': hamburgerMenuHidden}]">
           <ul>
             <li v-for="item in menuItems">
               <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
@@ -16,52 +16,24 @@
     </scrollactive>
   </div>
 
-  <section id="splash" ref="splash">
-    <img src="./assets/logo_white.svg" id="logo" />
-    <h6>Internet &nbsp;&nbsp; + &nbsp;&nbsp; Telewizja &nbsp;&nbsp; + &nbsp;&nbsp; Telefon</h6>
-  </section>
-
-  <section id="o_vline" ref="o_vline">
-  </section>
-
-  <section id="oferta" ref="oferta">
-    <div class="container">
-      <h1 class="heading">Oferta</h1>
-      <ul>
-        <li v-for="item in ofertaMenuItems">
-          <a :class="{'active': ofertaView == item.componentName}" @click="ofertaChangeView(item.componentName)">{{item.title}}</a>
-        </li>
-      </ul>
-      <transition name="oferta-component-fade" mode="out-in">
-        <keep-alive>
-          <component :is="ofertaView"></component>
-        </keep-alive>
-      </transition>
-    </div>
-  </section>
-
-  <section id="promocje" ref="promocje">
-    <div class="container">
-      <h1 class="heading">Promocje</h1>
-    </div>
-  </section>
-
-  <Aktualnosci id="aktualnosci" ref="aktualnosci" />
-
-  <section id="kontakt" ref="kontakt">
-  </section>
-
-  <section id="stopka" ref="stopka">
-
-  </section>
+  <Splash id="splash" />
+  <About id="about" />
+  <Offer id="offer" />
+  <Promotions id="promotions" />
+  <News id="news" />
+  <Contact id="contact" />
+  <section id="footer" />
 </div>
 </template>
 
 <script>
-import Aktualnosci from './components/Aktualnosci'
-import Oferta_Internet from './components/Oferta_Internet'
-import Oferta_Telewizja from './components/Oferta_Telewizja'
-import Oferta_Telefon from './components/Oferta_Telefon'
+import Splash from './components/Splash'
+import About from './components/About'
+import Offer from './components/Offer'
+import Promotions from './components/Promotions'
+import News from './components/News'
+import Contact from './components/Contact'
+
 import ClickOutside from 'vue-click-outside'
 
 export default {
@@ -69,28 +41,26 @@ export default {
   data() {
     return {
       isSplashVisible: true,
-      scrollPosition: null,
-      menuHidden: true,
-      ofertaView: 'Oferta_Internet',
-      // elements: [],
+      hamburgerMenuHidden: true,
+      menuHeight: 96,
       menuItems: [{
-          href: '#o_vline',
+          href: '#about',
           title: 'O Vline',
         },
         {
-          href: '#oferta',
+          href: '#offer',
           title: 'Oferta'
         },
         {
-          href: '#promocje',
+          href: '#promotions',
           title: 'Promocje'
         },
         {
-          href: '#aktualnosci',
+          href: '#news',
           title: 'Aktualności'
         },
         {
-          href: '#kontakt',
+          href: '#contact',
           title: 'Kontakt'
         },
         {
@@ -98,58 +68,34 @@ export default {
           external: true,
           title: 'Panel klienta'
         }
-      ],
-      ofertaMenuItems: [{
-          componentName: 'Oferta_Internet',
-          title: 'Internet'
-        },
-        {
-          componentName: 'Oferta_Telewizja',
-          title: 'Telewizja'
-        },
-        {
-          componentName: 'Oferta_Telefon',
-          title: 'Telefon'
-        }
       ]
     }
   },
   components: {
-    Aktualnosci,
-    'Oferta_Internet': Oferta_Internet,
-    'Oferta_Telewizja': Oferta_Telewizja,
-    'Oferta_Telefon': Oferta_Telefon
+    Splash,
+    About,
+    Offer,
+    News,
+    Promotions,
+    Contact
   },
   methods: {
-    // makeActive(item){
-    //   const itemName = item.target.getAttribute('class');
-    //   console.log(itemName)
-    //   this.active = itemName
-    // },
-    hideMenu() {
-      this.menuHidden = true
+    hideHamburgerMenu() {
+      this.hamburgerMenuHidden = true
     },
-    navButtonClick() {
-      this.menuHidden = !this.menuHidden
+    hamburgerButtonClick() {
+      this.hamburgerMenuHidden = !this.hamburgerMenuHidden
     },
     updateMenuStyle() {
-      this.isSplashVisible = this.scrollPosition < this.$refs.splash.offsetHeight - this.$refs.menu.offsetHeight
+      this.isSplashVisible = window.scrollY < window.innerHeight - this.menuHeight
     },
     updateScroll() {
-      this.scrollPosition = window.scrollY
       this.updateMenuStyle()
     },
     updateResize() {
       this.updateScroll()
     },
-    ofertaChangeView(button){
-     this.ofertaView = button
-    },
-    yourFunction(event, currentItem, lastActiveItem){
-    //  console.log('change')
-    //  console.log(currentItem)
-    //  console.log(lastActiveItem)
-    }
+    yourFunction(event, currentItem, lastActiveItem) {}
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
@@ -164,10 +110,9 @@ export default {
 }
 </script>
 
-<style src="./styles/reset.css"></style>
-<style src="./styles/_menu.scss" lang="scss"></style>
+<style src="./styles/reset.css"/>
+<style src="./styles/_menu.scss" lang="scss"/>
 <style lang="scss">
-
 $menu-height: 96px;
 $colorPrimary: #6b21d6;
 $colorText: #292929;
@@ -186,124 +131,6 @@ html {
   // font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; // text-align: center;
-  // color: #2c3e50;
-  // margin-top: 60px;
-}
-
-
-#splash {
-  background-color: $colorPrimary;
-  background: url("./assets/splash-bg.jpg") no-repeat center/cover;
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #fff;
-  }
-
-  h6 {
-    font-size: 2em;
-    font-weight: 300;
-  }
-}
-
-#logo {
-  margin-bottom: 80px;
-}
-
-#o_vline {
-  background-color: #ebebeb;
-  height: 100vh;
-  width: 100%;
-}
-
-#oferta {
-  background-color: #fff;
-  width: 100%;
-
-  h3 {
-    font-size: 4em;
-    text-align: center;
-  }
-
-  .oferta-component-fade-enter-active, .oferta-component-fade-leave-active {
-    transition: all 0.2s ease;
-  }
-  .oferta-component-fade-enter, .oferta-component-fade-leave-to
-  /* .component-fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
-
-  .oferta-component-fade-enter {
-    transform: translateX(8px);
-    // transform: scale(0.98, 0.98);
-  }
-
-  .oferta-component-fade-leave-to {
-    transform: translateX(-8px);
-    // transform: scale(1.02, 1.02);
-  }
-
-  ul {
-    margin: 32px 0 64px 0;
-    text-align: center;
-
-    li {
-      list-style: none;
-      margin: 0 8px;
-      display: inline;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-
-      a {
-        padding: 0 32px;
-        margin-bottom: 16px;
-        height: 48px;
-        display: inline-block;
-        font-weight: 600;
-        font-size: 0.875em;
-        color: $colorPrimary;
-        text-decoration: none;
-        line-height: 44px;
-        transition: background-color 0.2s, color 0.2s;
-        border: {
-          style: solid;
-          radius: 24px;
-          width: 2px;
-          color: $colorPrimary;
-        }
-
-        &.active,
-        &:hover {
-          color: white !important;
-          background-color: $colorPrimary !important;
-        }
-      }
-    }
-  }
-}
-
-#promocje {
-  background-color: #ebebeb;
-  height: 640px;
-  width: 100%;
-}
-
-#kontakt {
-  background-color: #121212;
-  height: 320px;
-  width: 100%;
 }
 
 .container {

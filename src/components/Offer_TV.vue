@@ -1,12 +1,12 @@
 <template>
-<div class="oferta-component">
+<div>
   <h3>Oferta Telewizyjna</h3>
 </div>
 </template>
 
 <script>
 // export default {
-//   name: 'Oferta_Telewizyjna',
+//   name: 'Offer_TV',
 //   data() {
 //     return {
 //     }

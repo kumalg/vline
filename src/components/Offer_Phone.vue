@@ -1,5 +1,5 @@
 <template>
-<div class="oferta-component">
+<div>
   <h3>Oferta Telefonowa</h3>
   <h3>Oferta bardziej</h3>
   <h3>Oferta no to już bardzo</h3>
@@ -8,7 +8,7 @@
 
 <script>
 // export default {
-//   name: 'Oferta_Telefonowa',
+//   name: 'Offer_Phone',
 //   data() {
 //     return {
 //     }

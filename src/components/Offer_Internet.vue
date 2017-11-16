@@ -1,5 +1,5 @@
 <template>
-<div class="oferta-component">
+<div>
   <h3>Oferta Internetowa</h3>
   <h3>Oferta bardziej</h3>
 </div>
@@ -7,7 +7,7 @@
 
 <script>
 // export default {
-//   name: 'Oferta_Internet',
+//   name: 'Offer_Internet',
 //   data() {
 //     return {
 //     }
