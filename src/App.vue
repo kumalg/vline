@@ -1,11 +1,12 @@
 <template>
 <div id="app">
-  <div id="menu" class="m1 menu" :class="{'menu-splash': isSplashVisible}">
-    <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="yourFunction">
+
+  <div id="menu" class="menu" :class="{'menu-splash': isSplashVisible}">
+    <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="menuItemChanged">
       <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
       <div class="hamburger-menu navigation">
-        <button id="nav-button" @click="hamburgerButtonClick" v-click-outside="hideHamburgerMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
-        <div :class="['menu-section', {'hide': hamburgerMenuHidden}]">
+        <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
+        <div :class="['menu-section', {'hide': expandableMenuHidden}]">
           <ul>
             <li v-for="item in menuItems">
               <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
@@ -23,6 +24,7 @@
   <News id="news" />
   <Contact id="contact" />
   <section id="footer" />
+
 </div>
 </template>
 
@@ -41,7 +43,7 @@ export default {
   data() {
     return {
       isSplashVisible: true,
-      hamburgerMenuHidden: true,
+      expandableMenuHidden: true,
       menuHeight: 96,
       menuItems: [{
           href: '#about',
@@ -80,11 +82,11 @@ export default {
     Contact
   },
   methods: {
-    hideHamburgerMenu() {
-      this.hamburgerMenuHidden = true
+    hideExpandableMenu() {
+      this.expandableMenuHidden = true
     },
-    hamburgerButtonClick() {
-      this.hamburgerMenuHidden = !this.hamburgerMenuHidden
+    navButtonClick() {
+      this.expandableMenuHidden = !this.expandableMenuHidden
     },
     updateMenuStyle() {
       this.isSplashVisible = window.scrollY < window.innerHeight - this.menuHeight
@@ -95,7 +97,7 @@ export default {
     updateResize() {
       this.updateScroll()
     },
-    yourFunction(event, currentItem, lastActiveItem) {}
+    menuItemChanged(event, currentItem, lastActiveItem) {}
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
@@ -114,8 +116,7 @@ export default {
 <style src="./styles/_menu.scss" lang="scss"/>
 <style lang="scss">
 $menu-height: 96px;
-$colorPrimary: #6b21d6;
-$colorText: #292929;
+@import './styles/_colors.scss';
 
 body,
 html {

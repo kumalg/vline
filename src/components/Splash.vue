@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$colorPrimary: #6b21d6;
+@import '../styles/_colors.scss';
 
 section {
   background-color: $colorPrimary;

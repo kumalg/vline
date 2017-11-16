@@ -17,7 +17,7 @@ window.fbAsyncInit = function() {
 }
 
 export default {
-  name: 'Aktualnosci',
+  name: 'News',
   data() {
     return {
       fbPostLinks: []
