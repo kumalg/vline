@@ -54,6 +54,10 @@ section {
 
     .container {
         max-width: 1100px;
+        padding:{
+          left: 0;
+          right: 0
+        }
     }
 
     .fb-posts {

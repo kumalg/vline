@@ -1,15 +1,19 @@
 <template>
 <div id="app">
 
-  <div id="menu" class="menu" :class="{'menu-splash': isSplashVisible}">
+  <div id="menu" :class="['menu', {'menu-splash': isSplashVisible}]">
     <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="menuItemChanged">
-      <a id="logo-button" class="scrollactive-item logo-button splash" href="#splash"></a>
+      <a href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
       <div class="hamburger-menu navigation">
-        <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu"><i class="fa fa-bars nav-icon" aria-hidden="true"></i></button>
+        <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">
+          <i class="fa fa-bars nav-icon" aria-hidden="true"></i>
+        </button>
         <div :class="['menu-section', {'hide': expandableMenuHidden}]">
           <ul>
             <li v-for="item in menuItems">
-              <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
+              <a :href="item.href" :class="{'scrollactive-item': !item.external}">
+                {{item.title}}
+              </a>
             </li>
           </ul>
         </div>
@@ -22,7 +26,7 @@
   <Offer id="offer" />
   <Promotions id="promotions" />
   <News id="news" />
-  <Contact id="contact" />
+  <Contact id="contact" ref="contact"/>
   <section id="footer" />
 
 </div>
@@ -93,6 +97,12 @@ export default {
     },
     updateScroll() {
       this.updateMenuStyle()
+      // var contact = this.$refs['contact'].$el
+      // window.pageYOffset >= this.getOffsetTop(target) - this.offset
+      //console.log('window.pageYOffset: ' + window.pageYOffset)
+      //console.log('contact.offsetTop: ' + contact.offsetTop)
+      //console.log('window.scrollTop + window.height: ' + (window.pageYOffset + window.innerHeight))
+    //  console.log(this.$el.offsetHeight)
     },
     updateResize() {
       this.updateScroll()
@@ -115,8 +125,8 @@ export default {
 <style src="./styles/reset.css"/>
 <style src="./styles/_menu.scss" lang="scss"/>
 <style lang="scss">
-$menu-height: 96px;
 @import './styles/_colors.scss';
+@import "./styles/_variables.scss";
 
 body,
 html {
@@ -136,7 +146,7 @@ html {
 
 .container {
   max-width: 960px;
-  padding: 80px 0;
+  padding: 80px 16px;
   margin: 0 auto;
 }
 
