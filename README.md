@@ -2,6 +2,12 @@
 
 > Kod źródłowy dla http://www.vline.net.pl/
 
+[![CircleCI](https://circleci.com/gh/kumalg/vline.svg?style=svg)](https://circleci.com/gh/kumalg/vline)
+
+# Preview PR
+
+[https://vline-4f923.firebaseapp.com/](https://vline-4f923.firebaseapp.com/)
+
 ## Build Setup
 
 ``` bash
