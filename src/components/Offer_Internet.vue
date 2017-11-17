@@ -1,6 +1,6 @@
 <template>
-<div class="container">
-  <div class="container_inner">
+<div>
+  <div class="container-offer-inner">
     <div class="nav">
       <h1>Długość trwania oferty:</h1>
       <ul>
@@ -120,7 +120,7 @@ export default {
     }
 }
 
-.container_inner {
+.container-offer-inner {
     // background-color: blue;
     display: flex;
     width: 100%;

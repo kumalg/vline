@@ -146,7 +146,7 @@ html {
 
 .container {
   max-width: 960px;
-  padding: 80px 8px;
+  padding: 80px 16px;
   margin: 0 auto;
 }
 
