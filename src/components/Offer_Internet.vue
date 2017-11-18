@@ -115,6 +115,10 @@ export default {
                 font-weight: 600;
                 display: inline;
                 color: black;
+
+                &:hover {
+                    color: $colorPrimary;
+                }
             }
         }
     }
@@ -167,11 +171,12 @@ export default {
             font-family: inherit;
             transition: color 0.3s ease;
 
-            &.active {
+            &.active, &:hover {
                 color: $colorPrimary;
-                .dot {
-                    background-color: $colorPrimary;
-                }
+            }
+
+            &.active .dot {
+                background-color: $colorPrimary;
             }
 
             .dot {
