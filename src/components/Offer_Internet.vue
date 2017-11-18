@@ -14,7 +14,7 @@
       </ul>
     </div>
     <transition name="offer-fade" mode="out-in">
-      <div v-bind:key="actualIndex" class="items">
+      <div v-bind:key="actualIndex" class="items" v-if="items">
         <div class="item list-item" v-for="item in items[actualIndex].items">
           <div class="title">
             {{item.title}}
