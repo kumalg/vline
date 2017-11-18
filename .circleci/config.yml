@@ -14,11 +14,8 @@ jobs:
           name: Install firebase
           command: npm install -q firebase-tools
       - run:
-          name: Install firebase
-          command: npm install firebase-functions
-      - run:
           name: Build application
           command: npm run build
       - deploy:
           name: Deploy to production
-          command: ./node_modules/.bin/firebase deploy --token ${FIREBASE_TOKEN}
+          command: ./node_modules/.bin/firebase deploy --only hosting --token ${FIREBASE_TOKEN}
