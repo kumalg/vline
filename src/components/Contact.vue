@@ -9,7 +9,7 @@
 
 <style lang="scss" scoped>
 section {
-  background-color: #121212;
+  background-color: #191919;
   height: 320px;
   width: 100%;
 }

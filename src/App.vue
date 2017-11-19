@@ -25,7 +25,7 @@
   <Promotions id="promotions" />
   <News id="news" />
   <Contact id="contact" ref="contact"/>
-  <section id="footer" />
+  <Footer id="footer" />
 
 </div>
 </template>
@@ -37,6 +37,7 @@ import Offer from './components/Offer'
 import Promotions from './components/Promotions'
 import News from './components/News'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 import ClickOutside from 'vue-click-outside'
 
@@ -81,7 +82,8 @@ export default {
     Offer,
     News,
     Promotions,
-    Contact
+    Contact,
+    Footer
   },
   methods: {
     hideExpandableMenu() {
