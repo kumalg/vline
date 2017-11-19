@@ -1,13 +1,13 @@
 <template>
 <section>
   <img src="../assets/logo_white.svg" class="logo" />
-  <h6>
+  <span>
     <i class="fa fa-globe" aria-hidden="true"></i>
     &nbsp;&nbsp; + &nbsp;&nbsp;
     <i class="fa fa-television" aria-hidden="true"></i>
     &nbsp;&nbsp; + &nbsp;&nbsp;
     <i class="fa fa-phone" aria-hidden="true"></i>
-</h6>
+</span>
 </section>
 </template>
 
@@ -34,17 +34,9 @@ section {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    color: #fff;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: #fff;
-    }
-
-    h6 {
+    span {
         font-size: 2em;
         font-weight: 300;
     }

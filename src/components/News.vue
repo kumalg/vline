@@ -1,10 +1,10 @@
 <template>
 <section>
   <div class="container">
-    <h1 class="heading">Aktualności</h1>
-    <div class="fb-posts" id="example" ref="example">
-      <div v-for="link in fbPostLinks" class="fb-post" :data-href="link.permalink_url" data-width="350"></div>
-    </div>
+    <h1>Aktualności</h1>
+    <ul class="fb-posts" id="example" ref="example">
+      <li v-for="link in fbPostLinks" class="fb-post" :data-href="link.permalink_url" data-width="350"></li>
+    </ul>
   </div>
 </section>
 </template>

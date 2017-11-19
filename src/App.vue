@@ -11,9 +11,7 @@
         <div :class="['menu-section', {'hide': expandableMenuHidden}]">
           <ul>
             <li v-for="item in menuItems">
-              <a :href="item.href" :class="{'scrollactive-item': !item.external}">
-                {{item.title}}
-              </a>
+              <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
             </li>
           </ul>
         </div>
@@ -170,12 +168,12 @@ html {
   max-width: 960px;
   padding: 80px 16px;
   margin: 0 auto;
-}
 
-.heading {
-  font-size: 2.25em;
-  font-weight: 300;
-  color: $colorPrimary;
-  text-align: center;
+  > h1 {
+    font-size: 2.25em;
+    font-weight: 300;
+    color: $colorPrimary;
+    text-align: center;
+  }
 }
 </style>

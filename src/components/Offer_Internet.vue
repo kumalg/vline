@@ -2,40 +2,32 @@
 <div>
   <div class="container-offer-inner">
     <div class="nav">
-      <h1>Długość trwania oferty:</h1>
+      <h2>Czas trwania oferty:</h2>
       <ul>
         <li v-for="(item, index) in items">
           <button :class="{'active': actualIndex == index}" @click="agreementLengthItemClick(index)">
-            <div class="dot"/><p>
-              {{item.agreement_length}}
-            </p>
+            <div class="dot"/><p>{{item.agreement_length}}</p>
           </button>
         </li>
       </ul>
     </div>
     <transition name="offer-fade" mode="out-in">
-      <div v-bind:key="actualIndex" class="items" v-if="items">
-        <div class="item list-item" v-for="item in items[actualIndex].items">
-          <div class="title">
-            {{item.title}}
-          </div>
-          <div class="subtitle">
-            {{item.subtitle}}
-          </div>
-          <div class="more-info" v-if="item.moreInfo">
-            <div v-for="info in item.moreInfo">
-              {{info}}
-            </div>
-          </div>
-          <div class="cost">
-            {{item.cost}} zł
-          </div>
-        </div>
-      </div>
+      <ul v-bind:key="actualIndex" class="items" v-if="items">
+        <li class="item list-item" v-for="item in items[actualIndex].items">
+          <h2>{{item.title}}</h2>
+          <p class="subtitle">{{item.subtitle}}</p>
+          <ul class="more-info" v-if="item.moreInfo">
+            <li>
+              <p v-for="info in item.moreInfo">{{info}}</p>
+            </li>
+          </ul>
+          <h3>{{item.cost}} zł</h3>
+        </li>
+      </ul>
     </transition>
   </div>
   <div class="files" v-if="links">
-    <h1>Do pobrania:</h1>
+    <h2>Do pobrania:</h2>
     <ul>
       <li v-for="link in links">
         <a :href="link.href">
@@ -90,8 +82,8 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_colors.scss';
 
-.files h1,
-.nav h1 {
+.files h2,
+.nav h2 {
     font-size: 1.125em;
     color: $colorPrimary;
     font-family: inherit;
@@ -125,7 +117,6 @@ export default {
 }
 
 .container-offer-inner {
-    // background-color: blue;
     display: flex;
     width: 100%;
 
@@ -141,20 +132,16 @@ export default {
 
     .offer-fade-enter {
         transform: translateX(8px);
-        // transform: scale(0.98, 0.98);
     }
 
     .offer-fade-leave-to {
         transform: translateX(-8px);
-        // transform: scale(1.02, 1.02);
     }
 
     .nav {
         flex: 1;
         min-width: 210px;
-        // flex-direction: column;
         padding-bottom: 16px;
-        // background: blue;
 
         ul {
             margin-top: 16px;
@@ -170,8 +157,10 @@ export default {
             cursor: pointer;
             font-family: inherit;
             transition: color 0.3s ease;
+            padding: 0;
 
-            &.active, &:hover {
+            &.active,
+            &:hover {
                 color: $colorPrimary;
             }
 
@@ -186,8 +175,9 @@ export default {
                 display: inline-block;
                 transition: background-color 0.3s ease;
             }
+
             p {
-                margin-left: 4px;
+                margin-left: 8px;
                 display: inline;
             }
         }
@@ -198,7 +188,6 @@ export default {
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
-        // background-color: red;
 
         .item {
             width: calc(33.33% - 16px);
@@ -213,34 +202,35 @@ export default {
                 color: rgba(0,0,0,.25);
             }
 
-            .title {
+            h2 {
                 font-size: 1.5em;
                 color: $colorPrimary;
             }
 
-            .subtitle {
-                margin-top: 8px;
+            h3 {
+                font-size: 1.125em;
+                font-weight: 600;
+                margin-top: 32px;
+                color: $colorPrimary;
+            }
+
+            p {
                 font-size: 0.75em;
                 font-weight: 600;
+            }
+
+            .subtitle {
+                margin-top: 8px;
             }
 
             .more-info {
                 margin-top: 16px;
                 padding: 16px 0;
-                font-size: 0.75em;
-                font-weight: 600;
                 border: {
                     style: solid;
                     width: 1px 0;
                     color: rgba(0,0,0,.25);
                 }
-            }
-
-            .cost {
-                margin-top: 32px;
-                font-size: 1.125em;
-                font-weight: 600;
-                color: $colorPrimary;
             }
         }
     }

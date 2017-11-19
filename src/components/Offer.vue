@@ -1,7 +1,7 @@
 <template>
 <section>
   <div class="container">
-    <h1 class="heading">Oferta</h1>
+    <h1>Oferta</h1>
     <ul>
       <li v-for="item in offerMenuItems">
         <a :class="{'active': actualOfferComponent == item.componentName}" @click="offerChangeView(item.componentName)">{{item.title}}</a>
@@ -85,7 +85,7 @@ section {
     }
 
     ul {
-        margin: 32px 0 64px;
+        margin: 32px 0 48px;
         text-align: center;
 
         li {
