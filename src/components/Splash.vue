@@ -43,7 +43,7 @@ section {
 
     .logo {
         max-width: 300px;
-        width: 80vw;
+        width: 60vw;
         margin-bottom: 80px;
     }
 }
