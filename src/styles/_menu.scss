@@ -44,11 +44,12 @@
 }
 
 #menu-center {
-  max-width: 980px;
+  max-width: 960px;
   height: $menu-height;
   margin: 0 auto;
   padding: 0 16px;
   white-space: nowrap;
+  box-sizing: content-box;
   display: flex;
   align-items: center; // > * {
   //   // display: inline-block;

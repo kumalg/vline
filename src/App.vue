@@ -3,7 +3,7 @@
 
   <div id="menu" :class="['menu', {'menu-splash': isSplashVisible}]">
     <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="menuItemChanged">
-      <a href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
+      <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
       <div class="hamburger-menu navigation">
         <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">
           <i class="fa fa-bars nav-icon" aria-hidden="true"></i>
@@ -170,6 +170,7 @@ html {
   max-width: 960px;
   padding: 80px 16px;
   margin: 0 auto;
+  box-sizing: content-box;
 
   > h1 {
     font-size: 2.25em;

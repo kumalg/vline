@@ -30,7 +30,7 @@
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="link in links">
-        <a :href="link.href">
+        <a target="_blank" :href="link.href">
           <i class="fa fa-file-pdf-o icon" aria-hidden="true"></i><p>{{link.title}}</p>
         </a>
       </li>
