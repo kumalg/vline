@@ -1,5 +1,5 @@
 <template>
-<section>
+<footer>
   <div class="container">
     <div class="logo-block">
       <a href="#splash"><img src="../assets/logo_white.svg" class="logo" /></a>
@@ -11,11 +11,11 @@
       <p>Projekt i wykonanie:<br><a href="http://kumalg.pl">Kamil Golec</a></p>
     </div>
   </div>
-</section>
+</footer>
 </template>
 
 <style lang="scss" scoped>
-section {
+footer {
     background-color: #121212;
     color: white;
     font-size: 0.8125em;

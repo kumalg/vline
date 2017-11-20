@@ -1,5 +1,56 @@
-@import "_colors.scss";
-@import "_variables.scss";
+<template>
+<div :class="['menu', {'menu-splash': splashStyle}]">
+  <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="menuItemChanged">
+    <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
+    <div class="hamburger-menu navigation">
+      <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">
+          <i class="fa fa-bars nav-icon" aria-hidden="true"></i>
+        </button>
+      <div :class="['menu-section', {'hide': expandableMenuHidden}]">
+        <ul>
+          <li v-for="item in menuItems">
+            <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </scrollactive>
+</div>
+</template>
+
+<script>
+import ClickOutside from 'vue-click-outside'
+
+export default {
+  name: 'Menu',
+  props: {
+    splashStyle: Boolean,
+    menuHeight: Number,
+    menuItems: Array
+  },
+  data() {
+    return {
+      expandableMenuHidden: true,
+    }
+  },
+  methods: {
+    hideExpandableMenu() {
+      this.expandableMenuHidden = true
+    },
+    navButtonClick() {
+      this.expandableMenuHidden = !this.expandableMenuHidden
+    },
+    menuItemChanged(event, currentItem, lastActiveItem) {}
+  },
+  directives: {
+    ClickOutside
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+@import "../styles/_colors.scss";
+@import "../styles/_variables.scss";
 
 .menu {
   width: 100%;
@@ -171,3 +222,5 @@ $nav-button-height: 48px;
     }
   }
 }
+
+</style>

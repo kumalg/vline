@@ -1,23 +1,7 @@
 <template>
 <div id="app">
 
-  <div id="menu" :class="['menu', {'menu-splash': isSplashVisible}]">
-    <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="menuItemChanged">
-      <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
-      <div class="hamburger-menu navigation">
-        <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">
-          <i class="fa fa-bars nav-icon" aria-hidden="true"></i>
-        </button>
-        <div :class="['menu-section', {'hide': expandableMenuHidden}]">
-          <ul>
-            <li v-for="item in menuItems">
-              <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </scrollactive>
-  </div>
+  <PageMenu id="menu" :splashStyle="isSplashVisible" :menuHeight="menuHeight" :menuItems="menuItems" />
 
   <Splash id="splash" />
   <About id="about" />
@@ -25,12 +9,13 @@
   <Promotions id="promotions" />
   <News id="news" />
   <Contact id="contact" ref="contact"/>
-  <Footer id="footer" />
+  <PageFooter id="footer" />
 
 </div>
 </template>
 
 <script>
+import Menu from './components/Menu'
 import Splash from './components/Splash'
 import About from './components/About'
 import Offer from './components/Offer'
@@ -39,18 +24,15 @@ import News from './components/News'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-import ClickOutside from 'vue-click-outside'
-
 export default {
   name: 'app',
   data() {
     return {
       isSplashVisible: true,
-      expandableMenuHidden: true,
       menuHeight: 96,
       menuItems: [{
           href: '#about',
-          title: 'O Vline',
+          title: 'O Vline'
         },
         {
           href: '#offer',
@@ -77,21 +59,16 @@ export default {
     }
   },
   components: {
+    PageMenu: Menu,
     Splash,
     About,
     Offer,
     News,
     Promotions,
     Contact,
-    Footer
+    PageFooter : Footer
   },
   methods: {
-    hideExpandableMenu() {
-      this.expandableMenuHidden = true
-    },
-    navButtonClick() {
-      this.expandableMenuHidden = !this.expandableMenuHidden
-    },
     updateMenuStyle() {
       this.isSplashVisible = window.scrollY < window.innerHeight - this.menuHeight
     },
@@ -106,8 +83,7 @@ export default {
     },
     updateResize() {
       this.updateScroll()
-    },
-    menuItemChanged(event, currentItem, lastActiveItem) {}
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
@@ -115,9 +91,6 @@ export default {
   },
   created: function() {
     this.updateMenuStyle()
-  },
-  directives: {
-    ClickOutside
   },
  //  head: {
  //   meta: [
@@ -145,7 +118,6 @@ export default {
 </script>
 
 <style src="./styles/reset.css"/>
-<style src="./styles/_menu.scss" lang="scss"/>
 <style lang="scss">
 @import './styles/_colors.scss';
 @import "./styles/_variables.scss";
