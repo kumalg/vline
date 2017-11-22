@@ -65,6 +65,8 @@ export default {
   z-index: 9999;
 }
 
+$hover-bg-color: rgba(255,255,255,0.1);
+
 .menu-splash {
   background-color: transparent;
   box-shadow: none;
@@ -73,8 +75,9 @@ export default {
     color: white !important;
 
     &:hover {
-      background-color: white !important;
-      color: $colorPrimary !important;
+      background-color: $hover-bg-color !important;
+      // background-color: white !important;
+      // color: $colorPrimary !important;
     }
   }
 
@@ -87,8 +90,9 @@ export default {
       color: white !important;
 
       &:hover {
-        background-color: white !important;
-        color: $colorPrimary !important;
+        background-color: $hover-bg-color !important;
+        // background-color: white !important;
+        // color: $colorPrimary !important;
       }
     }
   }
