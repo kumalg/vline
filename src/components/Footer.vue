@@ -8,7 +8,7 @@
       <p>© {{ new Date().getFullYear() }} <b>Vline Spółka Jawna</b></p>
     </div>
     <div class="author-block">
-      <p>Projekt i wykonanie <a href="http://kumalg.pl">Kamil Golec</a></p>
+      <p>Projekt i wykonanie <a href="http://kumalg.pl" target="_blank">Kamil Golec</a></p>
     </div>
   </div>
 </footer>
@@ -20,7 +20,7 @@ footer {
     color: white;
     font-size: 0.8125em;
     .container {
-        padding: 16px;
+        padding: 24px 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -42,7 +42,7 @@ footer {
         }
 
         > * {
-            margin: 16px 8px;
+            margin: 8px 0px;
             flex: 1;
         }
 
