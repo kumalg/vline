@@ -8,6 +8,7 @@
   <Offer id="offer" />
   <Promotions id="promotions" />
   <News id="news" />
+  <ContactUs id="contactUs"/>
   <Contact id="contact" ref="contact"/>
   <PageFooter id="footer" />
 
@@ -21,6 +22,7 @@ import About from './components/About'
 import Offer from './components/Offer'
 import Promotions from './components/Promotions'
 import News from './components/News'
+import ContactUs from './components/ContactUs'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -65,6 +67,7 @@ export default {
     Offer,
     News,
     Promotions,
+    ContactUs,
     Contact,
     PageFooter : Footer
   },

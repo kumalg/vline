@@ -70,6 +70,13 @@ section {
             margin: 0 8px;
             vertical-align: top;
             margin-bottom: 16px;
+
+            @media all and (max-width: 400px) {
+                margin: {
+                    left: 0;
+                    right: 0;
+                }
+            }
         }
     }
 }

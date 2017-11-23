@@ -10,8 +10,9 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/_colors.scss';
 section {
-  background-color: #ebebeb;
+  background-color: $colorBackgroundDark;
   height: 100vh;
   width: 100%;
 }
