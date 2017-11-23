@@ -106,7 +106,7 @@ export default {
                 font-size: 0.75em;
                 font-weight: 600;
                 display: inline;
-                color: black;
+                color: $colorText;
 
                 &:hover {
                     color: $colorPrimary;
@@ -148,6 +148,7 @@ export default {
         }
 
         button {
+            color: $colorText;
             background: transparent;
             border: none;
             font-size: 0.75em;
@@ -190,6 +191,7 @@ export default {
         justify-content: flex-start;
 
         .item {
+            color: $colorText;
             width: calc(33.33% - 16px);
             min-width: 192px;
             padding: 32px;

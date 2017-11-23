@@ -49,7 +49,7 @@ export default {
           title: 'Aktualności'
         },
         {
-          href: '#contact',
+          href: '#contactUs',
           title: 'Kontakt'
         },
         {

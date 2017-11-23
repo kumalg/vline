@@ -1,14 +1,14 @@
 <template>
 <footer>
   <div class="container">
-    <div class="logo-block">
+    <!-- <div class="logo-block">
       <a href="#splash"><img src="../assets/logo_white.svg" class="logo" /></a>
-    </div>
+    </div> -->
     <div class="copy-block">
-      <p>© {{ new Date().getFullYear() }}<br><b>Vline Spółka Jawna</b></p>
+      <p>© {{ new Date().getFullYear() }} <b>Vline Spółka Jawna</b></p>
     </div>
     <div class="author-block">
-      <p>Projekt i wykonanie:<br><a href="http://kumalg.pl">Kamil Golec</a></p>
+      <p>Projekt i wykonanie <a href="http://kumalg.pl">Kamil Golec</a></p>
     </div>
   </div>
 </footer>
@@ -34,6 +34,7 @@ footer {
         b {
             font-weight: 600;
             color: #ebebeb;
+            margin-left: 4px;
         }
 
         a:hover {
@@ -56,7 +57,8 @@ footer {
         }
 
         .copy-block {
-            text-align: center;
+            // text-align: center;
+            text-align: left;
         }
 
         .author-block {
