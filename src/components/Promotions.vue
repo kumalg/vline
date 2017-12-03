@@ -13,6 +13,5 @@
 section {
   background-color: #ebebeb;
   height: 640px;
-  width: 100%;
 }
 </style>

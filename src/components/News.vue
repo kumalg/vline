@@ -51,7 +51,6 @@ export default {
 section {
     background-color: #fff;
     min-height: 640px;
-    width: 100%;
 
     .container {
         max-width: 1100px;
@@ -62,7 +61,6 @@ section {
     }
 
     .fb-posts {
-        margin-top: 32px;
         text-align: center;
         overflow-x: auto;
 

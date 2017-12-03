@@ -54,7 +54,7 @@
 section {
     background-color: #191919;
     color: $colorTextOnDarkLighter;
-    width: 100%;
+
     .container {
         // font-size: 1.05em;
         display: flex;

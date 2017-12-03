@@ -23,6 +23,7 @@
 @import '../styles/_colors.scss';
 section {
     background-color: $colorBackgroundDark;
+    
     .container {
         padding: {
             top: 64px;

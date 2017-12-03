@@ -62,7 +62,6 @@ export default {
 
 section {
     background-color: #fff;
-    width: 100%;
 
     .offer-component-fade-enter-active,
     .offer-component-fade-leave-active {
@@ -85,7 +84,7 @@ section {
     }
 
     ul {
-        margin: 32px 0 48px;
+        margin-bottom: 48px;
         text-align: center;
 
         li {

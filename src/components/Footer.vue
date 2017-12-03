@@ -19,6 +19,7 @@ footer {
     background-color: #121212;
     color: white;
     font-size: 0.8125em;
+
     .container {
         padding: 24px 16px;
         display: flex;

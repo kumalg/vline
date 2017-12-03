@@ -145,6 +145,10 @@ html {
   -moz-osx-font-smoothing: grayscale; // text-align: center;
 }
 
+section {
+  width: 100%;
+}
+
 .container {
   max-width: 960px;
   padding: 80px 16px;
@@ -156,6 +160,7 @@ html {
     font-weight: 300;
     color: $colorPrimary;
     text-align: center;
+    margin-bottom: 32px;
   }
 }
 </style>
