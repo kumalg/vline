@@ -23,7 +23,7 @@
 @import '../styles/_colors.scss';
 section {
     background-color: $colorBackgroundDark;
-    
+
     .container {
         padding: {
             top: 64px;
@@ -41,7 +41,7 @@ section {
         }
         h2 {
             font-weight: 300;
-            color: $colorText;
+            // color: $colorText;
         }
 
         ul {

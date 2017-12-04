@@ -18,31 +18,31 @@
       </p>
       <ul>
         <li>
-          <img src="../assets/about/internet.png" />
+          <img src="../assets/about/internet.svg" />
           <h2>
               Internet
             </h2>
         </li>
         <li>
-          <img src="../assets/about/tv.png" />
+          <img src="../assets/about/tv.svg" />
           <h2>
               Telewizja światłowodowa
             </h2>
         </li>
         <li>
-          <img src="../assets/about/voip.png" />
+          <img src="../assets/about/voip.svg" />
           <h2>
               Cyfrowa Telefonia IP
             </h2>
         </li>
         <li>
-          <img src="../assets/about/cctv.png" />
+          <img src="../assets/about/cctv.svg" />
           <h2>
               Monitoring IP
             </h2>
         </li>
         <li>
-          <img src="../assets/about/oasis.png" />
+          <img src="../assets/about/oasis.svg" />
           <h2>
               Systemy Komunikacji Alarmowej OASIS
             </h2>
@@ -91,7 +91,6 @@ section {
     p {
         font-size: 1.125em;
         line-height: 1.875em;
-        color: $colorText;
     }
     p + p {
         padding-top: 1em;
@@ -159,6 +158,7 @@ section {
             flex: 1;
             padding: 32px 16px;
             text-align: center;
+            transition: background-color .2s ease;
             border: {
                 style: solid;
                 width: 1px;
@@ -170,6 +170,10 @@ section {
               margin-top: 16px;
                 font-size: 0.75em;
                 font-weight: 600;
+            }
+
+            &:hover {
+              background-color: rgba(0,0,0,.05);
             }
         }
     }

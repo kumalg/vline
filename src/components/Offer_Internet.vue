@@ -148,7 +148,7 @@ export default {
         }
 
         button {
-            color: $colorText;
+            // color: $colorText;
             background: transparent;
             border: none;
             font-size: 0.75em;
@@ -191,7 +191,7 @@ export default {
         justify-content: flex-start;
 
         .item {
-            color: $colorText;
+            // color: $colorText;
             width: calc(33.33% - 16px);
             min-width: 192px;
             padding: 32px;
