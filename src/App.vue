@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       isSplashVisible: true,
-      menuHeight: 96,
+      menuHeight: this.getNewMenuHeight(),
       menuItems: [{
           href: '#about',
           title: 'O Vline'
@@ -72,56 +72,27 @@ export default {
     PageFooter: Footer
   },
   methods: {
+    getNewMenuHeight() {
+      return window.innerWidth <= 750 ? 64 : 96
+    },
     updateMenuStyle() {
       this.isSplashVisible = window.scrollY < window.innerHeight - this.menuHeight
     },
     updateScroll() {
       this.updateMenuStyle()
-      // var contact = this.$refs['contact'].$el
-      // window.pageYOffset >= this.getOffsetTop(target) - this.offset
-      //console.log('window.pageYOffset: ' + window.pageYOffset)
-      //console.log('contact.offsetTop: ' + contact.offsetTop)
-      //console.log('window.scrollTop + window.height: ' + (window.pageYOffset + window.innerHeight))
-      //  console.log(this.$el.offsetHeight)
     },
     updateResize() {
-      if (window.innerWidth <= 750) {
-        this.menuHeight = 64
-      } else {
-        this.menuHeight = 96
-      }
+      this.menuHeight = this.getNewMenuHeight()
       this.updateScroll()
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-    window.addEventListener('resize', this.updateResize);
+    window.addEventListener('scroll', this.updateScroll)
+    window.addEventListener('resize', this.updateResize)
   },
   created: function() {
     this.updateMenuStyle()
-  },
-  //  head: {
-  //   meta: [
-  //     // { name: 'application-name', content: 'Name of my application' },
-  //     // { name: 'description', content: 'A description of the page', id: 'desc' }, // id to replace intead of create element
-  //     // // ...
-  //     // // Twitter
-  //     // { name: 'twitter:title', content: 'Content Title' },
-  //     // // with shorthand
-  //     // { n: 'twitter:description', c: 'Content description less than 200 characters'},
-  //     // // ...
-  //     // // Google+ / Schema.org
-  //     // { itemprop: 'name', content: 'Content Title' },
-  //     // { itemprop: 'description', content: 'Content Title' },
-  //     // // ...
-  //     // // Facebook / Open Graph
-  //     // { property: 'fb:app_id', content: '123456789' },
-  //     // { property: 'og:title', content: 'Content Title' },
-  //     // with shorthand
-  //     { p: 'og:image', c: './assets/og_image.png' },
-  //     // ...
-  //   ]
-  // }
+  }
 }
 </script>
 
@@ -141,9 +112,8 @@ html {
 }
 
 #app {
-  // font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; // text-align: center;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section {

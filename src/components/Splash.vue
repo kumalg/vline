@@ -43,7 +43,7 @@ section {
 
     .logo {
         max-width: 300px;
-        width: calc(60vw - (100vw - 100%)*0.6); //defaq
+        width: calc(60vw - (100vw - 100%) * 0.6);
         margin-bottom: 80px;
     }
 }

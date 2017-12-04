@@ -4,7 +4,7 @@
     <!-- <h1>O Vline</h1> -->
     <div class="block-with-icon">
       <div class="block-icon">
-          <img src="../assets/about/enterprise.png" />
+        <img src="../assets/about/enterprise.png" />
       </div>
       <div class="block-content">
         <p><b>Vline</b> jest nowoczesnym, stabilnym i prężnie rozwijającym się przedsiębiorstwem telekomunikacyjnym. Świadczy kompleksowe usługi dla klientów biznesowych i indywidualnych na terenie województwa łódzkiego.
@@ -53,7 +53,7 @@
   <div class="container">
     <div class="block-with-icon">
       <div class="block-icon">
-          <img src="../assets/about/requirments.png" />
+        <img src="../assets/about/requirments.png" style="max-width: 96px"/>
       </div>
       <div class="block-content">
         <p>Tworzymy i wdrażamy kompleksowe rozwiązania telekomunikacyjne oraz internetowe, dostosowane do specyficznych potrzeb Klientów na podstawie indywidualnej analizy ich wymagań.
@@ -67,7 +67,7 @@
 
     <div class="block-with-icon">
       <div class="block-icon">
-          <img src="../assets/about/staff.png" />
+        <img src="../assets/about/staff.png" />
       </div>
       <div class="block-content">
         <p>Chcielibyśmy zapewnić również, iż obok najnowocześniejszej technologii dysponujemy także życzliwym i profesjonalnym zespołem specjalistów będących do Państwa dyspozycji. Zachęcając Państwa do skorzystania z naszej oferty, służymy wszelkimi niezbędnymi
@@ -109,11 +109,16 @@ section {
 
     .block-icon {
         flex: 1;
+        width: 100%;
         text-align: center;
+        img {
+          max-width: 240px;
+          width: calc(60vw - (100vw - 100%) * 0.6);
+        }
     }
 
     .block-content {
-      margin-left: 32px;
+        margin-left: 32px;
         flex: 2;
     }
 
@@ -122,8 +127,8 @@ section {
         text-align: center;
 
         .block-content {
-          margin-top: 32px;
-          margin-left: auto;
+            margin-top: 32px;
+            margin-left: auto;
         }
     }
 }
@@ -158,7 +163,7 @@ section {
             flex: 1;
             padding: 32px 16px;
             text-align: center;
-            transition: background-color .2s ease;
+            transition: background-color 0.2s ease;
             border: {
                 style: solid;
                 width: 1px;
@@ -167,13 +172,13 @@ section {
             }
 
             h2 {
-              margin-top: 16px;
+                margin-top: 16px;
                 font-size: 0.75em;
                 font-weight: 600;
             }
 
             &:hover {
-              background-color: rgba(0,0,0,.05);
+                background-color: rgba(0,0,0,.05);
             }
         }
     }
