@@ -53,7 +53,7 @@
   <div class="container">
     <div class="block-with-icon">
       <div class="block-icon">
-        <img src="../assets/about/requirments.png" style="max-width: 96px"/>
+        <img src="../assets/about/list.svg" style="max-width: 96px"/>
       </div>
       <div class="block-content">
         <p>Tworzymy i wdrażamy kompleksowe rozwiązania telekomunikacyjne oraz internetowe, dostosowane do specyficznych potrzeb Klientów na podstawie indywidualnej analizy ich wymagań.
@@ -67,7 +67,7 @@
 
     <div class="block-with-icon">
       <div class="block-icon">
-        <img src="../assets/about/staff.png" />
+        <img src="../assets/about/crew.svg" style="max-width: 192px" />
       </div>
       <div class="block-content">
         <p>Chcielibyśmy zapewnić również, iż obok najnowocześniejszej technologii dysponujemy także życzliwym i profesjonalnym zespołem specjalistów będących do Państwa dyspozycji. Zachęcając Państwa do skorzystania z naszej oferty, służymy wszelkimi niezbędnymi
@@ -108,12 +108,13 @@ section {
     align-items: center;
 
     .block-icon {
+      align-self: flex-start;
         flex: 1;
         width: 100%;
         text-align: center;
         img {
           max-width: 240px;
-          width: calc(60vw - (100vw - 100%) * 0.6);
+          width: 75%;//calc(60vw - (100vw - 100%) * 0.6);
         }
     }
 
