@@ -89,8 +89,8 @@ section {
 }
 .container {
     p {
-        font-size: 1.125em;
-        line-height: 1.875em;
+        font-size: 1em;
+        line-height: 1.5em;
     }
     p + p {
         padding-top: 1em;
