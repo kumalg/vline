@@ -90,7 +90,7 @@ section {
 .container {
     p {
         font-size: 1em;
-        line-height: 1.5em;
+        line-height: 1.75em;
     }
     p + p {
         padding-top: 1em;

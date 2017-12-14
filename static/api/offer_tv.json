@@ -1,0 +1,33 @@
+[{
+    "title": "Mini",
+    "cost": "24,90",
+    "moreInfo": [
+      "108 kanałów",
+      "43 kanały HD"
+    ]
+  },
+  {
+    "title": "Smart",
+    "cost": "39,90",
+    "moreInfo": [
+      "145 kanałów",
+      "64 kanały HD"
+    ]
+  },
+  {
+    "title": "Optimum",
+    "cost": "59,90",
+    "moreInfo": [
+      "203 kanałów",
+      "92 kanały HD"
+    ]
+  },
+  {
+    "title": "Platinum",
+    "cost": "89,90",
+    "moreInfo": [
+      "233 kanałów",
+      "107 kanały HD"
+    ]
+  }
+]
