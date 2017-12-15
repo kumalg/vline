@@ -1,30 +1,42 @@
 <template>
 <div>
   <div>
+    <div class="desc">
+      <div class="text">
+        <h2>Telewizja światłowodowa</h2>
+        <p>
+          Dzięki współpracy pomiędzy Vline a <a href="http://telewizjaswiatlowodowa.pl"><b>Telewizją Światłowodową</b></a> dostarczamy Państwu telewizję w najwyższej jakości dzięki dobrodziejstwu technologii światłowodowej.
+        </p>
+      </div>
+      <div class="image">
+        <img src="../assets/offer/tv.jpg" />
+      </div>
+      <!-- <div class="image" /> -->
+    </div>
     <ul class="info-items">
       <li class="info-item">
-        <img src="../assets/about/tv.svg" />
+        <img src="../assets/offer/canals.png" />
         <h3>Najbogatszy wybór kanałów</h3>
         <p>
           Blisko 250 kanałów telewizyjnych, z czego aż ponad 120 w jakości HD! Kanały zostały podzielone na 4 pakiety. Dodatkowo - opcje premium, które zadowolą każdego widza.
         </p>
       </li>
       <li class="info-item">
-        <img src="../assets/about/tv.svg" />
+        <img src="../assets/offer/multi.png" />
         <h3>Na kilku ekranach jednocześnie</h3>
         <p>
           Oglądaj swoje ulubione programy, transmisje sportowe i filmy – kiedy chcesz i na czym tylko chcesz.
         </p>
       </li>
       <li class="info-item">
-        <img src="../assets/about/tv.svg" />
+        <img src="../assets/offer/fullhd.png" />
         <h3>Krystaliczna jakość obrazu</h3>
         <p>
           Twoje łącze światłowodowe może zapewnić Ci niesamowite wrażenia z oglądania programów w jakości Full HD.
         </p>
       </li>
       <li class="info-item">
-        <img src="../assets/about/tv.svg" />
+        <img src="../assets/offer/decoder.png" />
         <h3>Multimedialny dekoder</h3>
         <p>
           Możesz nagrywać, przewijać i zatrzymywać swoje ulubione programy - dzięki usłudze domowej nagrywarki. Możesz też obejrzeć swoje ulubione audycje nawet 3 dni do tyłu.
@@ -35,7 +47,7 @@
   <div class="container-offer-inner">
     <h2 class="package-title">Pakiety</h2>
     <ul class="items" v-if="items">
-      <ListItem v-for="item in items" :item="item"/>
+      <ListItem v-for="item in items" :item="item" />
     </ul>
   </div>
   <div class="files" v-if="links">
@@ -94,6 +106,46 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_colors.scss';
 
+.desc {
+    display: flex;
+    // align-items: center;
+    margin-bottom: 64px;
+
+    .text {
+        flex: 1;
+
+        h2 {
+            font-size: 2em;
+            color: $colorPrimary;
+            font-weight: 300;
+            word-wrap: break-word;
+        }
+        p {
+            margin-top: 16px;
+            color: rgba($colorText, .75);
+            font-size: 0.875em;
+            line-height: 1.75em;
+        }
+    }
+
+    .image {
+        flex: 2;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        // background: url("../assets/offer/tv.jpg") no-repeat center/cover;
+    }
+}
+
+a {
+    color: $colorPrimary;
+}
+
+b {
+    font-weight: 600;
+}
+
 .info-items {
     // flex: 3;
     display: flex;
@@ -106,24 +158,13 @@ export default {
 
         h3 {
             font-size: 1.125em;
-            margin: 0 0 16px;
+            margin: 16px 0;
         }
 
         p {
-            opacity: 0.75;
+            color: rgba($colorText, .75);
             font-size: 0.875em;
             line-height: 1.75em;
-        }
-    }
-}
-
-@media all and (max-width: 720px) {
-    .info-item {
-        width: 100% !important;
-        text-align: center;
-        p {
-            max-width: 460px;
-            margin: auto;
         }
     }
 }
@@ -143,11 +184,11 @@ export default {
     margin: 0 -8px;
 
     .item {
-    width: calc(25% - 16px);
-      margin: {
-        left: 8px;
-        right: 8px;
-      }
+        width: calc(25% - 16px);
+        margin: {
+            left: 8px;
+            right: 8px;
+        }
     }
 }
 
@@ -157,7 +198,32 @@ export default {
     }
 }
 
+@media all and (max-width: 720px) {
+    .desc {
+        flex-direction: column;
+        text-align: center;
+
+        .image {
+            margin-top: 16px;
+        }
+    }
+    .info-item {
+        width: 100% !important;
+        text-align: center;
+        p {
+            max-width: 460px;
+            margin: auto;
+        }
+    }
+}
+
 @media all and (max-width: 470px) {
+    .desc {
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+    }
     .item {
         width: 100% !important;
     }
