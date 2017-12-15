@@ -13,16 +13,7 @@
     </div>
     <transition name="offer-fade" mode="out-in">
       <ul v-bind:key="actualIndex" class="items" v-if="items">
-        <li class="item list-item" v-for="item in items[actualIndex].items">
-          <h2>{{item.title}}</h2>
-          <p class="subtitle">{{item.subtitle}}</p>
-          <ul class="more-info" v-if="item.moreInfo">
-            <li>
-              <p v-for="info in item.moreInfo">{{info}}</p>
-            </li>
-          </ul>
-          <h3>{{item.cost}} zł</h3>
-        </li>
+        <ListItem v-for="item in items[actualIndex].items" :item="item" />
       </ul>
     </transition>
   </div>
@@ -40,6 +31,7 @@
 </template>
 
 <script>
+import ListItem from './Offer_List_Item.vue'
 import axios from 'axios'
 
 export default {
@@ -75,6 +67,9 @@ export default {
           console.log(error);
         });
     }
+  },
+  components: {
+    ListItem: ListItem,
   }
 }
 </script>
@@ -87,7 +82,6 @@ export default {
     font-size: 1.125em;
     color: $colorPrimary;
     font-family: inherit;
-    // font-family: 'Open Sans';
 }
 
 .files {
@@ -148,7 +142,6 @@ export default {
         }
 
         button {
-            // color: $colorText;
             background: transparent;
             border: none;
             font-size: 0.75em;
@@ -189,50 +182,13 @@ export default {
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
+        margin: 0 -8px;
 
         .item {
-            // color: $colorText;
             width: calc(33.33% - 16px);
-            min-width: 192px;
-            padding: 32px;
-            margin: 0 8px 16px;
-            text-align: center;
-            border: {
-                style: solid;
-                width: 1px;
-                radius: 3px;
-                color: rgba(0,0,0,.25);
-            }
-
-            h2 {
-                font-size: 1.5em;
-                color: $colorPrimary;
-            }
-
-            h3 {
-                font-size: 1.125em;
-                font-weight: 600;
-                margin-top: 32px;
-                color: $colorPrimary;
-            }
-
-            p {
-                font-size: 0.75em;
-                font-weight: 600;
-            }
-
-            .subtitle {
-                margin-top: 8px;
-            }
-
-            .more-info {
-                margin-top: 16px;
-                padding: 16px 0;
-                border: {
-                    style: solid;
-                    width: 1px 0;
-                    color: rgba(0,0,0,.25);
-                }
+            margin: {
+              left: 8px;
+              right: 8px;
             }
         }
     }
@@ -254,10 +210,6 @@ export default {
 
         .item {
             width: 100% !important;
-            margin: {
-                left: 0 !important;
-                right: 0 !important;
-            }
         }
 
         .nav {

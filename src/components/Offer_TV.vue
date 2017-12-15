@@ -35,16 +35,7 @@
   <div class="container-offer-inner">
     <h2 class="package-title">Pakiety</h2>
     <ul class="items" v-if="items">
-      <li class="item list-item" v-for="item in items">
-        <h2>{{item.title}}</h2>
-        <!-- <p class="subtitle">{{item.subtitle}}</p> -->
-        <ul class="more-info" v-if="item.moreInfo">
-          <li>
-            <p v-for="info in item.moreInfo">{{info}}</p>
-          </li>
-        </ul>
-        <h3>od {{item.cost}} zł</h3>
-      </li>
+      <ListItem v-for="item in items" :item="item"/>
     </ul>
   </div>
   <div class="files" v-if="links">
@@ -61,6 +52,7 @@
 </template>
 
 <script>
+import ListItem from './Offer_List_Item.vue'
 import axios from 'axios'
 
 export default {
@@ -92,6 +84,9 @@ export default {
           console.log(error);
         });
     }
+  },
+  components: {
+    ListItem: ListItem,
   }
 }
 </script>
@@ -110,13 +105,11 @@ export default {
         margin-bottom: 32px;
 
         h3 {
-          font-size: 1.125em;
-          // color: $colorPrimary;
-          margin: 0 0 16px 0 ;
+            font-size: 1.125em;
+            margin: 0 0 16px;
         }
 
         p {
-            // text-align: justify;
             opacity: 0.75;
             font-size: 0.875em;
             line-height: 1.75em;
@@ -129,76 +122,38 @@ export default {
         width: 100% !important;
         text-align: center;
         p {
-          max-width: 460px;
-          margin: auto;
+            max-width: 460px;
+            margin: auto;
         }
     }
 }
 
 .package-title {
-  color: $colorPrimary;
-  font-size: 1.75em;
-  font-weight: 400;
-  text-align: center;
-  margin: 32px 0;
+    color: $colorPrimary;
+    font-size: 1.75em;
+    font-weight: 400;
+    text-align: center;
+    margin: 32px 0;
 }
 
 .items {
-    // flex: 3;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 0 -8px;
 
     .item {
-        // color: $colorText;
-        width: calc(25% - 12px);
-        min-width: 192px;
-        padding: 32px;
-        margin: 8px 0;
-        text-align: center;
-        border: {
-            style: solid;
-            width: 1px;
-            radius: 3px;
-            color: rgba(0,0,0,.25);
-        }
-
-        h2 {
-            font-size: 1.5em;
-            color: $colorPrimary;
-        }
-
-        h3 {
-            font-size: 1.125em;
-            font-weight: 600;
-            margin-top: 32px;
-            color: $colorPrimary;
-        }
-
-        p {
-            font-size: 0.75em;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            margin-top: 8px;
-        }
-
-        .more-info {
-            margin-top: 16px;
-            padding: 16px 0;
-            border: {
-                style: solid;
-                width: 1px 0;
-                color: rgba(0,0,0,.25);
-            }
-        }
+    width: calc(25% - 16px);
+      margin: {
+        left: 8px;
+        right: 8px;
+      }
     }
 }
 
 @media all and (max-width: 900px) {
     .item {
-        width: calc(50% - 8px) !important;
+        width: calc(50% - 16px) !important;
     }
 }
 
