@@ -58,7 +58,7 @@ section {
                     font-weight: 400;
                     font-size: 1.25em;
                     display: inline-block;
-                    background: linear-gradient(90deg,$colorPrimary 0,$colorPrimaryLighter 90%);
+                    background: linear-gradient(45deg,$colorPrimary 0,$colorPrimaryLighter 90%);
                     padding: 20px 64px;
                     border-radius: 100px;
                     box-shadow: 0 8px 32px rgba($colorPrimary, .25);

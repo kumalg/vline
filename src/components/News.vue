@@ -3,7 +3,7 @@
   <div class="container">
     <h1>Aktualności</h1>
     <ul class="fb-posts" id="example" ref="example">
-      <li v-for="link in fbPostLinks" class="fb-post" :data-href="link.permalink_url" data-width="350"></li>
+      <li v-for="(link, index) in fbPostLinks" :key="index" class="fb-post" :data-href="link.permalink_url" data-width="350"></li>
     </ul>
   </div>
 </section>

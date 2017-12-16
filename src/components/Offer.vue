@@ -3,7 +3,7 @@
   <div class="container">
     <h1>Oferta</h1>
     <ul>
-      <li v-for="item in offerMenuItems">
+      <li v-for="(item, index) in offerMenuItems" :key="index">
         <a :class="{'active': actualOfferComponent == item.componentName}" @click="offerChangeView(item.componentName)">{{item.title}}</a>
       </li>
     </ul>

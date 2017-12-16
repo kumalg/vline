@@ -47,13 +47,13 @@
   <div class="container-offer-inner">
     <h2 class="package-title">Pakiety</h2>
     <ul class="items" v-if="items">
-      <ListItem v-for="item in items" :item="item" />
+      <ListItem v-for="(item, index) in items" :item="item" :key="index"/>
     </ul>
   </div>
   <div class="files" v-if="links">
     <h2>Do pobrania:</h2>
     <ul>
-      <li v-for="link in links">
+      <li v-for="(link, index) in links" :key="index">
         <a target="_blank" :href="link.href">
           <i class="fa fa-file-pdf-o icon" aria-hidden="true"></i><p>{{link.title}}</p>
         </a>

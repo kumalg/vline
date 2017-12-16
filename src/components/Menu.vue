@@ -8,7 +8,7 @@
         </button>
       <div :class="['menu-section', {'hide': expandableMenuHidden}]">
         <ul>
-          <li v-for="item in menuItems">
+          <li v-for="item in menuItems" :key="item.href">
             <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
           </li>
         </ul>
@@ -106,7 +106,9 @@ $hover-bg-color: rgba(255,255,255,0.1);
     white-space: nowrap;
     box-sizing: content-box;
     display: flex;
-    align-items: center; // > * {
+    align-items: center;
+    transition: inherit;
+     // > * {
     //   // display: inline-block;
     //   //margin-top: ($menu-height - 32px) / 2;
     // }
@@ -160,6 +162,7 @@ $hover-bg-color: rgba(255,255,255,0.1);
         margin: 0 16px;
         padding: 0;
         border-radius: 0;
+        transition: transform .3s ease, margin .3s ease;
     }
 }
 $nav-button-height: 40px;
@@ -190,6 +193,11 @@ $nav-button-height: 40px;
     #menu-center,
     .menu {
         height: $menu-height-small;
+    }
+
+    #logo-button {
+        transform: scale(0.75);
+        margin-left: 0 !important;
     }
 
     .hamburger-menu {
