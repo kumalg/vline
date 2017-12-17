@@ -67,7 +67,7 @@ export default {
     }
 
     &.marked {
-        background: linear-gradient(45deg,$colorPrimary 0,$colorPrimaryLighter 90%);
+        background: linear-gradient(45deg,$colorPrimaryDarker 0,$colorPrimaryLighter 90%);
         box-shadow: 0 8px 32px rgba($colorPrimary, .25);
         border-width: 0;
 
