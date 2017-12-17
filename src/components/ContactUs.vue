@@ -33,15 +33,15 @@ section {
         h1,
         h2 {
             text-align: center;
-            font-size: 1.875em;
         }
         h1 {
+            font-size: 1.875em;
             font-weight: 400;
             color: $colorPrimary;
         }
         h2 {
+            font-size: 1.5em;
             font-weight: 300;
-            // color: $colorText;
         }
 
         ul {
