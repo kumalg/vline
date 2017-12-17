@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "bricklayer": "^0.4.3",
     "vue": "^2.5.2",
     "vue-click-outside": "^1.0.7",
     "vue-head": "^2.0.11"

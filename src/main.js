@@ -5,7 +5,6 @@ import App from './App'
 import Scrollactive from 'vue-scrollactive'
 import VueHead from 'vue-head'
 
-
 Vue.config.productionTip = false
 
 Vue.use(Scrollactive);
