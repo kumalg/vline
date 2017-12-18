@@ -98,7 +98,7 @@ section {
     overflow-x: auto;
 
     .fb-post {
-      overflow-x: auto;
+      // overflow-x: auto;
       width: 350px;
       margin: 8px 0;
       vertical-align: top;
