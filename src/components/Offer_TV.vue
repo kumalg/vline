@@ -11,7 +11,6 @@
       <div class="image">
         <img src="../assets/offer/tv.jpg" />
       </div>
-      <!-- <div class="image" /> -->
     </div>
     <ul class="info-items">
       <li class="info-item">
@@ -55,7 +54,7 @@
     <ul>
       <li v-for="(link, index) in links" :key="index">
         <a target="_blank" :href="link.href">
-          <i class="fa fa-file-pdf-o icon" aria-hidden="true"></i><p>{{link.title}}</p>
+          <FontAwesomeIcon :icon="iconPdf" /><p>{{link.title}}</p>
         </a>
       </li>
     </ul>
@@ -64,33 +63,37 @@
 </template>
 
 <script>
-import ListItem from './Offer_List_Item.vue'
-import axios from 'axios'
+import ListItem from "./Offer_List_Item.vue";
+import axios from "axios";
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import { faFilePdf } from "@fortawesome/fontawesome-free-regular";
 
 export default {
-  name: 'Offer_TV',
+  name: "Offer_TV",
   data() {
     return {
       items: null,
-      links: null,
-    }
+      links: null
+    };
   },
   created: function() {
-    this.fetchTVOffer()
+    this.fetchTVOffer();
   },
   methods: {
     fetchTVOffer() {
       var self = this;
-      axios.get('/static/api/offer_tv.json')
+      axios
+        .get("/static/api/offer_tv.json")
         .then(function(resp) {
-          self.items = resp.data
+          self.items = resp.data;
         })
         .catch(function(error) {
           console.log(error);
         });
-      axios.get('/static/api/offer_tv_links.json')
+      axios
+        .get("/static/api/offer_tv_links.json")
         .then(function(resp) {
-          self.links = resp.data
+          self.links = resp.data;
         })
         .catch(function(error) {
           console.log(error);
@@ -99,159 +102,163 @@ export default {
   },
   components: {
     ListItem: ListItem,
+    FontAwesomeIcon
+  },
+  computed: {
+    iconPdf() {
+      return faFilePdf;
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_colors.scss';
+@import "../styles/_colors.scss";
 
 .desc {
-    display: flex;
-    // align-items: center;
-    margin-bottom: 64px;
+  display: flex;
+  // align-items: center;
+  margin-bottom: 64px;
 
-    .text {
-        flex: 1;
+  .text {
+    flex: 1;
 
-        h2 {
-            font-size: 2em;
-            color: $colorPrimary;
-            font-weight: 300;
-            word-wrap: break-word;
-        }
-        p {
-            margin-top: 16px;
-            color: rgba($colorText, .75);
-            font-size: 0.875em;
-            line-height: 1.75em;
-        }
+    h2 {
+      font-size: 2em;
+      color: $colorPrimary;
+      font-weight: 300;
+      word-wrap: break-word;
     }
-
-    .image {
-        flex: 2;
-        img {
-            width: 100%;
-            height: auto;
-        }
-        // background: url("../assets/offer/tv.jpg") no-repeat center/cover;
+    p {
+      margin-top: 16px;
+      color: rgba($colorText, 0.75);
+      font-size: 0.875em;
+      line-height: 1.75em;
     }
+  }
+
+  .image {
+    flex: 2;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 a {
-    color: $colorPrimary;
+  color: $colorPrimary;
 }
 
 b {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .info-items {
-    // flex: 3;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 
-    .info-item {
-        width: calc(50% - 16px);
-        margin-bottom: 32px;
+  .info-item {
+    width: calc(50% - 16px);
+    margin-bottom: 32px;
 
-        h3 {
-            font-size: 1.125em;
-            margin: 16px 0;
-        }
-
-        p {
-            color: rgba($colorText, .75);
-            font-size: 0.875em;
-            line-height: 1.75em;
-        }
+    h3 {
+      font-size: 1.125em;
+      margin: 16px 0;
     }
+
+    p {
+      color: rgba($colorText, 0.75);
+      font-size: 0.875em;
+      line-height: 1.75em;
+    }
+  }
 }
 
 .package-title {
-    color: $colorPrimary;
-    font-size: 1.75em;
-    font-weight: 400;
-    text-align: center;
-    margin: 32px 0;
+  color: $colorPrimary;
+  font-size: 1.75em;
+  font-weight: 400;
+  text-align: center;
+  margin: 32px 0;
 }
 
 .items {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    margin: 0 -8px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 0 -8px;
 
-    .item {
-        width: calc(25% - 16px);
-        margin: {
-            left: 8px;
-            right: 8px;
-        }
+  .item {
+    width: calc(25% - 16px);
+    margin: {
+      left: 8px;
+      right: 8px;
     }
+  }
 }
 
 @media all and (max-width: 900px) {
-    .item {
-        width: calc(50% - 16px) !important;
-    }
+  .item {
+    width: calc(50% - 16px) !important;
+  }
 }
 
 @media all and (max-width: 720px) {
-    .desc {
-        flex-direction: column;
-        text-align: center;
+  .desc {
+    flex-direction: column;
+    text-align: center;
 
-        .image {
-            margin-top: 16px;
-        }
+    .image {
+      margin-top: 16px;
     }
-    .info-item {
-        width: 100% !important;
-        text-align: center;
-        p {
-            max-width: 460px;
-            margin: auto;
-        }
+  }
+  .info-item {
+    width: 100% !important;
+    text-align: center;
+    p {
+      max-width: 460px;
+      margin: auto;
     }
+  }
 }
 
 @media all and (max-width: 470px) {
-    .desc {
-        h2 {
-            font-size: 1.5em;
-            font-weight: 400;
-        }
+  .desc {
+    h2 {
+      font-size: 1.5em;
+      font-weight: 400;
     }
-    .item {
-        width: 100% !important;
-    }
+  }
+  .item {
+    width: 100% !important;
+  }
 }
 
 .files {
-    margin-top: 32px;
+  margin-top: 32px;
 
-    ul {
-        margin-top: 16px;
-        li {
-            line-height: 32px;
-            .icon {
-                color: $colorPrimary;
-                font-size: 1.125em;
-            }
-            p {
-                padding-left: 16px;
-                font-size: 0.75em;
-                font-weight: 600;
-                display: inline;
-                color: $colorText;
+  ul {
+    margin-top: 16px;
+    li {
+      line-height: 32px;
+      .icon {
+        color: $colorPrimary;
+        font-size: 1.125em;
+      }
+      p {
+        padding-left: 16px;
+        font-size: 0.75em;
+        font-weight: 600;
+        display: inline;
+        color: $colorText;
 
-                &:hover {
-                    color: $colorPrimary;
-                }
-            }
+        &:hover {
+          color: $colorPrimary;
         }
+      }
     }
+  }
 }
 </style>

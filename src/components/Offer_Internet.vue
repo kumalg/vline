@@ -22,7 +22,7 @@
     <ul>
       <li v-for="(link, index) in links" :key="index">
         <a target="_blank" :href="link.href">
-          <i class="fa fa-file-pdf-o icon" aria-hidden="true"></i><p>{{link.title}}</p>
+          <FontAwesomeIcon :icon="iconPdf" /><p>{{link.title}}</p>
         </a>
       </li>
     </ul>
@@ -31,37 +31,41 @@
 </template>
 
 <script>
-import ListItem from './Offer_List_Item.vue'
-import axios from 'axios'
+import ListItem from "./Offer_List_Item.vue";
+import axios from "axios";
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import { faFilePdf } from "@fortawesome/fontawesome-free-regular";
 
 export default {
-  name: 'Offer_Internet',
+  name: "Offer_Internet",
   data() {
     return {
       actualIndex: 0,
       items: null,
-      links: null,
-    }
+      links: null
+    };
   },
   created: function() {
-    this.fetchInternetOffer()
+    this.fetchInternetOffer();
   },
   methods: {
     agreementLengthItemClick(index) {
-      this.actualIndex = index
+      this.actualIndex = index;
     },
     fetchInternetOffer() {
       var self = this;
-      axios.get('/static/api/offer_internet.json')
+      axios
+        .get("/static/api/offer_internet.json")
         .then(function(resp) {
-          self.items = resp.data
+          self.items = resp.data;
         })
         .catch(function(error) {
           console.log(error);
         });
-      axios.get('/static/api/offer_internet_links.json')
+      axios
+        .get("/static/api/offer_internet_links.json")
         .then(function(resp) {
-          self.links = resp.data
+          self.links = resp.data;
         })
         .catch(function(error) {
           console.log(error);
@@ -70,157 +74,162 @@ export default {
   },
   components: {
     ListItem: ListItem,
+    FontAwesomeIcon
+  },
+  computed: {
+    iconPdf() {
+      return faFilePdf;
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_colors.scss';
+@import "../styles/_colors.scss";
 
 .files h2,
 .nav h2 {
-    font-size: 1.125em;
-    color: $colorPrimary;
-    font-family: inherit;
+  font-size: 1.125em;
+  color: $colorPrimary;
+  font-family: inherit;
 }
 
 .files {
+  margin-top: 16px;
+
+  ul {
     margin-top: 16px;
+    li {
+      line-height: 32px;
+      .icon {
+        color: $colorPrimary;
+        // font-size: 1.125em;
+      }
+      p {
+        padding-left: 16px;
+        font-size: 0.75em;
+        font-weight: 600;
+        display: inline;
+        color: $colorText;
 
-    ul {
-        margin-top: 16px;
-        li {
-            line-height: 32px;
-            .icon {
-                color: $colorPrimary;
-                font-size: 1.125em;
-            }
-            p {
-                padding-left: 16px;
-                font-size: 0.75em;
-                font-weight: 600;
-                display: inline;
-                color: $colorText;
-
-                &:hover {
-                    color: $colorPrimary;
-                }
-            }
+        &:hover {
+          color: $colorPrimary;
         }
+      }
     }
+  }
 }
 
 .container-offer-inner {
+  display: flex;
+  width: 100%;
+
+  .offer-fade-enter-active,
+  .offer-fade-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  .offer-fade-enter,
+  .offer-fade-leave-to {
+    opacity: 0;
+  }
+
+  .offer-fade-enter {
+    transform: translateX(8px);
+  }
+
+  .offer-fade-leave-to {
+    transform: translateX(-8px);
+  }
+
+  .nav {
+    flex: 1;
+    min-width: 210px;
+    padding-bottom: 16px;
+
+    ul {
+      margin-top: 16px;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 0.75em;
+      font-weight: 600;
+      outline: none;
+      margin: 8px 0;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.3s ease;
+      padding: 0;
+
+      &.active,
+      &:hover {
+        color: $colorPrimary;
+      }
+
+      &.active .dot {
+        background-color: $colorPrimary;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+
+      p {
+        margin-left: 8px;
+        display: inline;
+      }
+    }
+  }
+
+  .items {
+    flex: 3;
     display: flex;
-    width: 100%;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 0 -8px;
 
-    .offer-fade-enter-active,
-    .offer-fade-leave-active {
-        transition: all 0.2s ease;
+    .item {
+      margin: {
+        left: 8px;
+        right: 8px;
+      }
     }
-    /* .component-fade-leave-active below version 2.1.8 */
-    .offer-fade-enter,
-    .offer-fade-leave-to {
-        opacity: 0;
-    }
+  }
 
-    .offer-fade-enter {
-        transform: translateX(8px);
-    }
+  @media all and (max-width: 499px) {
+    flex-direction: column;
 
-    .offer-fade-leave-to {
-        transform: translateX(-8px);
+    .item {
+      width: 100%;
     }
 
     .nav {
-        flex: 1;
-        min-width: 210px;
-        padding-bottom: 16px;
-
-        ul {
-            margin-top: 16px;
-        }
-
-        button {
-            background: transparent;
-            border: none;
-            font-size: 0.75em;
-            font-weight: 600;
-            outline: none;
-            margin: 8px 0;
-            cursor: pointer;
-            font-family: inherit;
-            transition: color 0.3s ease;
-            padding: 0;
-
-            &.active,
-            &:hover {
-                color: $colorPrimary;
-            }
-
-            &.active .dot {
-                background-color: $colorPrimary;
-            }
-
-            .dot {
-                width: 8px;
-                height: 8px;
-                border-radius: 4px;
-                display: inline-block;
-                transition: background-color 0.3s ease;
-            }
-
-            p {
-                margin-left: 8px;
-                display: inline;
-            }
-        }
+      text-align: center;
     }
+  }
 
-    .items {
-        flex: 3;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        margin: 0 -8px;
-
-        .item {
-            // width: calc(33.33% - 16px);
-            margin: {
-              left: 8px;
-              right: 8px;
-            }
-        }
+  @media all and (min-width: 500px) {
+    .item {
+      width: calc(100% - 16px) !important;
     }
+  }
 
-    @media all and (max-width: 499px) {
-        flex-direction: column;
-
-        .item {
-            width: 100%;
-        }
-
-        .nav {
-            text-align: center;
-        }
+  @media all and (min-width: 700px) {
+    .item {
+      width: calc(49.9999% - 16px) !important;
     }
+  }
 
-    @media all and (min-width: 500px) {
-        .item {
-            width: calc(100% - 16px) !important;
-        }
+  @media all and (min-width: 992px) {
+    .item {
+      width: calc(33.3333% - 16px) !important;
     }
-
-    @media all and (min-width: 700px) {
-        .item {
-            width: calc(49.9999% - 16px) !important;
-        }
-    }
-
-    @media all and (min-width: 992px) {
-        .item {
-            width: calc(33.3333% - 16px) !important;
-        }
-    }
+  }
 }
 </style>
