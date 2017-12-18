@@ -3,8 +3,9 @@
     "items": [{
         "title": "60 Mb/s",
         "subtitle": "wysyłanie: 6 Mb/s",
-        "cost": "39,99",
-        "moreInfo": [
+        "cost": "39,99 zł",
+        "new_cost": "29,99 zł",
+        "more_info": [
           "Montaż: 99 zł"
         ]
       },
@@ -12,24 +13,25 @@
         "marked": true,
         "title": "80 Mb/s",
         "subtitle": "wysyłanie: 8 Mb/s",
-        "cost": "49,99",
-        "moreInfo": [
+        "cost": "49,99 zł",
+        "new_cost": "39,99 zł",
+        "more_info": [
           "Montaż: 99 zł"
         ]
       },
       {
         "title": "100 Mb/s",
         "subtitle": "wysyłanie: 10 Mb/s",
-        "cost": "59,99",
-        "moreInfo": [
+        "cost": "59,99 zł",
+        "more_info": [
           "Montaż: 49 zł"
         ]
       },
       {
         "title": "120 Mb/s",
         "subtitle": "wysyłanie: 12 Mb/s",
-        "cost": "69,99",
-        "moreInfo": [
+        "cost": "69,99 zł",
+        "more_info": [
           "Montaż: 1 zł"
         ]
       }
@@ -41,16 +43,16 @@
         "marked": true,
         "title": "80 Mb/s",
         "subtitle": "wysyłanie: 8 Mb/s",
-        "cost": "59,99",
-        "moreInfo": [
+        "cost": "59,99 zł",
+        "more_info": [
           "Montaż: 99 zł"
         ]
       },
       {
         "title": "100 Mb/s",
         "subtitle": "wysyłanie: 10 Mb/s",
-        "cost": "69,99",
-        "moreInfo": [
+        "cost": "69,99 zł",
+        "more_info": [
           "Montaż: 49 zł"
         ]
       }
@@ -63,8 +65,8 @@
       "marked": true,
       "title": "100 Mb/s",
       "subtitle": "wysyłanie: 10 Mb/s",
-      "cost": "69,99",
-      "moreInfo": [
+      "cost": "69,99 zł",
+      "more_info": [
         "Montaż: 49 zł"
       ]
     }]

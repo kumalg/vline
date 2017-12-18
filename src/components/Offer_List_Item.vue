@@ -2,19 +2,22 @@
   <li :class="[{'marked': item.marked}, 'item list-item']">
     <div class="tooltip" v-if="item.marked">
         <img src="../assets/offer/mark.svg"/>
-        <!-- <i class="fa fa-bookmark" aria-hidden="true"></i> -->
         <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
-        <!-- <span class="tooltiptext">Najlepszy wybór</span> -->
-        <!-- <span class="tooltiptext">Promocja</span> -->
     </div>
     <h2>{{item.title}}</h2>
     <p class="subtitle">{{item.subtitle}}</p>
-    <ul class="more-info" v-if="item.moreInfo">
+    <ul class="more-info" v-if="item.more_info">
       <li>
-        <p v-for="(info, index) in item.moreInfo" :key="index">{{info}}</p>
+        <p v-for="(info, index) in item.more_info" :key="index">{{info}}</p>
       </li>
     </ul>
-    <h3>{{item.cost}} zł</h3>
+    <template v-if="item.new_cost">
+      <h3 class="old">&nbsp;{{item.cost}}&nbsp;</h3>
+      <h3 class="promo">{{item.new_cost}}</h3>
+    </template>
+    <template v-else>
+      <h3>{{item.cost}}</h3>
+    </template>
   </li>
 </template>
 
@@ -99,6 +102,18 @@ $tooltipBackground: rgba(0, 0, 0, 0.75);
     font-weight: 600;
     margin-top: 32px;
     color: $colorPrimary;
+  }
+
+  h3.promo {
+    margin-top: 0;
+  }
+
+  h3.old {
+    margin-top: 19px;
+    text-decoration: line-through;
+    opacity: 0.5;
+    line-height: 0.8125em;
+    font-size: 0.8125em;
   }
 
   p {

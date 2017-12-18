@@ -22,7 +22,8 @@
 <style lang="scss" scoped>
 @import '../styles/_colors.scss';
 section {
-    background-color: $colorBackgroundDark;
+    // background-color: $colorBackgroundDark;
+    background: linear-gradient(45deg,$colorPrimaryDarker 0,$colorPrimaryLighter 90%);
 
     .container {
         padding: {
@@ -33,15 +34,17 @@ section {
         h1,
         h2 {
             text-align: center;
+            color: #fff;
         }
         h1 {
             font-size: 1.875em;
-            font-weight: 400;
-            color: $colorPrimary;
+            font-weight: 300;
+            // color: $colorPrimary;
         }
         h2 {
             font-size: 1.5em;
             font-weight: 300;
+            opacity: 0.75;
         }
 
         ul {
@@ -58,14 +61,18 @@ section {
                     font-weight: 400;
                     font-size: 1.25em;
                     display: inline-block;
-                    background: linear-gradient(45deg,$colorPrimaryDarker 0,$colorPrimaryLighter 90%);
+                    // background: linear-gradient(45deg,$colorPrimaryDarker 0,$colorPrimaryLighter 90%);
+                    background-color: rgba(#fff,.1);
                     padding: 20px 64px;
                     border-radius: 100px;
-                    box-shadow: 0 8px 32px rgba($colorPrimary, .25);
-                    transition: box-shadow .3s ease;
+                    // box-shadow: 0 8px 32px rgba($colorPrimary, .25);
+                    transition: box-shadow .3s ease, background-color .3s ease;
 
                     &:hover {
-                    box-shadow: 0 0px 64px rgba($colorPrimary, .75);
+                    // box-shadow: 0 0px 64px rgba($colorPrimary, .75);
+                    // box-shadow: 0 0px 64px rgba($colorPrimaryDarker, .75);
+                    background-color: rgba(#fff,.2);
+
                     }
                 }
             }

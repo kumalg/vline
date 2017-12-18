@@ -185,7 +185,7 @@ export default {
         margin: 0 -8px;
 
         .item {
-            width: calc(33.33% - 16px);
+            // width: calc(33.33% - 16px);
             margin: {
               left: 8px;
               right: 8px;
@@ -193,27 +193,33 @@ export default {
         }
     }
 
-    @media all and (max-width: 992px) {
+    @media all and (max-width: 499px) {
+        flex-direction: column;
+
         .item {
-            width: calc(50% - 16px) !important;
+            width: 100%;
+        }
+
+        .nav {
+            text-align: center;
         }
     }
 
-    @media all and (max-width: 700px) {
+    @media all and (min-width: 500px) {
         .item {
             width: calc(100% - 16px) !important;
         }
     }
 
-    @media all and (max-width: 500px) {
-        flex-direction: column;
-
+    @media all and (min-width: 700px) {
         .item {
-            width: 100% !important;
+            width: calc(49.9999% - 16px) !important;
         }
+    }
 
-        .nav {
-            text-align: center;
+    @media all and (min-width: 992px) {
+        .item {
+            width: calc(33.3333% - 16px) !important;
         }
     }
 }

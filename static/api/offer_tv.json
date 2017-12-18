@@ -1,23 +1,23 @@
 [{
     "title": "Mini",
-    "cost": "od 24,90",
-    "moreInfo": [
+    "cost": "od 24,90 zł",
+    "more_info": [
       "108 kanałów",
       "43 kanały HD"
     ]
   },
   {
     "title": "Smart",
-    "cost": "od 39,90",
-    "moreInfo": [
+    "cost": "od 39,90 zł",
+    "more_info": [
       "145 kanałów",
       "64 kanały HD"
     ]
   },
   {
     "title": "Optimum",
-    "cost": "od 59,90",
-    "moreInfo": [
+    "cost": "od 59,90 zł",
+    "more_info": [
       "203 kanały",
       "92 kanały HD"
     ]
@@ -25,8 +25,8 @@
   {
     "marked": true,
     "title": "Platinum",
-    "cost": "od 89,90",
-    "moreInfo": [
+    "cost": "od 89,90 zł",
+    "more_info": [
       "233 kanały",
       "107 kanałów HD"
     ]
