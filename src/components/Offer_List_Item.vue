@@ -46,13 +46,13 @@ $tooltipBackground: rgba(0, 0, 0, 0.75);
   background-color: $tooltipBackground;
   color: #fff;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 3px;
   padding: 6px 12px;
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 50%;
-  transform: translate(-50%, 8px);
+  left: calc(50% + 5px);
+  transform: translate(-100%, -8px);
   display: block;
   opacity: 0;
   transition: all 0.3s ease;
@@ -62,8 +62,9 @@ $tooltipBackground: rgba(0, 0, 0, 0.75);
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
-  margin-left: -5px;
+  // left: 100%;
+  right: 0;
+  // margin-right: 3px;
   border-width: 5px;
   border-style: solid;
   border-color: $tooltipBackground transparent transparent transparent;
@@ -71,7 +72,7 @@ $tooltipBackground: rgba(0, 0, 0, 0.75);
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  transform: translate(-50%, 0);
+  transform: translate(-100%, 0);
   opacity: 1;
 }
 
