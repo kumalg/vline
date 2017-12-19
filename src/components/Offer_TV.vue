@@ -54,7 +54,7 @@
     <ul>
       <li v-for="(link, index) in links" :key="index">
         <a target="_blank" :href="link.href">
-          <FontAwesomeIcon :icon="iconPdf" /><p>{{link.title}}</p>
+          <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.title}}</p>
         </a>
       </li>
     </ul>
@@ -248,6 +248,7 @@ b {
         font-size: 1.125em;
       }
       p {
+        // line-height: 1.125em;
         padding-left: 16px;
         font-size: 0.75em;
         font-weight: 600;

@@ -4,8 +4,8 @@
     <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
     <div class="hamburger-menu navigation">
       <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">
-          <i class="fa fa-bars nav-icon" aria-hidden="true"></i>
-        </button>
+        <FontAwesomeIcon :icon="iconNav" class="nav-icon" />
+      </button>
       <div :class="['menu-section', {'hide': expandableMenuHidden}]">
         <ul>
           <li v-for="item in menuItems" :key="item.href">
@@ -20,6 +20,8 @@
 
 <script>
 import ClickOutside from 'vue-click-outside'
+import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import { faBars } from "@fortawesome/fontawesome-free-solid";
 
 export default {
   name: 'Menu',
@@ -45,6 +47,14 @@ export default {
   directives: {
     ClickOutside
   },
+  components: {
+    FontAwesomeIcon
+  },
+  computed: {
+    iconNav() {
+      return faBars;
+    }
+  }
 }
 </script>
 
