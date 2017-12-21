@@ -1,7 +1,7 @@
 <template>
   <li :class="[{'marked': item.marked}, 'item list-item']">
     <div class="tooltip" v-if="item.marked">
-        <img src="../assets/offer/mark.svg"/>
+        <img src="../assets/offer/mark.svg" class="img">
         <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
     </div>
     <h2>{{item.title}}</h2>
@@ -35,52 +35,52 @@ export default {
 $tooltipBackground: rgba(0, 0, 0, 0.75);
 
 .tooltip {
-  top: 0;
-  right: 8px;
-  position: absolute;
-  display: inline-block;
-  text-align: center;
-}
+  top: -32px;
+  right: -8px;
+  position: relative;
+  text-align: right;
 
-.tooltiptext {
-  font-size: 0.8125em;
-  visibility: hidden;
-  max-width: 150px;
-  background-color: $tooltipBackground;
-  color: #fff;
-  text-align: center;
-  border-radius: 3px;
-  padding: 6px 12px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: calc(50% + 10px);
-  transform: translate(-100%, -8px);
-  display: block;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
+  .img {
+    position: absolute;
+  }
 
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  // left: 100%;
-  right: 5px;
-  // margin-right: 3px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: $tooltipBackground transparent transparent transparent;
-}
+  .tooltiptext {
+    font-size: 0.8125em;
+    visibility: hidden;
+    max-width: 150px;
+    background-color: $tooltipBackground;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 6px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
+    right: -18px;
+    transform: translateY(-8px);
+    display: block;
+    opacity: 0;
+    transition: all 0.3s ease;
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  transform: translate(-100%, 0);
-  opacity: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: 5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: $tooltipBackground transparent transparent transparent;
+    }
+  }
+
+  &:hover .tooltiptext {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .item {
-  position: relative;
   min-width: 192px;
   padding: 32px;
   margin: 8px 0;

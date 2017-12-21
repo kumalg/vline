@@ -39,12 +39,11 @@ section {
         h1 {
             font-size: 1.875em;
             font-weight: 300;
-            // color: $colorPrimary;
         }
         h2 {
+            color: rgba(#fff, .75);
             font-size: 1.5em;
             font-weight: 300;
-            opacity: 0.75;
         }
 
         ul {
