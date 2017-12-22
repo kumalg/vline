@@ -33,18 +33,14 @@ export default {
       var self = this;
       setTimeout(function() {
         if (typeof FB != "undefined") {
-          var pageAccessToken = "1696406740378520|67ec118b4e72b7d01b491f11a6d1b0aa";
-          FB.api("/telewizjaswiatlowodowa/posts?fields=permalink_url&limit=9", {
-              access_token: pageAccessToken
-            },
-            function(response) {
-              self.fbPostLinks = response.data;
-              self.$nextTick(function() {
-                window.fbAsyncInit();
-                self.bricklayer = new Bricklayer(document.getElementById("fb-posts"));
-              });
-            }
-          );
+          axios
+            .get("https://vlinezdw.azurewebsites.net/api/facebook-posts")
+            .then(function(resp) {
+              self.fbPostLinks = resp.data;
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
         }
       }, 2000);
     }
