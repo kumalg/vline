@@ -36,7 +36,13 @@ export default {
           axios
             .get("https://vlinezdw.azurewebsites.net/api/facebook-posts")
             .then(function(resp) {
-              self.fbPostLinks = resp.data;
+              self.fbPostLinks = resp.data.data;
+              self.$nextTick(function() {
+                window.fbAsyncInit();
+                self.bricklayer = new Bricklayer(
+                  document.getElementById("fb-posts")
+                );
+              });
             })
             .catch(function(error) {
               console.log(error);
