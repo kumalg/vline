@@ -32,53 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
-$tooltipBackground: rgba(0, 0, 0, 0.75);
-
-.tooltip {
-  top: -32px;
-  right: -8px;
-  position: relative;
-  text-align: right;
-
-  .img {
-    position: absolute;
-  }
-
-  .tooltiptext {
-    font-size: 0.8125em;
-    visibility: hidden;
-    max-width: 150px;
-    background-color: $tooltipBackground;
-    color: #fff;
-    text-align: center;
-    border-radius: 3px;
-    padding: 6px 12px;
-    position: absolute;
-    z-index: 1;
-    bottom: 5px;
-    right: -18px;
-    transform: translateY(-8px);
-    display: block;
-    opacity: 0;
-    transition: all 0.3s ease;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      right: 5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: $tooltipBackground transparent transparent transparent;
-    }
-  }
-
-  &:hover .tooltiptext {
-    visibility: visible;
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
 .item {
   min-width: 192px;
@@ -143,6 +96,7 @@ $tooltipBackground: rgba(0, 0, 0, 0.75);
     );
     box-shadow: 0 8px 32px rgba($colorPrimary, 0.25);
     border-width: 0;
+    padding: 33px;
 
     > * {
       color: white !important;
@@ -159,6 +113,53 @@ $tooltipBackground: rgba(0, 0, 0, 0.75);
 
     .more-info {
       border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    $tooltipBackground: rgba(0, 0, 0, 0.75);
+    .tooltip {
+      top: -33px;
+      right: -9px;
+      position: relative;
+      text-align: right;
+
+      .img {
+        position: absolute;
+      }
+
+      .tooltiptext {
+        font-size: 0.8125em;
+        visibility: hidden;
+        max-width: 150px;
+        background-color: $tooltipBackground;
+        color: #fff;
+        text-align: center;
+        border-radius: 3px;
+        padding: 6px 12px;
+        position: absolute;
+        z-index: 1;
+        bottom: 5px;
+        right: -18px;
+        transform: translateY(-8px);
+        display: block;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          right: 5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: $tooltipBackground transparent transparent transparent;
+        }
+      }
+
+      &:hover .tooltiptext {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 }
