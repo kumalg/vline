@@ -36,19 +36,23 @@ export default {
           axios
             .get("https://vlinezdw.azurewebsites.net/api/facebook-posts")
             .then(function(resp) {
-              self.fbPostLinks = resp.data.data;
-              self.$nextTick(function() {
-                window.fbAsyncInit();
-                self.bricklayer = new Bricklayer(
-                  document.getElementById("fb-posts")
-                );
-              });
+              self.setPosts(resp.data.data);
             })
             .catch(function(error) {
               console.log(error);
             });
         }
       }, 2000);
+    },
+    setPosts(posts) {
+      this.fbPostLinks = posts;
+      this.$nextTick(function() {
+        this.parsePosts();
+      });
+    },
+    parsePosts() {
+      window.fbAsyncInit();
+      this.bricklayer = new Bricklayer(document.getElementById("fb-posts"));
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
 <div :class="['menu', {'menu-splash': splashStyle}]">
-  <scrollactive id="menu-center" :offset="menuHeight" v-on:itemchanged="menuItemChanged">
+  <scrollactive id="menu-center" :offset="menuHeight" :duration="500" v-on:itemchanged="menuItemChanged">
     <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item logo-button splash"></a>
     <div class="hamburger-menu navigation">
       <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">

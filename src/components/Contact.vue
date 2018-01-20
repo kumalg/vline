@@ -34,7 +34,7 @@
     </div>
     <div>
       <div class="block">
-        <a href="#splash"><img src="../assets/logo_white.svg" class="logo" /></a>
+        <a href="#" v-scroll-to="'#splash'"><img src="../assets/logo_white.svg" class="logo" /></a>
       </div>
       <div class="block">
         <h2>Obserwuj nas</h2>

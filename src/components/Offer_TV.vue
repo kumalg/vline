@@ -44,7 +44,7 @@
     </ul>
   </div>
   <div class="container-offer-inner">
-    <h2 class="package-title">Pakiety</h2>
+    <h2 class="packages-title">Pakiety</h2>
     <ul class="items" v-if="items">
       <ListItem v-for="(item, index) in items" :item="item" :key="index"/>
     </ul>
@@ -176,7 +176,7 @@ b {
   }
 }
 
-.package-title {
+.packages-title {
   color: $colorPrimary;
   font-size: 1.75em;
   font-weight: 400;

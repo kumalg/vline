@@ -1,7 +1,7 @@
 <template>
 <section>
   <img src="../assets/logo_white.svg" class="logo" />
-  <a href="#about" class="button">Dowiedz się więcej</a>
+  <a href="#" v-scroll-to="'#about'" class="button">Dowiedz się więcej</a>
 </section>
 </template>
 
@@ -34,13 +34,18 @@ section {
 
   $button-color: #492778;
   .button {
-    background-color: rgba($button-color, 0.5);
+    background-color: rgba($button-color, .5);
     padding: 20px 64px;
     color: #fff;
     // font-size: 1.125em;
     font-weight: 300;
+    transition: background-color .2s ease;
     border: {
       radius: 100px;
+    }
+
+    &:hover {
+      background-color: rgba($button-color, .75);
     }
   }
 }

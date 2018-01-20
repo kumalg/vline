@@ -7,14 +7,14 @@
 </template>
 
 <script>
-// export default {
-//   name: 'Offer_Phone',
-//   data() {
-//     return {
-//     }
-//   },
-//   created: function() {
-//     console.log('nowa oferta telefonowa')
-//   }
-// }
+export default {
+  name: 'Offer_Phone',
+  data() {
+    return {
+    }
+  },
+  created: function() {
+    // console.log('nowa oferta telefonowa')
+  }
+}
 </script>
