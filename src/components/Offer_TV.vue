@@ -254,6 +254,7 @@ b {
         font-weight: 600;
         display: inline;
         color: $colorText;
+        transition: color .2s ease;
 
         &:hover {
           color: $colorPrimary;

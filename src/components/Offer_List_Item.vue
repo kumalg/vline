@@ -38,11 +38,16 @@ export default {
   padding: 32px;
   margin: 8px 0;
   text-align: center;
+  transition: box-shadow .2s ease;
   border: {
     style: solid;
     width: 1px;
     radius: 3px;
     color: rgba(0, 0, 0, 0.25);
+  }
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba($colorPrimary, 0.25);
   }
 
   h2 {
@@ -94,9 +99,13 @@ export default {
       $colorPrimaryDarker 0,
       $colorPrimaryLighter 90%
     );
-    box-shadow: 0 8px 32px rgba($colorPrimary, 0.25);
+    box-shadow: 0 8px 16px rgba($colorPrimary, 0.25);
     border-width: 0;
     padding: 33px;
+
+    &:hover {
+      box-shadow: 0 8px 16px rgba($colorPrimary, 0.5);
+    }
 
     > * {
       color: white !important;
