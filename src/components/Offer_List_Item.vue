@@ -57,7 +57,8 @@ export default {
 
   h3 {
     font-size: 1.125em;
-    font-weight: 600;
+    // font-weight: 600;
+    // font-weight: 600;
     margin-top: 32px;
     color: $colorPrimary;
   }
