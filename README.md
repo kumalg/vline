@@ -1,12 +1,12 @@
 # Vline
 
-> Not yet finished source code for http://www.vline.net.pl/
+[![CircleCI](https://circleci.com/gh/kumalg/vline.svg?style=svg)](https://circleci.com/gh/kumalg/vline)
 
-[![CircleCI](https://circleci.com/gh/kumalg/vline.svg?style=svg&circle-token=9f088a1298e87fb143cca05b4e1fa4c9828f1d25)](https://circleci.com/gh/kumalg/vline)
+Not yet finished source code for [Vline website](http://www.vline.net.pl/).
 
-## Preview last passed commit
+## Website Preview
 
-[https://vline-4f923.firebaseapp.com/](https://vline-4f923.firebaseapp.com/)
+This repository is also hosted on Firebase, so You can browse last passed commit in [this link](https://vline-4f923.firebaseapp.com/).
 
 ## Build Setup
 
