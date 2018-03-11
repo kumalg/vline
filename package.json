@@ -55,7 +55,7 @@
     "vue-loader": "^13.6.0",
     "vue-scrollactive": "^0.5.1",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.11",
+    "vue-template-compiler": "^2.5.15",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.2",
