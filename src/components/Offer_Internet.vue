@@ -1,5 +1,48 @@
 <template>
 <div>
+  <div>
+    <div class="desc">	
+      <div class="text">
+        <h2>Internet</h2>
+        <p>
+          Bez względu na to czy jesteś klientem czy firmą, Kowalskim czy „Kowalskim sp. z o.o.”, dla nas <b>jesteś zawsze najważniejszy</b>, więc dopasujemy ofertę do Twoich wymagań.
+        </p>
+      </div>
+      <div class="image">
+        <img src="../assets/offer/internet.jpg" />
+      </div>
+    </div>
+    <ul class="info-items">
+      <li class="info-item">
+        <!-- <img src="../assets/offer/canals.png" /> -->
+        <h3>Oferta dla każdego</h3>
+        <p>
+          Oferujemy łącza światłowodowe ftth, Ethernet i bezprzewodowe, naszą ofertę kierujemy do każdego odbiorcy, dajemy możliwość korzystania z niezawodnego, szybkiego i pewnego dostępu do Internetu. 
+        </p>
+      </li>
+      <li class="info-item">
+        <!-- <img src="../assets/offer/multi.png" /> -->
+        <h3>Najwyższa wydajność i niezadowność</h3>
+        <p>
+          Posiadamy dostęp do łącz operatorskich w oparciu o własne światłowodowe sieci, zoptymalizowane pod kątem uzyskania jak najwyższej wydajności i niezawodności.
+        </p>
+      </li>
+      <li class="info-item">
+        <!-- <img src="../assets/offer/fullhd.png" /> -->
+        <h3>Dostosowany dla Ciebie</h3>
+        <p>
+          Nieważne czy potrzebujesz łącza do domu czy dla firmy, postaramy się zaoferować usługę która w najlepszy możliwy sposób zaspokoi Twoje wymagania.
+        </p>
+      </li>
+      <li class="info-item">
+        <!-- <img src="../assets/offer/decoder.png" /> -->
+        <h3>Najszybszy internet światłowodowy</h3>
+        <p>
+          Nasze łącza <b>światłowodowe</b>, są wielokrotnie szybsze od łączy telefonicznych oraz średnio 10-krotnie szybsze od internetu LTE. Co ważne, możliwości światłowodu ciągle rosną. W świetle takich faktów możesz wybrać tylko jedno – Technologię ŚWIATŁOWODOWĄ.
+        </p>
+      </li>
+    </ul>
+  </div>
   <div class="container-offer-inner">
     <div class="nav">
       <h2>Czas trwania oferty:</h2>
@@ -94,35 +137,8 @@ export default {
   font-family: inherit;
 }
 
-.files {
-  margin-top: 16px;
-
-  ul {
-    margin-top: 16px;
-    li {
-      line-height: 32px;
-      .icon {
-        color: $colorPrimary;
-        font-size: 1.125em;
-      }
-      p {
-        // line-height: 1.125em;
-        padding-left: 16px;
-        font-size: 0.75em;
-        font-weight: 600;
-        display: inline;
-        color: $colorText;
-        transition: color .2s ease;
-
-        &:hover {
-          color: $colorPrimary;
-        }
-      }
-    }
-  }
-}
-
 .container-offer-inner {
+  margin-top: 32px;
   display: flex;
   width: 100%;
 

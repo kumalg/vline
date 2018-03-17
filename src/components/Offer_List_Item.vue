@@ -43,7 +43,7 @@ export default {
     style: solid;
     width: 1px;
     radius: 3px;
-    color: rgba(0, 0, 0, 0.25);
+    color: $colorBorder;
   }
 
   &:hover {

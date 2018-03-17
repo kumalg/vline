@@ -115,67 +115,6 @@ export default {
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 
-.desc {
-  display: flex;
-  // align-items: center;
-  margin-bottom: 64px;
-
-  .text {
-    flex: 1;
-
-    h2 {
-      font-size: 2em;
-      color: $colorPrimary;
-      font-weight: 300;
-      word-wrap: break-word;
-    }
-    p {
-      margin-top: 16px;
-      color: rgba($colorText, 0.75);
-      font-size: 0.875em;
-      line-height: 1.75em;
-    }
-  }
-
-  .image {
-    flex: 2;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-a {
-  color: $colorPrimary;
-}
-
-b {
-  font-weight: 600;
-}
-
-.info-items {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-
-  .info-item {
-    width: calc(50% - 16px);
-    margin-bottom: 32px;
-
-    h3 {
-      font-size: 1.125em;
-      margin: 16px 0;
-    }
-
-    p {
-      color: rgba($colorText, 0.75);
-      font-size: 0.875em;
-      line-height: 1.75em;
-    }
-  }
-}
-
 .packages-title {
   color: $colorPrimary;
   font-size: 1.75em;
@@ -206,61 +145,13 @@ b {
 }
 
 @media all and (max-width: 720px) {
-  .desc {
-    flex-direction: column;
-    text-align: center;
 
-    .image {
-      margin-top: 16px;
-    }
-  }
-  .info-item {
-    width: 100% !important;
-    text-align: center;
-    p {
-      max-width: 460px;
-      margin: auto;
-    }
-  }
 }
 
 @media all and (max-width: 470px) {
-  .desc {
-    h2 {
-      font-size: 1.5em;
-      font-weight: 400;
-    }
-  }
   .item {
     width: 100% !important;
   }
 }
 
-.files {
-  margin-top: 32px;
-
-  ul {
-    margin-top: 16px;
-    li {
-      line-height: 32px;
-      .icon {
-        color: $colorPrimary;
-        font-size: 1.125em;
-      }
-      p {
-        // line-height: 1.125em;
-        padding-left: 16px;
-        font-size: 0.75em;
-        font-weight: 600;
-        display: inline;
-        color: $colorText;
-        transition: color .2s ease;
-
-        &:hover {
-          color: $colorPrimary;
-        }
-      }
-    }
-  }
-}
 </style>

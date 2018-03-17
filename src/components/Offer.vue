@@ -12,113 +12,165 @@
         <component :is="actualOfferComponent"></component>
       </keep-alive>
     </transition>
+    <div class="shared block-with-icon">
+      <div class="block-icon">
+        <img src="../assets/offer/packages.svg" style="max-width: 192px"/>
+      </div>
+      <div class="block-content">
+        <p>Wszystkie nasze usługi mogą być łączone w pakiety co pozwala na ich racjonalne skalowanie i optymalizację kosztów. Oferujemy także usługi związane z zapewnieniem zapasowych łącz alternatywnych zapewniających dostęp do usług w przypadku awarii łącza podstawowego.</p>
+      </div>
+    </div>
   </div>
 </section>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
-import Offer_Internet from '../components/Offer_Internet'
-import Offer_TV from '../components/Offer_TV'
-import Offer_Phone from '../components/Offer_Phone'
+import Offer_Internet from "../components/Offer_Internet";
+import Offer_TV from "../components/Offer_TV";
+import Offer_Phone from "../components/Offer_Phone";
 
 export default {
-  name: 'Offer',
+  name: "Offer",
   data() {
     return {
-      actualOfferComponent: 'Offer_Internet',
-      offerMenuItems: [{
-          componentName: 'Offer_Internet',
-          title: 'Internet'
+      actualOfferComponent: "Offer_Internet",
+      offerMenuItems: [
+        {
+          componentName: "Offer_Internet",
+          title: "Internet"
         },
         {
-          componentName: 'Offer_TV',
-          title: 'Telewizja'
+          componentName: "Offer_TV",
+          title: "Telewizja"
         },
         {
-          componentName: 'Offer_Phone',
-          title: 'Telefon'
+          componentName: "Offer_Phone",
+          title: "Telefon"
         }
       ]
-    }
+    };
   },
   components: {
-    'Offer_Internet': Offer_Internet,
-    'Offer_TV': Offer_TV,
-    'Offer_Phone': Offer_Phone
+    Offer_Internet: Offer_Internet,
+    Offer_TV: Offer_TV,
+    Offer_Phone: Offer_Phone
   },
   created: function() {},
   methods: {
     offerChangeView(componentName) {
-      this.actualOfferComponent = componentName
-    },
+      this.actualOfferComponent = componentName;
+    }
   }
-}
+};
 </script>
 
+<style src="../styles/offer.scss" lang="scss"></style>
 <style lang="scss" scoped>
-@import '../styles/_colors.scss';
+@import "../styles/_colors.scss";
 
 section {
-    background-color: #fff;
+  background-color: #fff;
 
-    .offer-component-fade-enter-active,
-    .offer-component-fade-leave-active {
-        transition: all 0.2s ease;
-    }
-    /* .component-fade-leave-active below version 2.1.8 */
-    .offer-component-fade-enter,
-    .offer-component-fade-leave-to {
-        opacity: 0;
-    }
+  .offer-component-fade-enter-active,
+  .offer-component-fade-leave-active {
+    transition: all 0.2s ease;
+  }
+  /* .component-fade-leave-active below version 2.1.8 */
+  .offer-component-fade-enter,
+  .offer-component-fade-leave-to {
+    opacity: 0;
+  }
 
-    .offer-component-fade-enter {
-        transform: translateX(8px);
-        // transform: scale(0.98, 0.98);
-    }
+  .offer-component-fade-enter {
+    transform: translateX(8px);
+    // transform: scale(0.98, 0.98);
+  }
 
-    .offer-component-fade-leave-to {
-        transform: translateX(-8px);
-        // transform: scale(1.02, 1.02);
-    }
+  .offer-component-fade-leave-to {
+    transform: translateX(-8px);
+    // transform: scale(1.02, 1.02);
+  }
 
-    ul {
-        margin-bottom: 48px;
+  .shared {
+    position: relative;
+    margin-top: 48px;
+    padding: 48px 0;
+    border: {
+      style: solid;
+      width: 1px 0 0 0;
+      color: $colorBorder;
+    }
+  }
+
+  .block-with-icon {
+    display: flex;
+    align-items: center;
+
+    .block-icon {
+      align-self: flex-start;
+        flex: 1;
+        width: 100%;
         text-align: center;
-
-        li {
-            list-style: none;
-            margin: 0 8px;
-            display: inline;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-
-            a {
-                padding: 0 32px;
-                margin-bottom: 16px;
-                height: 48px;
-                display: inline-block;
-                font-weight: 600;
-                font-size: 0.875em;
-                color: $colorPrimary;
-                text-decoration: none;
-                line-height: 44px;
-                transition: background-color 0.2s, color 0.2s;
-                border: {
-                    style: solid;
-                    radius: 24px;
-                    width: 2px;
-                    color: $colorPrimary;
-                }
-
-                &.active,
-                &:hover {
-                    color: white !important;
-                    background-color: $colorPrimary !important;
-                }
-            }
+        img {
+          max-width: 240px;
+          width: 75%;//calc(60vw - (100vw - 100%) * 0.6);
         }
     }
+
+    .block-content {
+        margin-left: 32px;
+        flex: 2;
+    }
+
+    @media all and (max-width: 640px) {
+        flex-direction: column;
+        text-align: center;
+
+        .block-content {
+            margin-top: 32px;
+            margin-left: auto;
+        }
+    }
+  }
+
+  ul {
+    margin-bottom: 48px;
+    text-align: center;
+
+    li {
+      list-style: none;
+      margin: 0 8px;
+      display: inline;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+
+      a {
+        padding: 0 32px;
+        margin-bottom: 16px;
+        height: 48px;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 0.875em;
+        color: $colorPrimary;
+        text-decoration: none;
+        line-height: 44px;
+        transition: background-color 0.2s, color 0.2s;
+        border: {
+          style: solid;
+          radius: 24px;
+          width: 2px;
+          color: $colorPrimary;
+        }
+
+        &.active,
+        &:hover {
+          color: white !important;
+          background-color: $colorPrimary !important;
+        }
+      }
+    }
+  }
 }
 </style>

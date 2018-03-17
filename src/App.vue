@@ -96,8 +96,9 @@ export default {
 }
 </script>
 
-<style src="./styles/reset.css"/>
-<style lang="scss">@import './styles/_colors.scss';
+<style src="./styles/reset.css"></style>
+<style lang="scss" >
+@import './styles/_colors.scss';
 @import "./styles/_variables.scss";
 
 body,
@@ -126,7 +127,7 @@ section {
   margin: 0 auto;
   box-sizing: content-box;
 
-  >h1 {
+  > h1 {
     font-size: 2.25em;
     font-weight: 300;
     color: $colorPrimary;
