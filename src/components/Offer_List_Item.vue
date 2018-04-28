@@ -7,9 +7,7 @@
     <h2>{{item.title}}</h2>
     <p class="subtitle">{{item.subtitle}}</p>
     <ul class="more-info" v-if="item.more_info">
-      <li>
-        <p v-for="(info, index) in item.more_info" :key="index">{{info}}</p>
-      </li>
+      <li v-for="(info, index) in item.more_info" :key="index">{{info}}</li>
     </ul>
     <template v-if="item.new_cost">
       <h3 class="old">&nbsp;{{item.cost}}&nbsp;</h3>
@@ -75,7 +73,7 @@ export default {
     font-size: 0.8125em;
   }
 
-  p {
+  p, ul.more-info > li {
     font-size: 0.75em;
     font-weight: 600;
   }
@@ -117,7 +115,7 @@ export default {
       font-weight: 300;
     }
 
-    p {
+    p, ul.more-info > li {
       opacity: 0.95;
     }
 

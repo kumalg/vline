@@ -83,105 +83,106 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_colors.scss';
+@import "../styles/_colors.scss";
 section {
-    background-color: $colorBackgroundDark;
+  background-color: $colorBackgroundDark;
 }
 .container {
-    p {
-        font-size: 1em;
-        line-height: 1.75em;
-    }
-    p + p {
-        padding-top: 1em;
-    }
-    b {
-        font-weight: 600;
-        color: $colorPrimary;
-    }
-    > div + div {
-        margin-top: 64px;
-    }
+  p {
+    font-size: 1em;
+    line-height: 1.75em;
+  }
+  p + p {
+    padding-top: 1em;
+  }
+  b {
+    font-weight: 600;
+    color: $colorPrimary;
+  }
+  > div + div {
+    margin-top: 64px;
+  }
 }
 .block-with-icon {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    .block-icon {
-      align-self: flex-start;
-        flex: 1;
-        width: 100%;
-        text-align: center;
-        img {
-          max-width: 240px;
-          width: 75%;//calc(60vw - (100vw - 100%) * 0.6);
-        }
+  .block-icon {
+    align-self: flex-start;
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    img {
+      max-width: 240px;
+      width: 75%; //calc(60vw - (100vw - 100%) * 0.6);
     }
+  }
+
+  .block-content {
+    margin-left: 32px;
+    flex: 2;
+  }
+
+  @media all and (max-width: 640px) {
+    flex-direction: column;
+    text-align: center;
 
     .block-content {
-        margin-left: 32px;
-        flex: 2;
+      margin-top: 32px;
+      margin-left: auto;
     }
-
-    @media all and (max-width: 640px) {
-        flex-direction: column;
-        text-align: center;
-
-        .block-content {
-            margin-top: 32px;
-            margin-left: auto;
-        }
-    }
+  }
 }
 
 .partnership {
-    display: block;
-    margin: {
-        left: auto;
-        right: auto;
-    }
-    text-align: center !important;
-    font-size: 1.875em;
-    max-width: 640px;
+  display: block;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  text-align: center !important;
+  font-size: 1.875em;
+  max-width: 640px;
 }
 
 .mission-block {
-    background-color: #fff;
-    text-align: center;
-    > .container p {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 640px;
-    }
-    ul {
+  background-color: #fff;
+  text-align: center;
+  > .container p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 640px;
+  }
+  ul {
+    margin-top: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    li {
+      margin: 8px;
+      flex: 1;
+      padding: 32px 16px;
+      text-align: center;
+      transition: box-shadow .2s ease;
+      border: {
+        style: solid;
+        width: 1px;
+        radius: 3px;
+        color: rgba(0, 0, 0, 0.25);
+      }
+
+      h2 {
         margin-top: 16px;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
+        font-size: 0.75em;
+        font-weight: 600;
+      }
 
-        li {
-            margin: 8px;
-            flex: 1;
-            padding: 32px 16px;
-            text-align: center;
-            transition: background-color 0.2s ease;
-            border: {
-                style: solid;
-                width: 1px;
-                radius: 3px;
-                color: rgba(0,0,0,.25);
-            }
-
-            h2 {
-                margin-top: 16px;
-                font-size: 0.75em;
-                font-weight: 600;
-            }
-
-            &:hover {
-                background-color: rgba(0,0,0,.05);
-            }
-        }
+      &:hover {
+        // background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0 8px 16px rgba($colorPrimary, 0.25);
+      }
     }
+  }
 }
 </style>
