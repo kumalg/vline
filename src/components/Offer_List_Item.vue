@@ -1,21 +1,25 @@
 <template>
   <li :class="[{'marked': item.marked}, 'item list-item']">
-    <div class="tooltip" v-if="item.marked">
-        <img src="../assets/offer/mark.svg" class="img">
-        <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
-    </div>
-    <h2>{{item.title}}</h2>
-    <p class="subtitle">{{item.subtitle}}</p>
-    <ul class="more-info" v-if="item.more_info">
-      <li v-for="(info, index) in item.more_info" :key="index">{{info}}</li>
-    </ul>
-    <template v-if="item.new_cost">
-      <h3 class="old">&nbsp;{{item.cost}}&nbsp;</h3>
-      <h3 class="promo">{{item.new_cost}}</h3>
-    </template>
-    <template v-else>
-      <h3>{{item.cost}}</h3>
-    </template>
+    <a target="_blank" :href="item.link">
+      <div class="tooltip" v-if="item.marked">
+          <img src="../assets/offer/mark.svg" class="img">
+          <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
+      </div>
+      <h2>{{item.title}}</h2>
+      <p class="subtitle">{{item.subtitle}}</p>
+      <ul :class="['more-info', {'without-bottom-border': !item.cost}]" v-if="item.more_info">
+        <li v-for="(info, index) in item.more_info" :key="index">{{info}}</li>
+      </ul>
+      <template v-if="item.cost">
+        <template v-if="item.new_cost">
+          <h3 class="old">&nbsp;{{item.cost}}&nbsp;</h3>
+          <h3 class="promo">{{item.new_cost}}</h3>
+        </template>
+        <template v-else>
+          <h3>{{item.cost}}</h3>
+        </template>
+      </template>
+    </a>
   </li>
 </template>
 
@@ -33,7 +37,6 @@ export default {
 
 .item {
   min-width: 192px;
-  padding: 32px;
   margin: 8px 0;
   text-align: center;
   transition: box-shadow .2s ease;
@@ -42,6 +45,12 @@ export default {
     width: 1px;
     radius: 3px;
     color: $colorBorder;
+  }
+
+  > a {
+    display: block;
+    color: inherit;
+    padding: 32px;
   }
 
   &:hover {
@@ -90,6 +99,11 @@ export default {
       width: 1px 0;
       color: rgba(0, 0, 0, 0.25);
     }
+
+    &.without-bottom-border {
+      border-bottom-width: 0;
+      padding-bottom: 0;
+    }
   }
 
   &.marked {
@@ -100,14 +114,17 @@ export default {
     );
     box-shadow: 0 8px 16px rgba($colorPrimary, 0.25);
     border-width: 0;
-    padding: 33px;
+
+    > a {
+      padding: 33px;
+
+      > * {
+        color: white !important;
+      }
+    }
 
     &:hover {
       box-shadow: 0 8px 16px rgba($colorPrimary, 0.5);
-    }
-
-    > * {
-      color: white !important;
     }
 
     h2,

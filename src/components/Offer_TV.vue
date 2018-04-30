@@ -5,7 +5,7 @@
       <div class="text">
         <h2>Telewizja światłowodowa</h2>
         <p>
-          Dzięki współpracy z <a href="http://telewizjaswiatlowodowa.pl"><b>Telewizją Światłowodową</b></a> dostarczamy Państwu telewizję w najwyższej jakości dzięki dobrodziejstwu technologii światłowodowej.
+          Dzięki współpracy z <a target="_blank" href="http://telewizjaswiatlowodowa.pl"><b>Telewizją Światłowodową</b></a> dostarczamy Państwu telewizję w najwyższej jakości dzięki dobrodziejstwu technologii światłowodowej.
         </p>
       </div>
       <div class="image">
@@ -49,7 +49,7 @@
       <ListItem v-for="(item, index) in items" :item="item" :key="index"/>
     </ul>
   </div>
-  <div class="files" v-if="links">
+  <div class="files" v-if="links && links.length > 0">
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="(link, index) in links" :key="index">

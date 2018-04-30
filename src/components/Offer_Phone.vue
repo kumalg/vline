@@ -32,17 +32,17 @@
   </div>
   <div class="container-offer-inner">
     <h2 class="packages-title">Pakiety</h2>
-    <ul class="items" v-if="items">
+    <ul class="items phone-offer-items" v-if="items">
       <ListItem v-for="(item, index) in items" :item="item" :key="index"/>
     </ul>
   </div>
   <div class="links">
     <ul>
-      <li><a href="">Załóż darmowe konto</a></li>
-      <li><a href="">Zaloguj się</a></li>
+      <li><a target="_blank" href="https://rejestrator.ipfon.pl/index.php?version=vline&scenario=telefon&source1221">Załóż darmowe konto</a></li>
+      <li><a target="_blank" href="https://ipfon24.ipfon.pl/">Zaloguj się</a></li>
     </ul>
   </div>
-  <div class="files" v-if="links">
+  <div class="files" v-if="links && links.length > 0">
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="(link, index) in links" :key="index">
@@ -107,7 +107,7 @@ export default {
 
 <style lang="scss">
 
-.item h2 {
+.phone-offer-items .item h2 {
   font-size: 1em !important;
 }
 </style>

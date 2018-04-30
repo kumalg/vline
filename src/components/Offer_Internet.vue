@@ -60,7 +60,7 @@
       </ul>
     </transition>
   </div>
-  <div class="files" v-if="links">
+  <div class="files" v-if="links && links.length > 0">
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="(link, index) in links" :key="index">

@@ -1,15 +1,15 @@
 [
   {
+    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "title": "Mini",
-    "cost": "od 24,90 zł",
     "more_info": [
       "108 kanałów",
       "43 kanały HD"
     ]
   },
   {
+    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "title": "Smart",
-    "cost": "od 39,90 zł",
     "more_info": [
       "145 kanałów",
       "64 kanały HD"
@@ -17,16 +17,16 @@
   },
   {
     "marked": true,
+    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "title": "Optimum",
-    "cost": "od 59,90 zł",
     "more_info": [
       "203 kanały",
       "92 kanały HD"
     ]
   },
   {
+    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "title": "Platinum",
-    "cost": "od 89,90 zł",
     "more_info": [
       "233 kanały",
       "107 kanałów HD"

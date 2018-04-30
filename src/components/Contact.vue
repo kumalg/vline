@@ -4,7 +4,7 @@
     <div>
       <div class="block">
         <h2>Biuro Obsługi Klienta</h2>
-        <p>ul. Łaska 45</p>
+        <p>ul. Łaska 43</p>
         <p>98-220 Zduńska Wola</p>
         <p>Pn. - Pt.: 9:00 - 16:00</p>
       </div>
