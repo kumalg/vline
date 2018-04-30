@@ -7,13 +7,17 @@
   <div class="container">
     <h1>Promocje</h1>
     <div v-if="promotions && promotions.length != 0">
-      <transition v-if="selectedPromotion" name="promotion-fade" mode="out-in">
-        <div :key="selectedPromotionIndex">
-          <!-- <template>{{ selectedPromotion.name }}</template> -->
-          <img class="promotion-image" :src="selectedPromotion.image"/>
-          <button class="show-modal-button" @click="showModal = true">Dowiedz się więcej</button>
-        </div>
-      </transition>
+      <div class="promotions-container">
+        <button class="angle left" @click="shift(-1)"/>
+        <button class="angle right" @click="shift(1)"/>
+        <transition v-if="selectedPromotion" name="promotion-fade" mode="out-in">
+          <div :key="selectedPromotionIndex" class="promotion-item">
+            <!-- <template>{{ selectedPromotion.name }}</template> -->
+            <img class="promotion-image" :src="selectedPromotion.image"/>
+            <button class="show-modal-button" @click="showModal = true">Dowiedz się więcej</button>
+          </div>
+        </transition>
+      </div>
       <ul class="promotion-selectors">
         <li v-for="(promotion, index) in promotions" :key="index"><span :class="{'active': index == selectedPromotionIndex}" @click="selectedPromotionIndex = index"/></li>
       </ul>
@@ -58,6 +62,14 @@ export default {
         .catch(function(error) {
           console.log(error)
         })
+    },
+    shift (value) {
+      const promotionsCount = this.promotions.length
+      var newIndex = this.selectedPromotionIndex + value
+      if (newIndex < 0) {
+        newIndex += promotionsCount
+      }
+      this.selectedPromotionIndex = newIndex % promotionsCount
     }
   },
   computed: {
@@ -95,6 +107,60 @@ section {
   .promotion-fade-leave-to {
     transform: translateX(-8px);
     // transform: scale(1.02, 1.02);
+  }
+
+  .promotions-container {
+    position: relative;
+
+    .promotion-item {
+      margin: 0 32px;
+    }
+
+    .angle {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background: rgba(0,0,0,.05);
+      border: none;
+      border-radius: 32px;
+      cursor: pointer;
+      transition: background .2s ease;
+
+      &:hover {
+        background: rgba(0,0,0,.1);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 11px;
+        width: 10px;
+        height: 10px;
+        border: {
+          style: solid;
+          color: $colorText;
+          width: 2px 0 0 2px;
+        }
+      }
+
+      &.left {
+        left: 0;
+        &:after {
+          left: 13px;
+          transform: rotate(-45deg);
+        }
+      }
+
+      &.right {
+        right: 0;
+        &:after {
+          right: 13px;
+          transform: rotate(135deg);
+        }
+      }
+    }
   }
 
   ul.promotion-selectors {
