@@ -1,12 +1,50 @@
 <template>
 <section>
-  <img src="../assets/logo_white.svg" class="logo" />
+  <transition name="logo-fade" mode="out-in">
+    <img v-if="isOldLogoVisible" src="../assets/logo_white_old.svg" class="logo" key="old_logo">
+    <img else src="../assets/logo_white.svg" class="logo" key="new_logo">
+  </transition>
   <a href="#" v-scroll-to="'#about'" class="button">Dowiedz się więcej</a>
 </section>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      isOldLogoVisible: true
+    }
+  },
+  created () {
+    setTimeout( () => {
+      this.isOldLogoVisible = false
+      }, 2000);
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
+
+
+.logo-fade-enter-active,
+.logo-fade-leave-active {
+  transition: all 0.5s ease;
+}
+/* .component-fade-leave-active below version 2.1.8 */
+.logo-fade-enter,
+.logo-fade-leave-to {
+  opacity: 0;
+}
+
+.logo-fade-enter {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.logo-fade-leave-to {
+  transform: scale(0.9) rotate(-5deg);
+}
 
 section {
   background-color: $colorPrimary;
