@@ -2,7 +2,9 @@
 <section>
   <modal v-if="showModal && selectedPromotion" @close="showModal = false">
     <h3 slot="header">{{ selectedPromotion.name }}</h3>
-    <template slot="body"><p class="modal-content" v-html="selectedPromotion.info"/></template>
+    <template slot="body">
+      <p v-for="(paragraph, index) in selectedPromotion.info" :key="index" class="modal-content" v-html="paragraph"/>
+    </template>
   </modal>
   <div class="container">
     <h1>Promocje</h1>
@@ -216,10 +218,7 @@ section {
     color: rgba($colorText, 0.75);
     font-size: 0.875em;
     line-height: 1.75em;
-
-    br {
-      line-height: 2em;
-    }
+    margin: 0.5em 0;
   }
 
   .no-promotions {

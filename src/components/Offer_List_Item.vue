@@ -7,7 +7,7 @@
       </div>
       <h2>{{item.title}}</h2>
       <p class="subtitle">{{item.subtitle}}</p>
-      <ul :class="['more-info', {'without-bottom-border': !item.cost}]" v-if="item.more_info">
+      <ul :class="['more-info', {'without-bottom-border': !item.cost}]" v-if="item.more_info && item.more_info.length > 0">
         <li v-for="(info, index) in item.more_info" :key="index">{{info}}</li>
       </ul>
       <template v-if="item.cost">
