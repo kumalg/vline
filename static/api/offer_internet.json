@@ -1,6 +1,8 @@
-[{
+[
+  {
     "agreement_length": "24 miesiące",
-    "items": [{
+    "items": [
+      {
         "title": "60 Mb/s",
         "subtitle": "wysyłanie: 6 Mb/s",
         "cost": "39,99 zł",
@@ -39,7 +41,8 @@
   },
   {
     "agreement_length": "12 miesięcy",
-    "items": [{
+    "items": [
+      {
         "marked": true,
         "title": "80 Mb/s",
         "subtitle": "wysyłanie: 8 Mb/s",
@@ -58,17 +61,18 @@
       }
     ]
   },
-
   {
     "agreement_length": "bez zobowiązań",
-    "items": [{
-      "marked": true,
-      "title": "100 Mb/s",
-      "subtitle": "wysyłanie: 10 Mb/s",
-      "cost": "69,99 zł",
-      "more_info": [
-        "Montaż: 49 zł"
-      ]
-    }]
+    "items": [
+      {
+        "marked": true,
+        "title": "100 Mb/s",
+        "subtitle": "wysyłanie: 10 Mb/s",
+        "cost": "69,99 zł",
+        "more_info": [
+          "Montaż: 49 zł"
+        ]
+      }
+    ]
   }
 ]

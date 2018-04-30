@@ -89,7 +89,7 @@ $column-gutter: 10px;
 <style lang="scss" scoped>
 section {
   background-color: #fff;
-  min-height: 640px;
+  // min-height: 640px;
 
   .container {
     max-width: 1100px;

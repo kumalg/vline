@@ -1,4 +1,5 @@
-[{
+[
+  {
     "title": "Mini",
     "cost": "od 24,90 zł",
     "more_info": [
@@ -15,6 +16,7 @@
     ]
   },
   {
+    "marked": true,
     "title": "Optimum",
     "cost": "od 59,90 zł",
     "more_info": [
@@ -23,7 +25,6 @@
     ]
   },
   {
-    "marked": true,
     "title": "Platinum",
     "cost": "od 89,90 zł",
     "more_info": [

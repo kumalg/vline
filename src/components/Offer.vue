@@ -20,6 +20,9 @@
         <p>Wszystkie nasze usługi mogą być łączone w pakiety co pozwala na ich racjonalne skalowanie i optymalizację kosztów. Oferujemy także usługi związane z zapewnieniem zapasowych łącz alternatywnych zapewniających dostęp do usług w przypadku awarii łącza podstawowego.</p>
       </div>
     </div>
+    <div class="clause">
+      <span>Przedstawiona oferta cenowa ma charakter informacyjny, nie stanowi oferty handlowej w rozumieniu Art.66 par.1 Kodeksu Cywilnego</span>
+    </div>
   </div>
 </section>
 </template>
@@ -102,6 +105,14 @@ section {
       width: 1px 0 0 0;
       color: $colorBorder;
     }
+  }
+
+  .clause {
+    // span {
+      font-size: 0.8125em;
+      color: $colorTextLighter;
+      text-align: center;
+    // }
   }
 
   .block-with-icon {
