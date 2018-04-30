@@ -47,6 +47,7 @@
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+  padding: 24px;
 }
 
 .modal-container {
