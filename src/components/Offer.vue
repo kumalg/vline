@@ -17,7 +17,8 @@
         <img src="../assets/offer/packages.svg" style="max-width: 192px"/>
       </div>
       <div class="block-content">
-        <p>Wszystkie nasze usługi mogą być łączone w pakiety co pozwala na ich racjonalne skalowanie i optymalizację kosztów. Oferujemy także usługi związane z zapewnieniem zapasowych łącz alternatywnych zapewniających dostęp do usług w przypadku awarii łącza podstawowego.</p>
+        <p>Wszystkie nasze usługi mogą być łączone w pakiety co pozwala na ich racjonalne skalowanie i optymalizację kosztów.</p>
+        <p>Oferujemy także usługi związane z zapewnieniem zapasowych łącz alternatywnych zapewniających dostęp do usług w przypadku awarii łącza podstawowego.</p>
       </div>
     </div>
     <div class="clause">
@@ -131,8 +132,12 @@ section {
     }
 
     .block-content {
-        margin-left: 32px;
-        flex: 2;
+      margin-left: 32px;
+      flex: 2;
+
+      p {
+        margin: 0.5em 0;
+      }
     }
 
     @media all and (max-width: 640px) {
