@@ -11,7 +11,8 @@
       <div :class="['menu-section', {'hide': expandableMenuHidden}]">
         <ul>
           <li v-for="item in menuItems" :key="item.href">
-            <a :href="item.href" :class="{'scrollactive-item': !item.external}">{{item.title}}</a>
+            <a v-if="!item.external" :href="item.href" class="scrollactive-item">{{item.title}}</a>
+            <a v-else target="_blank" :href="item.href">{{item.title}}</a>
           </li>
         </ul>
       </div>
@@ -198,9 +199,9 @@ $nav-button-height: 40px;
     height: $menu-height-small;
   }
 
-  #logo-button {
+  #menu-center #logo-button {
     transform: scale(0.75);
-    margin-left: 0 !important;
+    margin-left: 0;
   }
 
   .hamburger-menu {
