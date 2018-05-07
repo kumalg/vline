@@ -45,19 +45,50 @@
   </div>
   <div class="container-offer-inner">
     <div class="nav">
-      <h2>Czas trwania oferty:</h2>
+      <!-- <h2>Czas trwania oferty:</h2>
       <ul>
         <li v-for="(item, index) in items" :key="index">
-          <button :class="{'active': actualIndex == index}" @click="agreementLengthItemClick(index)">
+          <button :class="{'active': currentIndex == index}" @click="agreementLengthItemClick(index)">
             <div class="dot"/><p>{{item.agreement_length}}</p>
           </button>
         </li>
-      </ul>
+      </ul> -->
+      <div class="type_group" v-for="(item, typeIndex) in items" :key="typeIndex">
+        <h2>{{ item.type }}</h2>
+        <ul>
+          <li v-for="(agreement, agreementLengthIndex) in item.offers" :key="agreementLengthIndex">
+            <button 
+              :class="{'active': currentTypeIndex == typeIndex && currentAgreementLengthIndex == agreementLengthIndex}" 
+              @click="agreementLengthItemClick(typeIndex, agreementLengthIndex)"
+            >
+              <div class="dot"/><p>{{agreement.agreement_length}}</p>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="type_group">
+        <h2>Interner Radiowy</h2>
+        <ul>
+          <li>
+            <button 
+              :class="{'active': currentTypeIndex == items.length && currentAgreementLengthIndex == 0}" 
+              @click="agreementLengthItemClick(items.length, 0)"
+            >
+              <div class="dot"/><p>Pakiety</p>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <transition name="offer-fade" mode="out-in">
-      <ul v-bind:key="actualIndex" class="items" v-if="items">
-        <ListItem v-for="(item, index) in items[actualIndex].items" :item="item" :key="index"/>
-      </ul>
+      <div class="offer-content" :key="`${currentTypeIndex}_${currentAgreementLengthIndex}`">
+        <ul v-if="items && currentTypeIndex < items.length" class="items">
+          <ListItem v-for="(item, index) in items[currentTypeIndex].offers[currentAgreementLengthIndex].items" :item="item" :key="index"/>
+        </ul>
+        <div v-else :key="`${items.length}_0`">
+          Pakiety już od 40 zł. Prędkość nawet do 15 Mbit
+        </div>
+      </div>
     </transition>
   </div>
   <div class="files" v-if="links && links.length > 0">
@@ -83,7 +114,8 @@ export default {
   name: "Offer_Internet",
   data() {
     return {
-      actualIndex: 0,
+      currentTypeIndex: 0,
+      currentAgreementLengthIndex: 0,
       items: null,
       links: null
     };
@@ -92,8 +124,9 @@ export default {
     this.fetchInternetOffer();
   },
   methods: {
-    agreementLengthItemClick(index) {
-      this.actualIndex = index;
+    agreementLengthItemClick(typeIndex, agreementLengthIndex) {
+      this.currentTypeIndex = typeIndex
+      this.currentAgreementLengthIndex = agreementLengthIndex
     },
     fetchInternetOffer() {
       var self = this;
@@ -165,8 +198,12 @@ export default {
     min-width: 210px;
     padding-bottom: 16px;
 
-    ul {
+    .type_group + .type_group {
       margin-top: 16px;
+    }
+
+    ul {
+      margin-top: 8px;
     }
 
     button {
@@ -204,18 +241,19 @@ export default {
       }
     }
   }
-
-  .items {
+  .offer-content {
     flex: 3;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    margin: 0 -8px;
+    .items {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      margin: 0 -8px;
 
-    .item {
-      margin: {
-        left: 8px;
-        right: 8px;
+      .item {
+        margin: {
+          left: 8px;
+          right: 8px;
+        }
       }
     }
   }

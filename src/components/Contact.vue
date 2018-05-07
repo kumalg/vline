@@ -25,7 +25,7 @@
       <div class="block">
         <h2>Dział serwisu</h2>
         <a href="tel:436569257"><FontAwesomeIcon :icon="iconPhone" class="contact-icon" flip="horizontal" />+43 656 92 57</a>
-        <p>Czynne: 09.00 - 17.00</p>
+        <p>Czynne: 09.00 - 16.00</p>
       </div>
       <div class="block">
         <h2>Serwis SMS 24h</h2>

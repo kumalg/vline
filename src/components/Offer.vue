@@ -4,12 +4,12 @@
     <h1>Oferta</h1>
     <ul>
       <li v-for="(item, index) in offerMenuItems" :key="index">
-        <a :class="{'active': actualOfferComponent == item.componentName}" @click="offerChangeView(item.componentName)">{{item.title}}</a>
+        <a :class="{'active': currentOfferComponent == item.componentName}" @click="offerChangeView(item.componentName)">{{item.title}}</a>
       </li>
     </ul>
     <transition name="offer-component-fade" mode="out-in">
       <keep-alive>
-        <component :is="actualOfferComponent"></component>
+        <component :is="currentOfferComponent"></component>
       </keep-alive>
     </transition>
     <div class="shared block-with-icon">
@@ -19,6 +19,8 @@
       <div class="block-content">
         <p>Wszystkie nasze usługi mogą być łączone w pakiety co pozwala na ich racjonalne skalowanie i optymalizację kosztów.</p>
         <p>Oferujemy także usługi związane z zapewnieniem zapasowych łącz alternatywnych zapewniających dostęp do usług w przypadku awarii łącza podstawowego.</p>
+        <p>Informacje dotyczace oferty dostepne w Biurze Obslugi Klienta lub pod numerem kontaktowym 43 656-92-56. Dla kazdej lokalizacji konieczne jest potwierdzenie mozliwosci technicznych swiadczenia uslug.
+</p>
       </div>
     </div>
     <div class="clause">
@@ -39,7 +41,7 @@ export default {
   name: "Offer",
   data() {
     return {
-      actualOfferComponent: "Offer_Internet",
+      currentOfferComponent: "Offer_Internet",
       offerMenuItems: [
         {
           componentName: "Offer_Internet",
@@ -64,7 +66,7 @@ export default {
   created: function() {},
   methods: {
     offerChangeView(componentName) {
-      this.actualOfferComponent = componentName;
+      this.currentOfferComponent = componentName;
     }
   }
 };
@@ -136,7 +138,10 @@ section {
       flex: 2;
 
       p {
-        margin: 0.5em 0;
+        color: rgba($colorText, .75);
+        font-size: 0.875em;
+        line-height: 1.75em;
+        margin: 0.75em 0;
       }
     }
 

@@ -51,11 +51,6 @@ export default {
         {
           href: '#contactUs',
           title: 'Kontakt'
-        },
-        {
-          href: 'https://poczta.vline.net.pl/src/login.php',
-          external: true,
-          title: 'Panel klienta'
         }
       ]
     }
