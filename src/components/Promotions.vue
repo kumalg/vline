@@ -4,6 +4,11 @@
     <h3 slot="header">{{ selectedPromotion.nazwa }}</h3>
     <template slot="body">
       <p v-for="(paragraph, index) in selectedPromotion.akapity" :key="index" class="modal-content" v-html="paragraph"/>
+      <ul v-if="selectedPromotion.linki">
+        <li v-for="(link, index) in selectedPromotion.linki" :key="index">
+          <a :href="link.adres" v-html="link.tytul"></a>
+        </li>
+      </ul>
     </template>
   </modal>
   <div class="container">
@@ -15,7 +20,8 @@
         <transition v-if="selectedPromotion" name="promotion-fade" mode="out-in">
           <div :key="selectedPromotionIndex" class="promotion-item">
             <!-- <template>{{ selectedPromotion.name }}</template> -->
-            <img class="promotion-image" :src="selectedPromotion.obraz"/>
+            <img v-if="selectedPromotion.obraz" class="promotion-image" :src="selectedPromotion.obraz"/>
+            <h3 v-else>{{ selectedPromotion.nazwa }}</h3>
             <button class="show-modal-button" @click="showModal = true">Dowiedz się więcej</button>
           </div>
         </transition>
@@ -116,6 +122,11 @@ section {
 
     .promotion-item {
       margin: 0 32px;
+
+      h3 {
+        text-align: center;
+        font-size: 2em;
+      }
     }
 
     .angle {

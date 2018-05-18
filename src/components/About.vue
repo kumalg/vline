@@ -4,7 +4,7 @@
     <!-- <h1>O Vline</h1> -->
     <div class="block-with-icon">
       <div class="block-icon">
-        <img src="../assets/about/enterprise.png" />
+        <img src="../assets/about/enterprise.svg" />
       </div>
       <div class="block-content">
         <p><b>Vline</b> jest nowoczesnym, stabilnym i prężnie rozwijającym się przedsiębiorstwem telekomunikacyjnym. Świadczy kompleksowe usługi dla klientów biznesowych i indywidualnych na terenie województwa łódzkiego.

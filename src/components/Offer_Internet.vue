@@ -14,28 +14,24 @@
     </div>
     <ul class="info-items">
       <li class="info-item">
-        <!-- <img src="../assets/offer/canals.png" /> -->
         <h3>Oferta dla każdego</h3>
         <p>
           Oferujemy łącza światłowodowe ftth, Ethernet i bezprzewodowe, naszą ofertę kierujemy do każdego odbiorcy, dajemy możliwość korzystania z niezawodnego, szybkiego i pewnego dostępu do Internetu. 
         </p>
       </li>
       <li class="info-item">
-        <!-- <img src="../assets/offer/multi.png" /> -->
         <h3>Najwyższa wydajność i niezadowność</h3>
         <p>
           Posiadamy dostęp do łącz operatorskich w oparciu o własne światłowodowe sieci, zoptymalizowane pod kątem uzyskania jak najwyższej wydajności i niezawodności.
         </p>
       </li>
       <li class="info-item">
-        <!-- <img src="../assets/offer/fullhd.png" /> -->
         <h3>Dostosowany dla Ciebie</h3>
         <p>
           Nieważne czy potrzebujesz łącza do domu czy dla firmy, postaramy się zaoferować usługę która w najlepszy możliwy sposób zaspokoi Twoje wymagania.
         </p>
       </li>
       <li class="info-item">
-        <!-- <img src="../assets/offer/decoder.png" /> -->
         <h3>Najszybszy internet światłowodowy</h3>
         <p>
           Nasze łącza <b>światłowodowe</b>, są wielokrotnie szybsze od łączy telefonicznych oraz średnio 10-krotnie szybsze od internetu LTE. Co ważne, możliwości światłowodu ciągle rosną. W świetle takich faktów możesz wybrać tylko jedno – Technologię ŚWIATŁOWODOWĄ.
@@ -45,14 +41,6 @@
   </div>
   <div class="container-offer-inner">
     <div class="nav">
-      <!-- <h2>Czas trwania oferty:</h2>
-      <ul>
-        <li v-for="(item, index) in items" :key="index">
-          <button :class="{'active': currentIndex == index}" @click="agreementLengthItemClick(index)">
-            <div class="dot"/><p>{{item.dlugosc_umowy}}</p>
-          </button>
-        </li>
-      </ul> -->
       <div class="typ_oferty_group" v-for="(item, typ_ofertyIndex) in items" :key="typ_ofertyIndex">
         <h2>{{ item.typ_oferty }}</h2>
         <ul>
@@ -67,14 +55,14 @@
         </ul>
       </div>
       <div class="typ_oferty_group">
-        <h2>Interner Radiowy</h2>
+        <h2>Inne</h2>
         <ul>
           <li>
             <button 
               :class="{'active': currentTypeIndex == items.length && currentAgreementLengthIndex == 0}" 
               @click="agreementLengthItemClick(items.length, 0)"
             >
-              <div class="dot"/><p>Pakiety</p>
+              <div class="dot"/><p>Interner Radiowy</p>
             </button>
           </li>
         </ul>
@@ -85,8 +73,9 @@
         <ul v-if="items && currentTypeIndex < items.length" class="items">
           <ListItem v-for="(item, index) in items[currentTypeIndex].opcje[currentAgreementLengthIndex].opcje" :item="item" :key="index"/>
         </ul>
-        <div v-else :key="`${items.length}_0`">
-          Pakiety już od 40 zł. Prędkość nawet do 15 Mbit
+        <div class="radio-internet" v-else :key="`${items.length}_0`">
+          <p>Pakiety już <b>od 40 zł</b></p>
+          <p>Prędkość nawet <b>do 15 Mbit</b></p>
         </div>
       </div>
     </transition>
@@ -254,6 +243,13 @@ export default {
           left: 8px;
           right: 8px;
         }
+      }
+    }
+    .radio-internet {
+      text-align: center;
+      p {
+        font-size: 1.5em;
+        margin: 16px 0;
       }
     }
   }

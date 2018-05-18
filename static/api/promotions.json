@@ -7,6 +7,12 @@
       "Nowy klient /Zakablowany/ również otrzyma jeden abonazwant internetowy w obniżonej cenie 1zł.",
       "Każdy abonent może zakablować dowolną ilość osób.",
       "Każda osoba to kolejny miesiąc Internetu <b>ZA DARMO!</b>"
+    ],
+    "linki": [
+      {
+        "tytul": "Pobierz <b>KUPON PROMOCYJNY</b>",
+        "adres": "http://vline.net.pl/pdf/kupon.pdf"
+      }
     ]
   },
   {

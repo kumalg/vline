@@ -1,6 +1,6 @@
 <template>
   <li :class="[{'wyrozniony': item.wyrozniony}, 'item list-item']">
-    <a target="_blank" :href="item.link">
+    <a target="_blank" :href="item.adres">
       <div class="tooltip" v-if="item.wyrozniony">
           <img src="../assets/offer/mark.svg" class="img">
           <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
