@@ -1,9 +1,9 @@
 <template>
 <section>
   <modal v-if="showModal && selectedPromotion" @close="showModal = false">
-    <h3 slot="header">{{ selectedPromotion.name }}</h3>
+    <h3 slot="header">{{ selectedPromotion.nazwa }}</h3>
     <template slot="body">
-      <p v-for="(paragraph, index) in selectedPromotion.info" :key="index" class="modal-content" v-html="paragraph"/>
+      <p v-for="(paragraph, index) in selectedPromotion.akapity" :key="index" class="modal-content" v-html="paragraph"/>
     </template>
   </modal>
   <div class="container">
@@ -15,7 +15,7 @@
         <transition v-if="selectedPromotion" name="promotion-fade" mode="out-in">
           <div :key="selectedPromotionIndex" class="promotion-item">
             <!-- <template>{{ selectedPromotion.name }}</template> -->
-            <img class="promotion-image" :src="selectedPromotion.image"/>
+            <img class="promotion-image" :src="selectedPromotion.obraz"/>
             <button class="show-modal-button" @click="showModal = true">Dowiedz się więcej</button>
           </div>
         </transition>

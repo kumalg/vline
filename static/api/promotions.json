@@ -1,18 +1,18 @@
 [
   {
-    "name": "Zakabluj Sąsiada",
-    "image": "http://vline.net.pl/img/zakabluj.png",
-    "info": [
-      "Każdy Abonent VLINE SC /Polecający/, który zachęci <b>DOWOLNĄ OSOBĘ</b> lub sąsiada, aby podpisała z nami umowę na usługi dostępu do Internetu na czas określony w zamian otrzyma jeden abonament internetowy w obniżonej cenie <b>1zł</b>.",
-      "Nowy klient /Zakablowany/ również otrzyma jeden abonament internetowy w obniżonej cenie 1zł.",
+    "nazwa": "Zakabluj Sąsiada",
+    "obraz": "http://vline.net.pl/img/zakabluj.png",
+    "akapity": [
+      "Każdy Abonent VLINE SC /Polecający/, który zachęci <b>DOWOLNĄ OSOBĘ</b> lub sąsiada, aby podpisała z nami umowę na usługi dostępu do Internetu na czas określony w zamian otrzyma jeden abonazwant internetowy w obniżonej cenie <b>1zł</b>.",
+      "Nowy klient /Zakablowany/ również otrzyma jeden abonazwant internetowy w obniżonej cenie 1zł.",
       "Każdy abonent może zakablować dowolną ilość osób.",
       "Każda osoba to kolejny miesiąc Internetu <b>ZA DARMO!</b>"
     ]
   },
   {
-    "name": "Druga promocja",
-    "image": "http://vline.net.pl/img/60mb.png",
-    "info": [
+    "nazwa": "Druga promocja",
+    "obraz": "http://vline.net.pl/img/60mb.png",
+    "akapity": [
       "Treść drugiej promocji"
     ]
   }

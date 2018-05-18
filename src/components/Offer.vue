@@ -4,7 +4,7 @@
     <h1>Oferta</h1>
     <ul>
       <li v-for="(item, index) in offerMenuItems" :key="index">
-        <a :class="{'active': currentOfferComponent == item.componentName}" @click="offerChangeView(item.componentName)">{{item.title}}</a>
+        <a :class="{'active': currentOfferComponent == item.componentName}" @click="offerChangeView(item.componentName)">{{item.tytul}}</a>
       </li>
     </ul>
     <transition name="offer-component-fade" mode="out-in">
@@ -45,15 +45,15 @@ export default {
       offerMenuItems: [
         {
           componentName: "Offer_Internet",
-          title: "Internet"
+          tytul: "Internet"
         },
         {
           componentName: "Offer_TV",
-          title: "Telewizja"
+          tytul: "Telewizja"
         },
         {
           componentName: "Offer_Phone",
-          title: "Telefon"
+          tytul: "Telefon"
         }
       ]
     };

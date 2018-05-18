@@ -1,75 +1,75 @@
 [
   {
-    "type": "Bloki Światłowód",
-    "offers": [
+    "typ_oferty": "Bloki Światłowód",
+    "opcje": [
       {
-        "agreement_length": "24 miesiące",
-        "items": [
+        "dlugosc_umowy": "24 miesiące",
+        "opcje": [
           {
-            "title": "80 Mb/s",
-            "subtitle": "wysyłanie: 8 Mb/s",
-            "cost": "40,00 zł",
-            "more_info": [
+            "tytul": "80 Mb/s",
+            "podtytul": "wysyłanie: 8 Mb/s",
+            "cena": "40,00 zł",
+            "wiecej_info": [
               "Aktywacja: 1 zł"
             ]
           },
           {
-            "title": "100 Mb/s",
-            "subtitle": "wysyłanie: 10 Mb/s",
-            "cost": "50,00 zł",
-            "more_info": [
+            "tytul": "100 Mb/s",
+            "podtytul": "wysyłanie: 10 Mb/s",
+            "cena": "50,00 zł",
+            "wiecej_info": [
               "Aktywacja: 1 zł"
             ]
           },
           {
-            "marked": true,
-            "title": "300 Mb/s",
-            "subtitle": "wysyłanie: 30 Mb/s",
-            "cost": "70,00 zł",
-            "more_info": [
+            "wyrozniony": true,
+            "tytul": "300 Mb/s",
+            "podtytul": "wysyłanie: 30 Mb/s",
+            "cena": "70,00 zł",
+            "wiecej_info": [
               "Aktywacja: 1 zł"
             ]
           }
         ]
       },
       {
-        "agreement_length": "12 miesięcy",
-        "items": [
+        "dlugosc_umowy": "12 miesięcy",
+        "opcje": [
           {
-            "title": "80 Mb/s",
-            "subtitle": "wysyłanie: 8 Mb/s",
-            "cost": "40,00 zł",
-            "more_info": [
+            "tytul": "80 Mb/s",
+            "podtytul": "wysyłanie: 8 Mb/s",
+            "cena": "40,00 zł",
+            "wiecej_info": [
               "Aktywacja: 99 zł"
             ]
           },
           {
-            "title": "100 Mb/s",
-            "subtitle": "wysyłanie: 10 Mb/s",
-            "cost": "50,00 zł",
-            "more_info": [
+            "tytul": "100 Mb/s",
+            "podtytul": "wysyłanie: 10 Mb/s",
+            "cena": "50,00 zł",
+            "wiecej_info": [
               "Aktywacja: 99 zł"
             ]
           },
           {
-            "marked": true,
-            "title": "300 Mb/s",
-            "subtitle": "wysyłanie: 30 Mb/s",
-            "cost": "70,00 zł",
-            "more_info": [
+            "wyrozniony": true,
+            "tytul": "300 Mb/s",
+            "podtytul": "wysyłanie: 30 Mb/s",
+            "cena": "70,00 zł",
+            "wiecej_info": [
               "Aktywacja: 99 zł"
             ]
           }
         ]
       },
       {
-        "agreement_length": "czas nieokreślony",
-        "items": [
+        "dlugosc_umowy": "czas nieokreślony",
+        "opcje": [
           {
-            "title": "60 Mb/s",
-            "subtitle": "wysyłanie: 6 Mb/s",
-            "cost": "50,00 zł",
-            "more_info": [
+            "tytul": "60 Mb/s",
+            "podtytul": "wysyłanie: 6 Mb/s",
+            "cena": "50,00 zł",
+            "wiecej_info": [
               "Aktywacja: 99 zł"
             ]
           }
@@ -78,32 +78,32 @@
     ]
   },
   {
-    "type": "Domki Światłowód",
-    "offers": [
+    "typ_oferty": "Domki Światłowód",
+    "opcje": [
       {
-        "agreement_length": "24 miesiące",
-        "items": [
+        "dlugosc_umowy": "24 miesiące",
+        "opcje": [
           {
-            "title": "Standard",
-            "subtitle": "odbieranie: 20 Mb/s\nwysyłanie: 2 Mb/s",
-            "cost": "50,00 zł",
-            "more_info": [
+            "tytul": "Standard",
+            "podtytul": "odbieranie: 20 Mb/s\nwysyłanie: 2 Mb/s",
+            "cena": "50,00 zł",
+            "wiecej_info": [
               "Aktywacja: 250 zł"
             ]
           },
           {
-            "title": "Plus",
-            "subtitle": "odbieranie: 40 Mb/s\nwysyłanie: 4 Mb/s",
-            "cost": "60,00 zł",
-            "more_info": [
+            "tytul": "Plus",
+            "podtytul": "odbieranie: 40 Mb/s\nwysyłanie: 4 Mb/s",
+            "cena": "60,00 zł",
+            "wiecej_info": [
               "Aktywacja: 200 zł"
             ]
           },
           {
-            "title": "Super",
-            "subtitle": "odbieranie: 120 Mb/s\nwysyłanie: 12 Mb/s",
-            "cost": "90,00 zł",
-            "more_info": [
+            "tytul": "Super",
+            "podtytul": "odbieranie: 120 Mb/s\nwysyłanie: 12 Mb/s",
+            "cena": "90,00 zł",
+            "wiecej_info": [
               "Aktywacja: 150 zł"
             ]
           }

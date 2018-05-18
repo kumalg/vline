@@ -1,22 +1,22 @@
 <template>
-  <li :class="[{'marked': item.marked}, 'item list-item']">
+  <li :class="[{'wyrozniony': item.wyrozniony}, 'item list-item']">
     <a target="_blank" :href="item.link">
-      <div class="tooltip" v-if="item.marked">
+      <div class="tooltip" v-if="item.wyrozniony">
           <img src="../assets/offer/mark.svg" class="img">
           <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
       </div>
-      <h2>{{item.title}}</h2>
-      <p class="subtitle">{{item.subtitle}}</p>
-      <ul :class="['more-info', {'without-bottom-border': !item.cost}]" v-if="item.more_info && item.more_info.length > 0">
-        <li v-for="(info, index) in item.more_info" :key="index">{{info}}</li>
+      <h2>{{item.tytul}}</h2>
+      <p class="podtytul">{{item.podtytul}}</p>
+      <ul :class="['more-info', {'without-bottom-border': !item.cena}]" v-if="item.wiecej_info && item.wiecej_info.length > 0">
+        <li v-for="(info, index) in item.wiecej_info" :key="index">{{info}}</li>
       </ul>
-      <template v-if="item.cost">
-        <template v-if="item.new_cost">
-          <h3 class="old">&nbsp;{{item.cost}}&nbsp;</h3>
-          <h3 class="promo">{{item.new_cost}}</h3>
+      <template v-if="item.cena">
+        <template v-if="item.new_cena">
+          <h3 class="old">&nbsp;{{item.cena}}&nbsp;</h3>
+          <h3 class="promo">{{item.new_cena}}</h3>
         </template>
         <template v-else>
-          <h3>{{item.cost}}</h3>
+          <h3>{{item.cena}}</h3>
         </template>
       </template>
     </a>
@@ -87,7 +87,7 @@ export default {
     font-weight: 600;
   }
 
-  .subtitle {
+  .podtytul {
     margin-top: 8px;
   }
 
@@ -106,7 +106,7 @@ export default {
     }
   }
 
-  &.marked {
+  &.wyrozniony {
     background: linear-gradient(
       45deg,
       $colorPrimaryDarker 0,

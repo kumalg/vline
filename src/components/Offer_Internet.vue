@@ -49,24 +49,24 @@
       <ul>
         <li v-for="(item, index) in items" :key="index">
           <button :class="{'active': currentIndex == index}" @click="agreementLengthItemClick(index)">
-            <div class="dot"/><p>{{item.agreement_length}}</p>
+            <div class="dot"/><p>{{item.dlugosc_umowy}}</p>
           </button>
         </li>
       </ul> -->
-      <div class="type_group" v-for="(item, typeIndex) in items" :key="typeIndex">
-        <h2>{{ item.type }}</h2>
+      <div class="typ_oferty_group" v-for="(item, typ_ofertyIndex) in items" :key="typ_ofertyIndex">
+        <h2>{{ item.typ_oferty }}</h2>
         <ul>
-          <li v-for="(agreement, agreementLengthIndex) in item.offers" :key="agreementLengthIndex">
+          <li v-for="(agreement, agreementLengthIndex) in item.opcje" :key="agreementLengthIndex">
             <button 
-              :class="{'active': currentTypeIndex == typeIndex && currentAgreementLengthIndex == agreementLengthIndex}" 
-              @click="agreementLengthItemClick(typeIndex, agreementLengthIndex)"
+              :class="{'active': currentTypeIndex == typ_ofertyIndex && currentAgreementLengthIndex == agreementLengthIndex}" 
+              @click="agreementLengthItemClick(typ_ofertyIndex, agreementLengthIndex)"
             >
-              <div class="dot"/><p>{{agreement.agreement_length}}</p>
+              <div class="dot"/><p>{{agreement.dlugosc_umowy}}</p>
             </button>
           </li>
         </ul>
       </div>
-      <div class="type_group">
+      <div class="typ_oferty_group">
         <h2>Interner Radiowy</h2>
         <ul>
           <li>
@@ -83,7 +83,7 @@
     <transition name="offer-fade" mode="out-in">
       <div class="offer-content" :key="`${currentTypeIndex}_${currentAgreementLengthIndex}`">
         <ul v-if="items && currentTypeIndex < items.length" class="items">
-          <ListItem v-for="(item, index) in items[currentTypeIndex].offers[currentAgreementLengthIndex].items" :item="item" :key="index"/>
+          <ListItem v-for="(item, index) in items[currentTypeIndex].opcje[currentAgreementLengthIndex].opcje" :item="item" :key="index"/>
         </ul>
         <div v-else :key="`${items.length}_0`">
           Pakiety już od 40 zł. Prędkość nawet do 15 Mbit
@@ -95,8 +95,8 @@
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="(link, index) in links" :key="index">
-        <a target="_blank" :href="link.href">
-          <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.title}}</p>
+        <a target="_blank" :href="link.link">
+          <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.tytul}}</p>
         </a>
       </li>
     </ul>
@@ -124,8 +124,8 @@ export default {
     this.fetchInternetOffer();
   },
   methods: {
-    agreementLengthItemClick(typeIndex, agreementLengthIndex) {
-      this.currentTypeIndex = typeIndex
+    agreementLengthItemClick(typ_ofertyIndex, agreementLengthIndex) {
+      this.currentTypeIndex = typ_ofertyIndex
       this.currentAgreementLengthIndex = agreementLengthIndex
     },
     fetchInternetOffer() {
@@ -198,7 +198,7 @@ export default {
     min-width: 210px;
     padding-bottom: 16px;
 
-    .type_group + .type_group {
+    .typ_oferty_group + .typ_oferty_group {
       margin-top: 16px;
     }
 

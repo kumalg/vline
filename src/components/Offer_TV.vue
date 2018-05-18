@@ -44,7 +44,7 @@
     </ul>
   </div>
   <div class="container-offer-inner">
-    <h2 class="packages-title">Pakiety</h2>
+    <h2 class="packages-tytul">Pakiety</h2>
     <ul class="items" v-if="items">
       <ListItem v-for="(item, index) in items" :item="item" :key="index"/>
     </ul>
@@ -53,8 +53,8 @@
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="(link, index) in links" :key="index">
-        <a target="_blank" :href="link.href">
-          <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.title}}</p>
+        <a target="_blank" :href="link.link">
+          <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.tytul}}</p>
         </a>
       </li>
     </ul>
@@ -115,7 +115,7 @@ export default {
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 
-.packages-title {
+.packages-tytul {
   color: $colorPrimary;
   font-size: 1.75em;
   font-weight: 400;

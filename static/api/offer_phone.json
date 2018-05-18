@@ -1,36 +1,36 @@
 [
   {
-    "title": "Doładowanie konta 10",
-    "cost": "10,00 zł",
-    "more_info": [
+    "tytul": "Doładowanie konta 10",
+    "cena": "10,00 zł",
+    "wiecej_info": [
       "Ważność: 3 miesiące"
     ]
   },
   {
-    "title": "Doładowanie konta 25",
-    "cost": "25,00 zł",
-    "more_info": [
+    "tytul": "Doładowanie konta 25",
+    "cena": "25,00 zł",
+    "wiecej_info": [
       "Ważność: 6 miesiące"
     ]
   },
   {
-    "title": "Doładowanie konta 50",
-    "cost": "50,00 zł",
-    "more_info": [
+    "tytul": "Doładowanie konta 50",
+    "cena": "50,00 zł",
+    "wiecej_info": [
       "Ważność: 12 miesięcy"
     ]
   },
   {
-    "title": "Doładowanie konta 100",
-    "cost": "100,00 zł",
-    "more_info": [
+    "tytul": "Doładowanie konta 100",
+    "cena": "100,00 zł",
+    "wiecej_info": [
       "Ważność: 12 miesięcy"
     ]
   },
   {
-    "title": "Doładowanie konta 500",
-    "cost": "500,00 zł",
-    "more_info": [
+    "tytul": "Doładowanie konta 500",
+    "cena": "500,00 zł",
+    "wiecej_info": [
       "Ważność: 12 miesięcy"
     ]
   }
