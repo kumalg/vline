@@ -1,6 +1,6 @@
 [
   {
-    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
+    "adres": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "tytul": "Mini",
     "wiecej_info": [
       "110 kanałów",
@@ -8,7 +8,7 @@
     ]
   },
   {
-    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
+    "adres": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "tytul": "Smart",
     "wiecej_info": [
       "153 kanały",
@@ -17,7 +17,7 @@
   },
   {
     "wyrozniony": true,
-    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
+    "adres": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "tytul": "Optimum",
     "wiecej_info": [
       "211 kanałów",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "link": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
+    "adres": "https://telewizjaswiatlowodowa.pl/wybierz-pakiet",
     "tytul": "Platinum",
     "wiecej_info": [
       "241 kanałów",

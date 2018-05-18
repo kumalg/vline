@@ -46,7 +46,7 @@
     <h2>Do pobrania:</h2>
     <ul>
       <li v-for="(link, index) in links" :key="index">
-        <a target="_blank" :href="link.link">
+        <a target="_blank" :href="link.adres">
           <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.tytul}}</p>
         </a>
       </li>
