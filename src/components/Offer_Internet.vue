@@ -62,7 +62,7 @@
               :class="{'active': currentTypeIndex == items.length && currentAgreementLengthIndex == 0}" 
               @click="agreementLengthItemClick(items.length, 0)"
             >
-              <div class="dot"/><p>Interner Radiowy</p>
+              <div class="dot"/><p>Internet Radiowy</p>
             </button>
           </li>
         </ul>
@@ -120,7 +120,7 @@ export default {
     fetchInternetOffer() {
       var self = this;
       axios
-        .get("/static/api/offer_internet.json")
+        .get("./static/api/offer_internet.json")
         .then(function(resp) {
           self.items = resp.data;
         })
@@ -128,7 +128,7 @@ export default {
           console.log(error);
         });
       axios
-        .get("/static/api/offer_internet_links.json")
+        .get("./static/api/offer_internet_links.json")
         .then(function(resp) {
           self.links = resp.data;
         })

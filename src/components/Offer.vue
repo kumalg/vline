@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 import Offer_Internet from "../components/Offer_Internet";
 import Offer_TV from "../components/Offer_TV";
 import Offer_Phone from "../components/Offer_Phone";

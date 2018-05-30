@@ -4,6 +4,7 @@
   <PageMenu id="menu" :splashStyle="isSplashVisible" :menuHeight="menuHeight" :menuItems="menuItems" />
 
   <Splash id="splash" />
+  <!-- <Rodo id="rodo" /> -->
   <About id="about" />
   <Offer id="offer" />
   <Promotions id="promotions" />
@@ -18,6 +19,7 @@
 <script>
 import Menu from './components/Menu'
 import Splash from './components/Splash'
+import Rodo from './components/Rodo'
 import About from './components/About'
 import Offer from './components/Offer'
 import Promotions from './components/Promotions'
@@ -58,6 +60,7 @@ export default {
   components: {
     PageMenu: Menu,
     Splash,
+    Rodo,
     About,
     Offer,
     News,

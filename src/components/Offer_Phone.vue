@@ -3,12 +3,10 @@
   <div class="desc">
     <div class="text">
       <h2>Telefon VoIP</h2>
-      <p>
-        Opis telefonii VoIP
-      </p>
+      <p>Platforma <b>VoIP</b>, w oparciu o którą świadczymy usługi, została stworzona z myślą o klientach, dla których szybka i sprawna komunikacja to podstawa udanego biznesu.</p>
     </div>
     <div class="image">
-      <img src="../assets/offer/tv.jpg" />
+      <img src="../assets/offer/phone.jpg" />
     </div>
   </div>
   <div class="call-methods-container">
@@ -20,7 +18,7 @@
           <li>Możemy zamontować u Państwa urządzenie (bramkę voip). A dotychczasowy telefon stacjonarny zamiast do gniazdka telefonicznego TP podłączymy do bramki podłączonej do internetu (bez pośrednictwa komputera). Będziesz dzwonić tak jak dotychczas, przy użyciu swojego aparatu telefonicznego.</li>
           <li>Możemy zamontować u Państwa nowy Cyfrowy Telefon Stacjonarny w systemie bezprzewodowym z obsługą wielu numerów w jednej słuchawce podłączony bezpośrednio do Internetu. Będziesz dzwonić tak jak dotychczas, przy użyciu swojego Nowego aparatu telefonicznego.</li>
         </ul>
-        <div>Obrazek</div>
+        <img src="../assets/offer/voip.png" />
       </li>
       <li class="call-methods-list-item">
         <h4>Komputer, laptop, smartfon</h4>
@@ -76,7 +74,7 @@ export default {
     fetchPhoneOffer() {
       var self = this;
       axios
-        .get("/static/api/offer_phone.json")
+        .get("./static/api/offer_phone.json")
         .then(function(resp) {
           self.items = resp.data
         })
@@ -84,7 +82,7 @@ export default {
           console.log(error)
         });
       axios
-        .get("/static/api/offer_phone_links.json")
+        .get("./static/api/offer_phone_links.json")
         .then(function(resp) {
           self.links = resp.data
         })
@@ -138,6 +136,10 @@ h3, .packages-tytul {
       color: rgba($colorText, 0.75);
       font-size: 0.875em;
       line-height: 1.75em;
+      img {
+        margin-top: 24px;
+        width: 100%;
+      }
       h4 {
         color: $colorPrimary;
         font-size: 1.25em;

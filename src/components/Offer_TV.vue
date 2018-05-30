@@ -83,7 +83,7 @@ export default {
     fetchTVOffer() {
       var self = this;
       axios
-        .get("/static/api/offer_tv.json")
+        .get("./static/api/offer_tv.json")
         .then(function(resp) {
           self.items = resp.data;
         })
@@ -91,7 +91,7 @@ export default {
           console.log(error);
         });
       axios
-        .get("/static/api/offer_tv_links.json")
+        .get("./static/api/offer_tv_links.json")
         .then(function(resp) {
           self.links = resp.data;
         })

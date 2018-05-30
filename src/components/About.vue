@@ -1,5 +1,6 @@
 <template>
 <section>
+  <Rodo />
   <div class="container">
     <!-- <h1>O Vline</h1> -->
     <div class="block-with-icon">
@@ -80,6 +81,12 @@
 </template>
 
 <script>
+import Rodo from '@/components/Rodo'
+export default {
+  components: {
+    Rodo
+  }
+}
 </script>
 
 <style lang="scss" scoped>
