@@ -7,9 +7,9 @@
     <div class="copy-block">
       <p>© {{ new Date().getFullYear() }} <b>Vline Spółka Jawna</b></p>
     </div>
-    <div class="author-block">
+    <!-- <div class="author-block">
       <p>Projekt i wykonanie <a href="http://kumalg.pl" target="_blank">Kamil Golec</a></p>
-    </div>
+    </div> -->
   </div>
 </footer>
 </template>
@@ -58,8 +58,8 @@ footer {
         }
 
         .copy-block {
-            // text-align: center;
-            text-align: left;
+            text-align: center;
+            // text-align: left;
         }
 
         .author-block {
