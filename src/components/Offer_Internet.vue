@@ -20,7 +20,7 @@
         </p>
       </li>
       <li class="info-item">
-        <h3>Najwyższa wydajność i niezadowność</h3>
+        <h3>Najwyższa wydajność i niezawodność</h3>
         <p>
           Posiadamy dostęp do łącz operatorskich w oparciu o własne światłowodowe sieci, zoptymalizowane pod kątem uzyskania jak najwyższej wydajności i niezawodności.
         </p>
@@ -32,9 +32,9 @@
         </p>
       </li>
       <li class="info-item">
-        <h3>Najszybszy internet światłowodowy</h3>
+        <h3>Najszybszy Internet światłowodowy</h3>
         <p>
-          Nasze łącza <b>światłowodowe</b>, są wielokrotnie szybsze od łączy telefonicznych oraz średnio 10-krotnie szybsze od internetu LTE. Co ważne, możliwości światłowodu ciągle rosną. W świetle takich faktów możesz wybrać tylko jedno – Technologię ŚWIATŁOWODOWĄ.
+          Nasze łącza <b>światłowodowe</b>, są wielokrotnie szybsze od łączy telefonicznych oraz średnio 10-krotnie szybsze od Internetu LTE. Co ważne, możliwości światłowodu ciągle rosną. W świetle takich faktów możesz wybrać tylko jedno – Technologię ŚWIATŁOWODOWĄ.
         </p>
       </li>
     </ul>
@@ -120,7 +120,7 @@ export default {
     fetchInternetOffer() {
       var self = this;
       axios
-        .get("./static/api/offer_internet.json")
+        .get("./static/OFERTA/oferta_internet.json")
         .then(function(resp) {
           self.items = resp.data;
         })
@@ -128,7 +128,7 @@ export default {
           console.log(error);
         });
       axios
-        .get("./static/api/offer_internet_links.json")
+        .get("./static/OFERTA/oferta_internet_linki.json")
         .then(function(resp) {
           self.links = resp.data;
         })

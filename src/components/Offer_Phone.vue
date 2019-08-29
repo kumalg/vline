@@ -15,7 +15,7 @@
       <li class="call-methods-list-item">
         <h4>Zwykły stacjonarny telefon</h4>
         <ul>
-          <li>Możemy zamontować u Państwa urządzenie (bramkę voip). A dotychczasowy telefon stacjonarny zamiast do gniazdka telefonicznego TP podłączymy do bramki podłączonej do internetu (bez pośrednictwa komputera). Będziesz dzwonić tak jak dotychczas, przy użyciu swojego aparatu telefonicznego.</li>
+          <li>Możemy zamontować u Państwa urządzenie (bramkę voip). A dotychczasowy telefon stacjonarny zamiast do gniazdka telefonicznego TP podłączymy do bramki podłączonej do Internetu (bez pośrednictwa komputera). Będziesz dzwonić tak jak dotychczas, przy użyciu swojego aparatu telefonicznego.</li>
           <li>Możemy zamontować u Państwa nowy Cyfrowy Telefon Stacjonarny w systemie bezprzewodowym z obsługą wielu numerów w jednej słuchawce podłączony bezpośrednio do Internetu. Będziesz dzwonić tak jak dotychczas, przy użyciu swojego Nowego aparatu telefonicznego.</li>
         </ul>
         <img src="../assets/offer/voip.png" />
@@ -23,7 +23,7 @@
       <li class="call-methods-list-item">
         <h4>Komputer, laptop, smartfon</h4>
         <p>
-          Każdy może pobrać i zainstalować bezpłatny program do obslugi SIP. Np. x-lite. Wszędzie, gdzie będziesz miał dostęp do Internetu będziesz mógł dzwonić przez Cyfrowy Telefon Stacjonarny, oraz odbierać połączenia na swój własny numer stacjonarny.
+          Każdy może pobrać i zainstalować bezpłatny program do obsługi SIP. Np. x-lite. Wszędzie, gdzie będziesz miał dostęp do Internetu będziesz mógł dzwonić przez Cyfrowy Telefon Stacjonarny, oraz odbierać połączenia na swój własny numer stacjonarny.
         </p>
       </li>
     </ul>
@@ -74,7 +74,7 @@ export default {
     fetchPhoneOffer() {
       var self = this;
       axios
-        .get("./static/api/offer_phone.json")
+        .get("./static/OFERTA/oferta_telefon.json")
         .then(function(resp) {
           self.items = resp.data
         })
@@ -82,7 +82,7 @@ export default {
           console.log(error)
         });
       axios
-        .get("./static/api/offer_phone_links.json")
+        .get("./static/OFERTA/oferta_telefon_linki.json")
         .then(function(resp) {
           self.links = resp.data
         })

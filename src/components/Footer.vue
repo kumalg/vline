@@ -5,7 +5,7 @@
       <a href="#splash"><img src="../assets/logo_white.svg" class="logo" /></a>
     </div> -->
     <div class="copy-block">
-      <p>© {{ new Date().getFullYear() }} <b>Vline Spółka Jawna</b></p>
+      <p>© 2018 - {{ new Date().getFullYear() }} <b>Vline Spółka Jawna</b></p>
     </div>
     <!-- <div class="author-block">
       <p>Projekt i wykonanie <a href="http://kumalg.pl" target="_blank">Kamil Golec</a></p>

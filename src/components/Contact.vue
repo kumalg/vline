@@ -38,7 +38,7 @@
       </div>
       <div class="block">
         <h2>Obserwuj nas</h2>
-        <a href="https://www.facebook.com/Vlinespj" target="_blank" class="social-button"><FontAwesomeIcon :icon="iconFacebook" /></a>
+        <a href="https://www.facebook.com/vlinezdwola" target="_blank" class="social-button"><FontAwesomeIcon :icon="iconFacebook" /></a>
       </div>
     </div>
   </div>

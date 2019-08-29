@@ -34,7 +34,7 @@ export default {
       setTimeout(function() {
         if (typeof FB != "undefined") {
           axios
-            .get("https://vlinezdw.azurewebsites.net/api/facebook-posts")
+            .get("//vline.net.pl/facebook_posts.php")
             .then(function(resp) {
               self.setPosts(resp.data.data);
             })

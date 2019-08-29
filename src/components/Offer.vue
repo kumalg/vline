@@ -19,8 +19,7 @@
       <div class="block-content">
         <p>Wszystkie nasze usługi mogą być łączone w pakiety co pozwala na ich racjonalne skalowanie i optymalizację kosztów.</p>
         <p>Oferujemy także usługi związane z zapewnieniem zapasowych łącz alternatywnych zapewniających dostęp do usług w przypadku awarii łącza podstawowego.</p>
-        <p>Informacje dotyczace oferty dostepne w Biurze Obslugi Klienta lub pod numerem kontaktowym 43 656-92-56. Dla kazdej lokalizacji konieczne jest potwierdzenie mozliwosci technicznych swiadczenia uslug.
-</p>
+        <p>Informacje dotyczące oferty dostępne w Biurze Obsługi Klienta lub pod numerem kontaktowym 43 656-92-56. Dla każdej lokalizacji konieczne jest potwierdzenie możliwosci technicznych świadczenia uslug.</p>
       </div>
     </div>
     <div class="clause">
