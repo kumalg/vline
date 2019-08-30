@@ -4,7 +4,6 @@
   <PageMenu id="menu" :splashStyle="isSplashVisible" :menuHeight="menuHeight" :menuItems="menuItems" />
 
   <Splash id="splash" />
-  <!-- <Rodo id="rodo" /> -->
   <About id="about" />
   <Offer id="offer" />
   <Promotions id="promotions" />
@@ -19,7 +18,6 @@
 <script>
 import Menu from './components/Menu'
 import Splash from './components/Splash'
-import Rodo from './components/Rodo'
 import About from './components/About'
 import Offer from './components/Offer'
 import Promotions from './components/Promotions'
@@ -60,7 +58,6 @@ export default {
   components: {
     PageMenu: Menu,
     Splash,
-    Rodo,
     About,
     Offer,
     News,
@@ -96,6 +93,8 @@ export default {
 
 <style src="./styles/reset.css"></style>
 <style lang="scss" >
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap&subset=latin-ext');
+
 @import './styles/_colors.scss';
 @import "./styles/_variables.scss";
 

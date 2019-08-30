@@ -1,14 +1,16 @@
 <template>
 <section>
   <transition name="logo-fade" mode="out-in">
-    <img v-if="isOldLogoVisible" src="../assets/logo_white_old.svg" class="logo" key="old_logo">
-    <img else src="../assets/logo_white.svg" class="logo" key="new_logo">
+    <img class="logo" :key="logo.key" :src="logo.src" alt="Vline logo">
   </transition>
   <a href="#" v-scroll-to="'#about'" class="button">Dowiedz się więcej</a>
 </section>
 </template>
 
 <script>
+import OldLogo from '../assets/logo_white_old.svg';
+import NewLogo from '../assets/logo_white.svg';
+
 export default {
   data () {
     return {
@@ -19,6 +21,13 @@ export default {
     setTimeout( () => {
       this.isOldLogoVisible = false
       }, 2000);
+  },
+  computed: {
+    logo () {
+      return this.isOldLogoVisible
+        ? { src: OldLogo, key: 'logo-old '}
+        : { src: NewLogo, key: 'logo-new' }
+    }
   }
 }
 </script>

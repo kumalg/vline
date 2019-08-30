@@ -65,8 +65,8 @@
 <script>
 import ListItem from "./Offer_List_Item.vue";
 import axios from "axios";
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-import { faFilePdf } from "@fortawesome/fontawesome-free-regular";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 export default {
   name: "Offer_TV",
@@ -83,7 +83,7 @@ export default {
     fetchTVOffer() {
       var self = this;
       axios
-        .get("./static/OFERTA/oferta_tv.json")
+        .get("./OFERTA/oferta_tv.json")
         .then(function(resp) {
           self.items = resp.data;
         })
@@ -91,7 +91,7 @@ export default {
           console.log(error);
         });
       axios
-        .get("./static/OFERTA/oferta_tv_linki.json")
+        .get("./OFERTA/oferta_tv_linki.json")
         .then(function(resp) {
           self.links = resp.data;
         })

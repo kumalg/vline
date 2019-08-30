@@ -60,7 +60,7 @@ export default {
     fetchPromotions () {
       var self = this
       axios
-        .get("./static/OFERTA/promocje.json")
+        .get("./OFERTA/promocje.json")
         .then(function(resp) {
           self.promotions = resp.data
           if (self.promotions != null & self.promotions.length > 0) {

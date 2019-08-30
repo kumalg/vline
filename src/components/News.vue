@@ -34,8 +34,10 @@ export default {
       setTimeout(function() {
         if (typeof FB != "undefined") {
           axios
-            .get("//vline.net.pl/facebook_posts.php")
+            // .get("//vline.net.pl/facebook_posts.php")
+            .get('https://graph.facebook.com/883327525166389/posts?fields=permalink_url&limit=9&access_token=EAASW4vn7YVABAHZClnvKg9eBvX6NytU15zygY3c4TxZCSzuX0IYfWJPE7DeYHdQw23R4NR1Sa4SvE5KQUgiHCtZCEFNBiADuGyhZCWN53iIEjYa71VCmPmOaUZC4IXgXlVtxlJtwZBYJGhuQZB7v77eZCKtCQD3PZCWkjIWEr9wxpgWWG4ZBDcBMwc')
             .then(function(resp) {
+              console.log(resp)
               self.setPosts(resp.data.data);
             })
             .catch(function(error) {

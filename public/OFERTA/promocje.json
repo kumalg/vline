@@ -1,7 +1,7 @@
 [
   {
     "nazwa": "Zakabluj Sąsiada",
-    "obraz": "http://vline.net.pl/img/zakabluj.png",
+    "obraz": "http://vline.net.pl/files/img/zakabluj.png",
     "akapity": [
       "Każdy Abonent VLINE SC /Polecający/, który zachęci <b>DOWOLNĄ OSOBĘ</b> lub sąsiada, aby podpisała z nami umowę na usługi dostępu do Internetu na czas określony w zamian otrzyma jeden abonazwant internetowy w obniżonej cenie <b>1zł</b>.",
       "Nowy klient /Zakablowany/ również otrzyma jeden abonazwant internetowy w obniżonej cenie 1zł.",
@@ -11,12 +11,12 @@
     "linki": [
       {
         "tytul": "Pobierz <b>KUPON PROMOCYJNY</b>",
-        "adres": "http://vline.net.pl/pdf/kupon.pdf"
+        "adres": "http://vline.net.pl/files/pdf/kupon.pdf"
       }
     ]
   },
   {
     "nazwa": "Bezprzewodowa sieć domowa 150 mb/s za 1 zł + upominek gratis",
-    "obraz": "http://vline.net.pl/img/150mb.png"
+    "obraz": "http://vline.net.pl/files/img/150mb.png"
   }
 ]

@@ -96,8 +96,8 @@
 <script>
 import ListItem from "./Offer_List_Item.vue";
 import axios from "axios";
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-import { faFilePdf } from "@fortawesome/fontawesome-free-regular";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 export default {
   name: "Offer_Internet",
@@ -105,7 +105,7 @@ export default {
     return {
       currentTypeIndex: 0,
       currentAgreementLengthIndex: 0,
-      items: null,
+      items: [],
       links: null
     };
   },
@@ -120,7 +120,7 @@ export default {
     fetchInternetOffer() {
       var self = this;
       axios
-        .get("./static/OFERTA/oferta_internet.json")
+        .get("./OFERTA/oferta_internet.json")
         .then(function(resp) {
           self.items = resp.data;
         })
@@ -128,7 +128,7 @@ export default {
           console.log(error);
         });
       axios
-        .get("./static/OFERTA/oferta_internet_linki.json")
+        .get("./OFERTA/oferta_internet_linki.json")
         .then(function(resp) {
           self.links = resp.data;
         })

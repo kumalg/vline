@@ -46,14 +46,14 @@
 </template>
 
 <script>
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faMobileAlt,
   faPhone,
   faEnvelopeOpen,
   faFax
-} from "@fortawesome/fontawesome-free-solid";
-import { faFacebookF } from "@fortawesome/fontawesome-free-brands";
+} from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 export default {
   name: "Contact",

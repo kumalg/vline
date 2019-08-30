@@ -1,6 +1,6 @@
 <template>
 <div :class="['menu', {'menu-splash': splashStyle}]">
-  <scrollactive id="menu-center" :offset="menuHeight" :duration="500" v-on:itemchanged="menuItemChanged">
+  <scrollactive id="menu-center" :offset="menuHeight" :duration="500">
     <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item splash">
       <img src="../assets/logo-menu.svg">
     </a>
@@ -23,8 +23,8 @@
 
 <script>
 import ClickOutside from "vue-click-outside"
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome"
-import { faBars } from "@fortawesome/fontawesome-free-solid"
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 
 export default {
   name: "Menu",
@@ -45,8 +45,7 @@ export default {
     },
     navButtonClick () {
       this.expandableMenuHidden = !this.expandableMenuHidden
-    },
-    menuItemChanged (event, currentItem, lastActiveItem) {}
+    }
   },
   directives: {
     ClickOutside
