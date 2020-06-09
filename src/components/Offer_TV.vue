@@ -5,7 +5,7 @@
       <div class="text">
         <h2>Telewizja światłowodowa</h2>
         <p>
-          Dzięki współpracy z <a target="_blank" href="http://telewizjaswiatlowodowa.pl"><b>Telewizją Światłowodową</b></a> dostarczamy Państwu telewizję w najwyższej jakości dzięki dobrodziejstwu technologii światłowodowej.
+          Dzięki współpracy z <a target="_blank"><b>Telewizją Światłowodową</b></a> dostarczamy Państwu telewizję w najwyższej jakości dzięki dobrodziejstwu technologii światłowodowej.
         </p>
       </div>
       <div class="image">

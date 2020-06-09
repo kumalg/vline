@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 
 Vue.use(Scrollactive, {
   duration: 100,
+  modifyUrl: true
 });
 Vue.use(VueScrollTo, {
   container: "body",
