@@ -1,22 +1,27 @@
 <template>
-  <li :class="[{'wyrozniony': item.wyrozniony}, 'item list-item']">
+  <li :class="[{ wyrozniony: item.wyrozniony }, 'item list-item']">
     <a target="_blank" :href="item.adres">
       <div class="tooltip" v-if="item.wyrozniony">
-          <img src="../assets/offer/mark.svg" class="img">
-          <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
+        <img src="../assets/offer/mark.svg" class="img" />
+        <span class="tooltiptext">Najlepszy&nbsp;wybór</span>
       </div>
-      <h2>{{item.tytul}}</h2>
-      <p class="podtytul">{{item.podtytul}}</p>
-      <ul :class="['more-info', {'without-bottom-border': !item.cena}]" v-if="item.wiecej_info && item.wiecej_info.length > 0">
-        <li v-for="(info, index) in item.wiecej_info" :key="index">{{info}}</li>
+      <h2>{{ item.tytul }}</h2>
+      <p class="podtytul">{{ item.podtytul }}</p>
+      <ul
+        :class="['more-info', { 'without-bottom-border': !item.cena }]"
+        v-if="item.wiecej_info && item.wiecej_info.length > 0"
+      >
+        <li v-for="(info, index) in item.wiecej_info" :key="index">
+          {{ info }}
+        </li>
       </ul>
       <template v-if="item.cena">
         <template v-if="item.new_cena">
-          <h3 class="old">&nbsp;{{item.cena}}&nbsp;</h3>
-          <h3 class="promo">{{item.new_cena}}</h3>
+          <h3 class="old">&nbsp;{{ item.cena }}&nbsp;</h3>
+          <h3 class="promo">{{ item.new_cena }}</h3>
         </template>
         <template v-else>
-          <h3>{{item.cena}}</h3>
+          <h3>{{ item.cena }}</h3>
         </template>
       </template>
     </a>
@@ -27,8 +32,8 @@
 export default {
   name: "Menu",
   props: {
-    item: Object
-  }
+    item: Object,
+  },
 };
 </script>
 
@@ -39,7 +44,7 @@ export default {
   min-width: 192px;
   margin: 8px 0;
   text-align: center;
-  transition: box-shadow .2s ease;
+  transition: box-shadow 0.2s ease;
   border: {
     style: solid;
     width: 1px;
@@ -82,13 +87,15 @@ export default {
     font-size: 0.8125em;
   }
 
-  p, ul.more-info > li {
+  p,
+  ul.more-info > li {
     font-size: 0.75em;
     font-weight: 600;
   }
 
   .podtytul {
     margin-top: 8px;
+    white-space: pre;
   }
 
   .more-info {
@@ -132,7 +139,8 @@ export default {
       font-weight: 300;
     }
 
-    p, ul.more-info > li {
+    p,
+    ul.more-info > li {
       opacity: 0.95;
     }
 

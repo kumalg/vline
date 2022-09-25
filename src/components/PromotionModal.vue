@@ -2,7 +2,7 @@
   <transition name="modal">
     <div class="modal-mask" @mousedown.stop="$emit('close')" @touchstart.stop="$emit('close')">
       <div class="modal-wrapper">
-        <div class="modal-container" @mousedown.stop @touchstart.stop>
+        <div :class="['modal-container', { 'modal-container--large': size === 'large' }]" @mousedown.stop @touchstart.stop>
           
           <button class="modal-exit-button" @click="$emit('close')"/>
 
@@ -20,6 +20,17 @@
     </div>
   </transition>
 </template>
+
+<script>
+export default {
+  props: {
+    size: {
+      type: String,
+      required: false
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import "../styles/_colors.scss";
@@ -53,6 +64,10 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
   transition: all .3s ease;
   // font-family: Helvetica, Arial, sans-serif;
+
+  &--large {
+    max-width: 960px;
+  }
 }
 
 .modal-header h3 {
@@ -62,7 +77,7 @@
 }
 
 .modal-body {
-  margin: 16px 0;
+  margin: 8px 0;
 }
 
 .modal-exit-button {

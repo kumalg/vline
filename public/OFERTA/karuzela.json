@@ -1,0 +1,21 @@
+[
+  {
+    "nazwa": "Zakabluj Sąsiada",
+    "skrot": "Rozdajemy Internet za darmo! Sprawdź szczegóły promocji i korzystaj z Internetu za 0zł",
+    "obraz": "/img/karuzela/zakabluj.jpg",
+    "kolor_tla": "white",
+    "motyw_tekstu": "ciemny",
+    "akapity": [
+      "Każdy Abonent VLINE będący konsumentem (\"Polecający\"), który zachęci <b>dowolną osobę</b> lub sąsiada, aby podpisała z nami umowę na usługi dostępu do Internetu na czas określony w zamian otrzyma jeden abonament internetowy w obniżonej cenie <b>1zł</b>.",
+      "Nowy klient będący konsumentem (\"Zakablowany\") również otrzyma jeden abonament internetowy w obniżonej cenie 1zł.",
+      "Każdy abonent może zakablować dowolną ilość osób.",
+      "Każda osoba to kolejny miesiąc Internetu <b>za darmo!</b>"
+    ],
+    "linki": [
+      {
+        "tytul": "Pobierz <b>kupon promocyjny</b>",
+        "adres": "http://vline.net.pl/files/pdf/kupon.pdf"
+      }
+    ]
+  }
+]

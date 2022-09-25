@@ -1,31 +1,157 @@
 [
   {
-    "tytul": "Mini",
-    "wiecej_info": [
-      "110 kanałów",
-      "48 kanałów HD"
-    ]
-  },
-  {
-    "tytul": "Smart",
-    "wiecej_info": [
-      "153 kanały",
-      "74 kanały HD"
-    ]
-  },
-  {
-    "wyrozniony": true,
-    "tytul": "Optimum",
-    "wiecej_info": [
-      "211 kanałów",
-      "108 kanałów HD"
-    ]
-  },
-  {
-    "tytul": "Platinum",
-    "wiecej_info": [
-      "241 kanałów",
-      "123 kanały HD"
+    "typ_oferty": "Telewizja z Internetem",
+    "opcje": [
+      {
+        "dlugosc_umowy": "TV + Internet Bloki",
+        "opcje": [
+          {
+            "tytul": "Mini",
+            "podtytul": "100 kanałów\nw tym 62 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 100Mb/s",
+              "Wysyłanie: 10Mb/s",
+              "Aktywacja: 100zł"
+            ],
+            "cena": "90,00 zł"
+          },
+          {
+            "tytul": "Smart",
+            "podtytul": "152 kanały\nw tym 99 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 250Mb/s",
+              "Wysyłanie: 20Mb/s",
+              "Aktywacja: 100zł"
+            ],
+            "cena": "105,00 zł"
+          },
+          {
+            "wyrozniony": true,
+            "tytul": "Optimum",
+            "podtytul": "200 kanałów\nw tym 129 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 250Mb/s",
+              "Wysyłanie: 20Mb/s",
+              "Aktywacja: 100zł"
+            ],
+            "cena": "125,00 zł"
+          },
+          {
+            "tytul": "Platinum",
+            "podtytul": "236 kanałów\nw tym 155 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 250Mb/s",
+              "Wysyłanie: 20Mb/s",
+              "Aktywacja: 100zł"
+            ],
+            "cena": "145,00 zł"
+          }
+        ]
+      },
+      {
+        "dlugosc_umowy": "TV + Internet GPON",
+        "opcje": [
+          {
+            "tytul": "Mini",
+            "podtytul": "100 kanałów\nw tym 62 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 100Mb/s",
+              "Wysyłanie: 10Mb/s",
+              "Aktywacja: 150zł"
+            ],
+            "cena": "100,00 zł"
+          },
+          {
+            "tytul": "Smart",
+            "podtytul": "152 kanały\nw tym 99 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 250Mb/s",
+              "Wysyłanie: 20Mb/s",
+              "Aktywacja: 150zł"
+            ],
+            "cena": "115,00 zł"
+          },
+          {
+            "wyrozniony": true,
+            "tytul": "Optimum",
+            "podtytul": "200 kanałów\nw tym 129 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 250Mb/s",
+              "Wysyłanie: 20Mb/s",
+              "Aktywacja: 150zł"
+            ],
+            "cena": "135,00 zł"
+          },
+          {
+            "tytul": "Platinum",
+            "podtytul": "236 kanałów\nw tym 155 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 250Mb/s",
+              "Wysyłanie: 20Mb/s",
+              "Aktywacja: 150zł"
+            ],
+            "cena": "155,00 zł"
+          }
+        ]
+      },
+      {
+        "dlugosc_umowy": "TV + Internet NEXERA",
+        "opcje": [
+          {
+            "tytul": "Mini",
+            "podtytul": "100 kanałów\nw tym 62 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 300Mb/s",
+              "Wysyłanie: 30Mb/s",
+              "Aktywacja: 250zł"
+            ],
+            "cena": "110,00 zł"
+          },
+          {
+            "tytul": "Smart",
+            "podtytul": "152 kanały\nw tym 99 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 300Mb/s",
+              "Wysyłanie: 30Mb/s",
+              "Aktywacja: 250zł"
+            ],
+            "cena": "125,00 zł"
+          },
+          {
+            "wyrozniony": true,
+            "tytul": "Optimum",
+            "podtytul": "200 kanałów\nw tym 129 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 300Mb/s",
+              "Wysyłanie: 30Mb/s",
+              "Aktywacja: 250zł"
+            ],
+            "cena": "145,00 zł"
+          },
+          {
+            "tytul": "Platinum",
+            "podtytul": "236 kanałów\nw tym 155 HD",
+            "wiecej_info": [
+              "Internet:",
+              "Odbieranie: 300Mb/s",
+              "Wysyłanie: 30Mb/s",
+              "Aktywacja: 250zł"
+            ],
+            "cena": "165,00 zł"
+          }
+        ]
+      }
     ]
   }
 ]

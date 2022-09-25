@@ -1,96 +1,139 @@
 <template>
-<div>
   <div>
-    <div class="desc">	
-      <div class="text">
-        <h2>Internet</h2>
-        <p>
-          Bez względu na to czy jesteś klientem czy firmą, Kowalskim czy „Kowalskim sp. z o.o.”, dla nas <b>jesteś zawsze najważniejszy</b>, więc dopasujemy ofertę do Twoich wymagań.
-        </p>
-      </div>
-      <div class="image">
-        <img src="../assets/offer/internet.jpg" />
-      </div>
-    </div>
-    <ul class="info-items">
-      <li class="info-item">
-        <h3>Oferta dla każdego</h3>
-        <p>
-          Oferujemy łącza światłowodowe ftth, Ethernet i bezprzewodowe, naszą ofertę kierujemy do każdego odbiorcy, dajemy możliwość korzystania z niezawodnego, szybkiego i pewnego dostępu do Internetu. 
-        </p>
-      </li>
-      <li class="info-item">
-        <h3>Najwyższa wydajność i niezawodność</h3>
-        <p>
-          Posiadamy dostęp do łącz operatorskich w oparciu o własne światłowodowe sieci, zoptymalizowane pod kątem uzyskania jak najwyższej wydajności i niezawodności.
-        </p>
-      </li>
-      <li class="info-item">
-        <h3>Dostosowany dla Ciebie</h3>
-        <p>
-          Nieważne czy potrzebujesz łącza do domu czy dla firmy, postaramy się zaoferować usługę która w najlepszy możliwy sposób zaspokoi Twoje wymagania.
-        </p>
-      </li>
-      <li class="info-item">
-        <h3>Najszybszy Internet światłowodowy</h3>
-        <p>
-          Nasze łącza <b>światłowodowe</b>, są wielokrotnie szybsze od łączy telefonicznych oraz średnio 10-krotnie szybsze od Internetu LTE. Co ważne, możliwości światłowodu ciągle rosną. W świetle takich faktów możesz wybrać tylko jedno – Technologię ŚWIATŁOWODOWĄ.
-        </p>
-      </li>
-    </ul>
-  </div>
-  <div class="container-offer-inner">
-    <div class="nav">
-      <div class="typ_oferty_group" v-for="(item, typ_ofertyIndex) in items" :key="typ_ofertyIndex">
-        <h2>{{ item.typ_oferty }}</h2>
-        <ul>
-          <li v-for="(agreement, agreementLengthIndex) in item.opcje" :key="agreementLengthIndex">
-            <button 
-              :class="{'active': currentTypeIndex == typ_ofertyIndex && currentAgreementLengthIndex == agreementLengthIndex}" 
-              @click="agreementLengthItemClick(typ_ofertyIndex, agreementLengthIndex)"
-            >
-              <div class="dot"/><p>{{agreement.dlugosc_umowy}}</p>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="typ_oferty_group">
-        <h2>Inne</h2>
-        <ul>
-          <li>
-            <button 
-              :class="{'active': currentTypeIndex == items.length && currentAgreementLengthIndex == 0}" 
-              @click="agreementLengthItemClick(items.length, 0)"
-            >
-              <div class="dot"/><p>Internet Radiowy</p>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <transition name="offer-fade" mode="out-in">
-      <div class="offer-content" :key="`${currentTypeIndex}_${currentAgreementLengthIndex}`">
-        <ul v-if="items && currentTypeIndex < items.length" class="items">
-          <ListItem v-for="(item, index) in items[currentTypeIndex].opcje[currentAgreementLengthIndex].opcje" :item="item" :key="index"/>
-        </ul>
-        <div class="radio-internet" v-else :key="`${items.length}_0`">
-          <p>Pakiety już <b>od 40 zł</b></p>
-          <p>Prędkość nawet <b>do 15 Mbit</b></p>
+    <div>
+      <div class="desc">
+        <div class="text">
+          <h2>Internet</h2>
+          <p>
+            Bez względu na to czy jesteś klientem czy firmą, Kowalskim czy
+            „Kowalskim sp. z o.o.”, dla nas <b>jesteś zawsze najważniejszy</b>,
+            więc dopasujemy ofertę do Twoich wymagań.
+          </p>
+        </div>
+        <div class="image">
+          <img src="../assets/offer/internet.jpg" />
         </div>
       </div>
-    </transition>
+      <ul class="info-items">
+        <li class="info-item">
+          <h3>Oferta dla każdego</h3>
+          <p>
+            Oferujemy łącza światłowodowe ftth, Ethernet i bezprzewodowe, naszą
+            ofertę kierujemy do każdego odbiorcy, dajemy możliwość korzystania z
+            niezawodnego, szybkiego i pewnego dostępu do Internetu.
+          </p>
+        </li>
+        <li class="info-item">
+          <h3>Najwyższa wydajność i niezawodność</h3>
+          <p>
+            Posiadamy dostęp do łącz operatorskich w oparciu o własne
+            światłowodowe sieci, zoptymalizowane pod kątem uzyskania jak
+            najwyższej wydajności i niezawodności.
+          </p>
+        </li>
+        <li class="info-item">
+          <h3>Dostosowany dla Ciebie</h3>
+          <p>
+            Nieważne czy potrzebujesz łącza do domu czy dla firmy, postaramy się
+            zaoferować usługę która w najlepszy możliwy sposób zaspokoi Twoje
+            wymagania.
+          </p>
+        </li>
+        <li class="info-item">
+          <h3>Najszybszy Internet światłowodowy</h3>
+          <p>
+            Nasze łącza <b>światłowodowe</b>, są wielokrotnie szybsze od łączy
+            telefonicznych oraz średnio 10-krotnie szybsze od Internetu LTE. Co
+            ważne, możliwości światłowodu ciągle rosną. W świetle takich faktów
+            możesz wybrać tylko jedno – Technologię ŚWIATŁOWODOWĄ.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="container-offer-inner">
+      <div class="nav">
+        <div
+          class="typ_oferty_group"
+          v-for="(item, typ_ofertyIndex) in items"
+          :key="typ_ofertyIndex"
+        >
+          <h2>{{ item.typ_oferty }}</h2>
+          <ul>
+            <li
+              v-for="(agreement, agreementLengthIndex) in item.opcje"
+              :key="agreementLengthIndex"
+            >
+              <button
+                :class="{
+                  active:
+                    currentTypeIndex == typ_ofertyIndex &&
+                    currentAgreementLengthIndex == agreementLengthIndex,
+                }"
+                @click="
+                  agreementLengthItemClick(
+                    typ_ofertyIndex,
+                    agreementLengthIndex
+                  )
+                "
+              >
+                <div class="dot" />
+                <p>{{ agreement.dlugosc_umowy }}</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="typ_oferty_group">
+          <h2>Inne</h2>
+          <ul>
+            <li>
+              <button
+                :class="{
+                  active:
+                    currentTypeIndex == items.length &&
+                    currentAgreementLengthIndex == 0,
+                }"
+                @click="agreementLengthItemClick(items.length, 0)"
+              >
+                <div class="dot" />
+                <p>Internet Radiowy</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <transition name="offer-fade" mode="out-in">
+        <div
+          class="offer-content"
+          :key="`${currentTypeIndex}_${currentAgreementLengthIndex}`"
+        >
+          <ul v-if="items && currentTypeIndex < items.length" class="items">
+            <ListItem
+              v-for="(item, index) in items[currentTypeIndex].opcje[
+                currentAgreementLengthIndex
+              ].opcje"
+              :item="item"
+              :key="index"
+            />
+          </ul>
+          <div class="radio-internet" v-else :key="`${items.length}_0`">
+            <p>Pakiety już <b>od 40 zł</b></p>
+            <p>Prędkość nawet <b>do 15 Mbit</b></p>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <div class="files" v-if="links && links.length > 0">
+      <h2>Do pobrania:</h2>
+      <ul>
+        <li v-for="(link, index) in links" :key="index">
+          <a target="_blank" :href="link.adres">
+            <FontAwesomeIcon :icon="iconPdf" class="icon" />
+            <p>{{ link.tytul }}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="files" v-if="links && links.length > 0">
-    <h2>Do pobrania:</h2>
-    <ul>
-      <li v-for="(link, index) in links" :key="index">
-        <a target="_blank" :href="link.adres">
-          <FontAwesomeIcon :icon="iconPdf" class="icon" /><p>{{link.tytul}}</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
 </template>
 
 <script>
@@ -106,7 +149,7 @@ export default {
       currentTypeIndex: 0,
       currentAgreementLengthIndex: 0,
       items: [],
-      links: null
+      links: null,
     };
   },
   created: function() {
@@ -114,13 +157,13 @@ export default {
   },
   methods: {
     agreementLengthItemClick(typ_ofertyIndex, agreementLengthIndex) {
-      this.currentTypeIndex = typ_ofertyIndex
-      this.currentAgreementLengthIndex = agreementLengthIndex
+      this.currentTypeIndex = typ_ofertyIndex;
+      this.currentAgreementLengthIndex = agreementLengthIndex;
     },
     fetchInternetOffer() {
       var self = this;
       axios
-        .get("./OFERTA/oferta_internet.json")
+        .get(`./OFERTA/oferta_internet.json?timestamp=${new Date().getTime()}`)
         .then(function(resp) {
           self.items = resp.data;
         })
@@ -128,24 +171,26 @@ export default {
           console.log(error);
         });
       axios
-        .get("./OFERTA/oferta_internet_linki.json")
+        .get(
+          `./OFERTA/oferta_internet_linki.json?timestamp=${new Date().getTime()}`
+        )
         .then(function(resp) {
           self.links = resp.data;
         })
         .catch(function(error) {
           console.log(error);
         });
-    }
+    },
   },
   components: {
     ListItem: ListItem,
-    FontAwesomeIcon
+    FontAwesomeIcon,
   },
   computed: {
     iconPdf() {
       return faFilePdf;
-    }
-  }
+    },
+  },
 };
 </script>
 

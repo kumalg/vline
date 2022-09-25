@@ -1,59 +1,73 @@
 <template>
-<div :class="['menu', {'menu-splash': splashStyle}]">
-  <scrollactive id="menu-center" :offset="menuHeight" :duration="500">
-    <a alt="logo" href="#splash" id="logo-button" class="scrollactive-item splash">
-      <img src="../assets/logo-menu.svg">
-    </a>
-    <div class="hamburger-menu navigation">
-      <button id="nav-button" @click="navButtonClick" v-click-outside="hideExpandableMenu">
-        <FontAwesomeIcon :icon="faBars" class="nav-icon" />
-      </button>
-      <div :class="['menu-section', {'hide': expandableMenuHidden}]">
-        <ul>
-          <li v-for="item in menuItems" :key="item.href">
-            <a v-if="!item.external" :href="item.href" class="scrollactive-item">{{item.title}}</a>
-            <a v-else target="_blank" :href="item.href">{{item.title}}</a>
-          </li>
-        </ul>
+  <div :class="['menu', { 'menu-splash': splashStyle }]">
+    <scrollactive id="menu-center" :offset="menuHeight" :duration="500">
+      <a
+        alt="logo"
+        href="#carousel"
+        id="logo-button"
+        class="scrollactive-item splash"
+      >
+        <img src="../assets/logo-menu.svg" />
+      </a>
+      <div class="hamburger-menu navigation">
+        <button
+          id="nav-button"
+          @click="navButtonClick"
+          v-click-outside="hideExpandableMenu"
+        >
+          <FontAwesomeIcon :icon="faBars" class="nav-icon" />
+        </button>
+        <div :class="['menu-section', { hide: expandableMenuHidden }]">
+          <ul>
+            <li v-for="item in menuItems" :key="item.href">
+              <a
+                v-if="!item.external"
+                :href="item.href"
+                class="scrollactive-item"
+                >{{ item.title }}</a
+              >
+              <a v-else target="_blank" :href="item.href">{{ item.title }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </scrollactive>
-</div>
+    </scrollactive>
+  </div>
 </template>
 
 <script>
-import ClickOutside from "vue-click-outside"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import ClickOutside from "vue-click-outside";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   name: "Menu",
   props: {
     splashStyle: Boolean,
     menuHeight: Number,
-    menuItems: Array
+    menuItems: Array,
   },
-  data () {
+  data() {
     return {
       faBars,
-      expandableMenuHidden: true
-    }
+      expandableMenuHidden: true,
+    };
   },
   methods: {
-    hideExpandableMenu () {
-      this.expandableMenuHidden = true
+    hideExpandableMenu() {
+      this.expandableMenuHidden = true;
     },
-    navButtonClick () {
-      this.expandableMenuHidden = !this.expandableMenuHidden
-    }
+    navButtonClick() {
+      this.expandableMenuHidden = !this.expandableMenuHidden;
+    },
   },
   directives: {
-    ClickOutside
+    ClickOutside,
   },
   components: {
-    FontAwesomeIcon
-  }
-}
+    FontAwesomeIcon,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -63,7 +77,9 @@ export default {
 .menu {
   width: 100%;
   height: $menu-height;
-  position: fixed;
+  // position: fixed;
+  position: sticky;
+  top: 0;
   background-color: #fff;
   box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: all 0.3s ease;
@@ -75,33 +91,33 @@ export default {
 
 $hover-bg-color: rgba(255, 255, 255, 0.1);
 
-.menu-splash {
-  background-color: transparent;
-  box-shadow: none;
+// .menu-splash {
+//   background-color: transparent;
+//   box-shadow: none;
 
-  #nav-button {
-    color: white;
+//   #nav-button {
+//     color: white;
 
-    &:hover {
-      background-color: $hover-bg-color;
-    }
-  }
+//     &:hover {
+//       background-color: $hover-bg-color;
+//     }
+//   }
 
-  #logo-button {
-    opacity: 0;
-    visibility: hidden;
-  }
+//   #logo-button {
+//     opacity: 0;
+//     visibility: hidden;
+//   }
 
-  @media all and (min-width: 751px) {
-    #menu-center ul li a {
-      color: white;
+//   @media all and (min-width: 751px) {
+//     #menu-center ul li a {
+//       color: white;
 
-      &:hover {
-        background-color: $hover-bg-color;
-      }
-    }
-  }
-}
+//       &:hover {
+//         background-color: $hover-bg-color;
+//       }
+//     }
+//   }
+// }
 
 #menu-center {
   max-width: 960px;

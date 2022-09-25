@@ -6,29 +6,23 @@
         "dlugosc_umowy": "24 miesiące",
         "opcje": [
           {
-            "tytul": "80 Mb/s",
-            "podtytul": "wysyłanie: 8 Mb/s",
-            "cena": "40,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 1 zł"
-            ]
+            "tytul": "200 Mb/s",
+            "podtytul": "wysyłanie: 20 Mb/s",
+            "cena": "50,00 zł",
+            "wiecej_info": ["Aktywacja: 1 zł"]
           },
           {
-            "tytul": "100 Mb/s",
-            "podtytul": "wysyłanie: 10 Mb/s",
-            "cena": "50,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 1 zł"
-            ]
+            "tytul": "300 Mb/s",
+            "podtytul": "wysyłanie: 30 Mb/s",
+            "cena": "60,00 zł",
+            "wiecej_info": ["Aktywacja: 1 zł"]
           },
           {
             "wyrozniony": true,
-            "tytul": "300 Mb/s",
-            "podtytul": "wysyłanie: 30 Mb/s",
+            "tytul": "500 Mb/s",
+            "podtytul": "wysyłanie: 50 Mb/s",
             "cena": "70,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 1 zł"
-            ]
+            "wiecej_info": ["Aktywacja: 1 zł"]
           }
         ]
       },
@@ -36,29 +30,23 @@
         "dlugosc_umowy": "12 miesięcy",
         "opcje": [
           {
-            "tytul": "80 Mb/s",
-            "podtytul": "wysyłanie: 8 Mb/s",
-            "cena": "40,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 99 zł"
-            ]
+            "tytul": "200 Mb/s",
+            "podtytul": "wysyłanie: 20 Mb/s",
+            "cena": "50,00 zł",
+            "wiecej_info": ["Aktywacja: 99 zł"]
           },
           {
-            "tytul": "100 Mb/s",
-            "podtytul": "wysyłanie: 10 Mb/s",
-            "cena": "50,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 99 zł"
-            ]
+            "tytul": "300 Mb/s",
+            "podtytul": "wysyłanie: 30 Mb/s",
+            "cena": "60,00 zł",
+            "wiecej_info": ["Aktywacja: 99 zł"]
           },
           {
             "wyrozniony": true,
-            "tytul": "300 Mb/s",
-            "podtytul": "wysyłanie: 30 Mb/s",
+            "tytul": "500 Mb/s",
+            "podtytul": "wysyłanie: 50 Mb/s",
             "cena": "70,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 99 zł"
-            ]
+            "wiecej_info": ["Aktywacja: 99 zł"]
           }
         ]
       },
@@ -66,12 +54,10 @@
         "dlugosc_umowy": "czas nieokreślony",
         "opcje": [
           {
-            "tytul": "60 Mb/s",
-            "podtytul": "wysyłanie: 6 Mb/s",
+            "tytul": "100 Mb/s",
+            "podtytul": "wysyłanie: 10 Mb/s",
             "cena": "50,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 99 zł"
-            ]
+            "wiecej_info": ["Aktywacja: 99 zł"]
           }
         ]
       }
@@ -85,28 +71,39 @@
         "opcje": [
           {
             "tytul": "Standard",
-            "podtytul": "odbieranie: 20 Mb/s\nwysyłanie: 2 Mb/s",
-            "cena": "50,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 250 zł"
-            ]
+            "podtytul": "odbieranie: 200 Mb/s\nwysyłanie: 20 Mb/s",
+            "cena": "60,00 zł",
+            "wiecej_info": ["Aktywacja: 1 zł"]
           },
           {
             "tytul": "Plus",
-            "podtytul": "odbieranie: 40 Mb/s\nwysyłanie: 4 Mb/s",
-            "cena": "60,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 200 zł"
-            ]
+            "podtytul": "odbieranie: 300 Mb/s\nwysyłanie: 30 Mb/s",
+            "cena": "70,00 zł",
+            "wiecej_info": ["Aktywacja: 1 zł"]
           },
           {
             "wyrozniony": true,
             "tytul": "Super",
-            "podtytul": "odbieranie: 120 Mb/s\nwysyłanie: 12 Mb/s",
-            "cena": "90,00 zł",
-            "wiecej_info": [
-              "Aktywacja: 150 zł"
-            ]
+            "podtytul": "odbieranie: 800 Mb/s\nwysyłanie: 50 Mb/s",
+            "cena": "100,00 zł",
+            "wiecej_info": ["Aktywacja: 1 zł"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "typ_oferty": "NEXERA Światłowód",
+    "opcje": [
+      {
+        "dlugosc_umowy": "24 miesiące",
+        "opcje": [
+          {
+            "wyrozniony": true,
+            "tytul": "Super",
+            "podtytul": "odbieranie: 300 Mb/s\nwysyłanie: 30 Mb/s",
+            "cena": "70,00 zł",
+            "wiecej_info": ["Aktywacja: 1 zł"]
           }
         ]
       }

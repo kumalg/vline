@@ -7,6 +7,11 @@
     <div class="copy-block">
       <p>© 2018 - {{ new Date().getFullYear() }} <b>Vline Spółka Jawna</b></p>
     </div>
+    
+    <div class="rodo">
+        Rozporządzenie Ogólne o Danych Osobowych (RODO)
+        <a href="./files/rodoinfo.odt" target="_blank">Pobierz dokument</a>
+    </div>
     <!-- <div class="author-block">
       <p>Projekt i wykonanie <a href="http://kumalg.pl" target="_blank">Kamil Golec</a></p>
     </div> -->
@@ -25,6 +30,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: column;
 
         p {
             font-weight: 400;
@@ -60,6 +66,16 @@ footer {
         .copy-block {
             text-align: center;
             // text-align: left;
+        }
+
+        .rodo {
+            font-size: 12px;
+            color: #797979;
+            text-align: center;
+
+            a {
+                color: #797979;
+            }
         }
 
         .author-block {

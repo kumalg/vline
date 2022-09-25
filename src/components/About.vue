@@ -1,6 +1,6 @@
 <template>
 <section>
-  <Rodo />
+  <!-- <Rodo /> -->
   <div class="container">
     <!-- <h1>O Vline</h1> -->
     <div class="block-with-icon">
@@ -80,14 +80,14 @@
 </section>
 </template>
 
-<script>
-import Rodo from '@/components/Rodo'
-export default {
-  components: {
-    Rodo
-  }
-}
-</script>
+// <script>
+// import Rodo from '@/components/Rodo'
+// export default {
+//   components: {
+//     Rodo
+//   }
+// }
+// </script>
 
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";

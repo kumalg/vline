@@ -1,94 +1,118 @@
 <template>
-<section>
-  <modal v-if="showModal && selectedPromotion" @close="showModal = false">
-    <h3 slot="header">{{ selectedPromotion.nazwa }}</h3>
-    <template slot="body">
-      <p v-for="(paragraph, index) in selectedPromotion.akapity" :key="index" class="modal-content" v-html="paragraph"/>
-      <ul v-if="selectedPromotion.linki">
-        <li v-for="(link, index) in selectedPromotion.linki" :key="index">
-          <a :href="link.adres" v-html="link.tytul"></a>
-        </li>
-      </ul>
-    </template>
-  </modal>
-  <div class="container">
-    <h1>Promocje</h1>
-    <div v-if="promotions && promotions.length != 0">
-      <div class="promotions-container">
-        <button class="angle left" @click="shift(-1)"/>
-        <button class="angle right" @click="shift(1)"/>
-        <transition v-if="selectedPromotion" name="promotion-fade" mode="out-in">
-          <div :key="selectedPromotionIndex" class="promotion-item">
-            <!-- <template>{{ selectedPromotion.name }}</template> -->
-            <img v-if="selectedPromotion.obraz" class="promotion-image" :src="selectedPromotion.obraz"/>
-            <h3 v-else>{{ selectedPromotion.nazwa }}</h3>
-            <button class="show-modal-button" @click="showModal = true">Dowiedz się więcej</button>
-          </div>
-        </transition>
+  <section>
+    <modal v-if="showModal && selectedPromotion" @close="showModal = false">
+      <h3 slot="header">{{ selectedPromotion.nazwa }}</h3>
+      <template slot="body">
+        <p
+          v-for="(paragraph, index) in selectedPromotion.akapity"
+          :key="index"
+          class="modal-content"
+          v-html="paragraph"
+        />
+        <ul v-if="selectedPromotion.linki">
+          <li v-for="(link, index) in selectedPromotion.linki" :key="index">
+            <a :href="link.adres" v-html="link.tytul"></a>
+          </li>
+        </ul>
+      </template>
+    </modal>
+    <div class="container">
+      <h1>Promocje</h1>
+      <div v-if="promotions && promotions.length != 0">
+        <div class="promotions-container">
+          <button class="angle left" @click="shift(-1)" />
+          <button class="angle right" @click="shift(1)" />
+          <transition
+            v-if="selectedPromotion"
+            name="promotion-fade"
+            mode="out-in"
+          >
+            <div :key="selectedPromotionIndex" class="promotion-item">
+              <!-- <template>{{ selectedPromotion.name }}</template> -->
+              <img
+                v-if="selectedPromotion.obraz"
+                class="promotion-image"
+                :src="selectedPromotion.obraz"
+              />
+              <h3 v-else>{{ selectedPromotion.nazwa }}</h3>
+              <button class="show-modal-button" @click="showModal = true">
+                Dowiedz się więcej
+              </button>
+            </div>
+          </transition>
+        </div>
+        <ul class="promotion-selectors">
+          <li v-for="(promotion, index) in promotions" :key="index">
+            <span
+              :class="{ active: index == selectedPromotionIndex }"
+              @click="selectedPromotionIndex = index"
+            />
+          </li>
+        </ul>
       </div>
-      <ul class="promotion-selectors">
-        <li v-for="(promotion, index) in promotions" :key="index"><span :class="{'active': index == selectedPromotionIndex}" @click="selectedPromotionIndex = index"/></li>
-      </ul>
+      <div v-else class="no-promotions">
+        <p>Niestety, aktualnie nie prowadzimy żadnych akcji promocyjnych :'(</p>
+      </div>
     </div>
-    <div v-else class="no-promotions">
-      <p>Niestety, aktualnie nie prowadzimy żadnych akcji promocyjnych :'(</p>
-    </div>
-  </div>
-</section>
+  </section>
 </template>
 
 <script>
-import Modal from './PromotionModal'
+import Modal from "./PromotionModal";
 import axios from "axios";
 
 export default {
-  name: 'Promotions',
+  name: "Promotions",
   components: {
-    Modal
+    Modal,
   },
-  data () {
+  data() {
     return {
       promotions: [],
       showModal: false,
-      selectedPromotionIndex: null
-    }
+      selectedPromotionIndex: null,
+    };
   },
-  created () {
-    this.fetchPromotions()
+  created() {
+    this.fetchPromotions();
   },
   methods: {
-    fetchPromotions () {
-      var self = this
+    fetchPromotions() {
+      var self = this;
       axios
-        .get("./OFERTA/promocje.json")
+        .get(`./OFERTA/promocje.json?timestamp=${new Date().getTime()}`)
         .then(function(resp) {
-          self.promotions = resp.data
-          if (self.promotions != null & self.promotions.length > 0) {
-            self.selectedPromotionIndex = 0
+          self.promotions = resp.data;
+          if ((self.promotions != null) & (self.promotions.length > 0)) {
+            self.selectedPromotionIndex = 0;
           }
         })
         .catch(function(error) {
-          console.log(error)
-        })
+          console.log(error);
+        });
     },
-    shift (value) {
-      const promotionsCount = this.promotions.length
-      var newIndex = this.selectedPromotionIndex + value
+    shift(value) {
+      const promotionsCount = this.promotions.length;
+      var newIndex = this.selectedPromotionIndex + value;
       if (newIndex < 0) {
-        newIndex += promotionsCount
+        newIndex += promotionsCount;
       }
-      this.selectedPromotionIndex = newIndex % promotionsCount
-    }
+      this.selectedPromotionIndex = newIndex % promotionsCount;
+    },
   },
   computed: {
-    selectedPromotion () {
-      if (this.selectedPromotionIndex != null && this.promotions != null && this.promotions.length > this.selectedPromotionIndex) {
-        return this.promotions[this.selectedPromotionIndex]
+    selectedPromotion() {
+      if (
+        this.selectedPromotionIndex != null &&
+        this.promotions != null &&
+        this.promotions.length > this.selectedPromotionIndex
+      ) {
+        return this.promotions[this.selectedPromotionIndex];
       }
-      return null
-    }
-  }
-}
+      return null;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -135,18 +159,18 @@ section {
       transform: translateY(-50%);
       width: 32px;
       height: 32px;
-      background: rgba(0,0,0,.05);
+      background: rgba(0, 0, 0, 0.05);
       border: none;
       border-radius: 32px;
       cursor: pointer;
-      transition: background .2s ease;
+      transition: background 0.2s ease;
 
       &:hover {
-        background: rgba(0,0,0,.1);
+        background: rgba(0, 0, 0, 0.1);
       }
 
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: 11px;
         width: 10px;
@@ -191,7 +215,7 @@ section {
         border: 2px solid $colorPrimary;
         border-radius: 50%;
         cursor: pointer;
-        transition: border-width .2s ease;
+        transition: border-width 0.2s ease;
 
         &.active {
           border-width: 8px;
@@ -208,19 +232,19 @@ section {
   }
 
   .show-modal-button {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: $colorText;
     display: block;
     margin: 16px auto;
     padding: 8px 16px;
-    background: rgba(0,0,0,.05);
+    background: rgba(0, 0, 0, 0.05);
     border: none;
     border-radius: 32px;
     cursor: pointer;
-    transition: background .2s ease;
+    transition: background 0.2s ease;
 
     &:hover {
-      background: rgba(0,0,0,.1);
+      background: rgba(0, 0, 0, 0.1);
     }
   }
 
